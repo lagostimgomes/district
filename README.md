@@ -94,17 +94,13 @@ Two representative plans are extracted:
 
 ## Example maps
 
-### Maryland — 8 congressional districts
+Maps are generated locally by running `render_state.py` after the pipeline
+completes for a state. Outputs land in `data/{abbr}/final/`:
 
-| Best Compact | Fewest County Splits |
-|:---:|:---:|
-| ![MD compact](data/md/final/map_compact.png) | ![MD splits](data/md/final/map_fewest_splits.png) |
-
-### Tennessee — 9 congressional districts
-
-| Best Compact | Fewest County Splits |
-|:---:|:---:|
-| ![TN compact](data/tn/final/map_compact.png) | ![TN splits](data/tn/final/map_fewest_splits.png) |
+- `map_compact.png` — best Polsby–Popper mean
+- `map_fewest_splits.png` — fewest county splits
+- `map_comparison.png` — side-by-side with optional enacted-map column
+- `map_comparison_lean.png` — same, with VEST 2020 presidential lean badges
 
 ---
 

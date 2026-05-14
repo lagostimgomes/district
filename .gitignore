@@ -18,19 +18,9 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data — raw downloads, large binaries, and intermediate files are not tracked.
-# Committed: final district maps (*.gpkg, *.png) and reports (*.json, *.csv).
-data/*/census_blocks/
-data/*/census_tracts/
-data/*/vtd_precincts/
-data/*/places/
-data/*/county_subdivisions/
-data/*/current_districts/
-data/*/counties/
-data/vest/
-data/*/ensemble/
-data/*/graph/*.gpickle
-data/maryland/
+# All data directories — downloaded census geography, computed outputs, and
+# intermediate files are not tracked. Run the pipeline to regenerate locally.
+data/
 
 # Logs (runtime output, not source)
 logs/
