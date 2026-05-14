@@ -1,0 +1,20 @@
+{
+  "label": "best_map_compact",
+  "output_file": "data/la/final/best_map_compact.gpkg",
+  "n_districts": 6,
+  "pp_min": 0.10379627998052073,
+  "pp_mean": 0.15953812580021806,
+  "pp_max": 0.2694884255066614,
+  "pop_dev_max": 0.004272701450434158,
+  "pop_dev_mean": 0.002179469205425512,
+  "cut_edges": 635.0,
+  "county_splits": 37.0,
+  "district_populations": {
+    "district_0": 777383,
+    "district_1": 774480,
+    "district_2": 774112,
+    "district_3": 778621,
+    "district_4": 775767,
+    "district_5": 777346
+  }
+}

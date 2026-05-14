@@ -1,0 +1,21 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/al/final/best_map_fewest_splits.gpkg",
+  "n_districts": 7,
+  "pp_min": 0.10447999433131738,
+  "pp_mean": 0.17639126440367275,
+  "pp_max": 0.24824529637429116,
+  "pop_dev_max": 0.004318828631929102,
+  "pop_dev_mean": 0.002244529584671321,
+  "cut_edges": 376.0,
+  "county_splits": 34.0,
+  "district_populations": {
+    "district_0": 715993,
+    "district_1": 719573,
+    "district_2": 714991,
+    "district_3": 715264,
+    "district_4": 716562,
+    "district_5": 720858,
+    "district_6": 721038
+  }
+}

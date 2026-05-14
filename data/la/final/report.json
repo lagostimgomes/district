@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T05:40:34.630475+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "Louisiana Blind Redistricting (generalized pipeline)",
+  "state": "Louisiana",
+  "abbr": "LA",
+  "fips": "22",
+  "k": 6,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/la/graph/la_precinct_dual_graph.gpickle",
+    "plans": "data/la/ensemble/plans.parquet",
+    "metrics": "data/la/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 119,
+    "plans_sampled_for_pareto": 119,
+    "pareto_frontier_size": 61
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 35,
+    "pp_mean": 0.15953812580021806,
+    "county_splits": 37,
+    "cut_edges": 635
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 0,
+    "pp_mean": 0.14526939593309166,
+    "county_splits": 35,
+    "cut_edges": 657
+  },
+  "outputs": {
+    "best_map_compact": "data/la/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/la/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/la/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

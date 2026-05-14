@@ -1,0 +1,26 @@
+{
+  "label": "best_map_compact",
+  "output_file": "data/nj/final/best_map_compact.gpkg",
+  "n_districts": 12,
+  "pp_min": 0.11396061452549087,
+  "pp_mean": 0.19726576174110041,
+  "pp_max": 0.3099642775157092,
+  "pop_dev_max": 0.003783841742660006,
+  "pop_dev_mean": 0.0027167699504315438,
+  "cut_edges": 1076.0,
+  "county_splits": 34.0,
+  "district_populations": {
+    "district_0": 777403,
+    "district_1": 773446,
+    "district_2": 776150,
+    "district_3": 772695,
+    "district_4": 775451,
+    "district_5": 772033,
+    "district_6": 770879,
+    "district_7": 774783,
+    "district_8": 771184,
+    "district_9": 770727,
+    "district_10": 776912,
+    "district_11": 777309
+  }
+}

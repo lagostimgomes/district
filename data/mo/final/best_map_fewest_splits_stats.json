@@ -1,0 +1,22 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/mo/final/best_map_fewest_splits.gpkg",
+  "n_districts": 8,
+  "pp_min": 0.11818362696239254,
+  "pp_mean": 0.19535929349943207,
+  "pp_max": 0.27823986150134183,
+  "pop_dev_max": 0.004693668624623002,
+  "pop_dev_mean": 0.00250260484067376,
+  "cut_edges": 702.0,
+  "county_splits": 44.0,
+  "district_populations": {
+    "district_0": 766803,
+    "district_1": 772512,
+    "district_2": 771077,
+    "district_3": 769020,
+    "district_4": 771545,
+    "district_5": 768645,
+    "district_6": 767874,
+    "district_7": 767411
+  }
+}

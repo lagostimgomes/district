@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T06:09:07.884843+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "North Carolina Blind Redistricting (generalized pipeline)",
+  "state": "North Carolina",
+  "abbr": "NC",
+  "fips": "37",
+  "k": 14,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/nc/graph/nc_precinct_dual_graph.gpickle",
+    "plans": "data/nc/ensemble/plans.parquet",
+    "metrics": "data/nc/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 480,
+    "plans_sampled_for_pareto": 480,
+    "pareto_frontier_size": 32
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 336,
+    "pp_mean": 0.19013032119926376,
+    "county_splits": 64,
+    "cut_edges": 791
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 438,
+    "pp_mean": 0.17855552079840617,
+    "county_splits": 62,
+    "cut_edges": 856
+  },
+  "outputs": {
+    "best_map_compact": "data/nc/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/nc/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/nc/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

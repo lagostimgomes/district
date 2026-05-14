@@ -1,0 +1,16 @@
+{
+  "label": "best_map_compact",
+  "output_file": "data/me/final/best_map_compact.gpkg",
+  "n_districts": 2,
+  "pp_min": 0.21271432831588621,
+  "pp_mean": 0.2604229590636892,
+  "pp_max": 0.3081315898114922,
+  "pop_dev_max": 0.0016187361750608085,
+  "pop_dev_mean": 0.0016187361750608085,
+  "cut_edges": 16.0,
+  "county_splits": 1.0,
+  "district_populations": {
+    "district_0": 412308,
+    "district_1": 413645
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T06:01:24.960856+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "Arkansas Blind Redistricting (generalized pipeline)",
+  "state": "Arkansas",
+  "abbr": "AR",
+  "fips": "05",
+  "k": 4,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/ar/graph/ar_precinct_dual_graph.gpickle",
+    "plans": "data/ar/ensemble/plans.parquet",
+    "metrics": "data/ar/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 662,
+    "plans_sampled_for_pareto": 662,
+    "pareto_frontier_size": 36
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 162,
+    "pp_mean": 0.2174943933631358,
+    "county_splits": 26,
+    "cut_edges": 307
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 421,
+    "pp_mean": 0.20796398252489523,
+    "county_splits": 22,
+    "cut_edges": 338
+  },
+  "outputs": {
+    "best_map_compact": "data/ar/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/ar/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/ar/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

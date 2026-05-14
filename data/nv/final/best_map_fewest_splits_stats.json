@@ -1,0 +1,18 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/nv/final/best_map_fewest_splits.gpkg",
+  "n_districts": 4,
+  "pp_min": 0.26129381171260413,
+  "pp_mean": 0.3863425570815554,
+  "pp_max": 0.5821983792211004,
+  "pop_dev_max": 0.002738504690116066,
+  "pop_dev_mean": 0.001369252345058033,
+  "cut_edges": 213.0,
+  "county_splits": 4.0,
+  "district_populations": {
+    "district_0": 773871,
+    "district_1": 776458,
+    "district_2": 778944,
+    "district_3": 775341
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T06:30:22.182384+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "New Jersey Blind Redistricting (generalized pipeline)",
+  "state": "New Jersey",
+  "abbr": "NJ",
+  "fips": "34",
+  "k": 12,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/nj/graph/nj_precinct_dual_graph.gpickle",
+    "plans": "data/nj/ensemble/plans.parquet",
+    "metrics": "data/nj/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 95,
+    "plans_sampled_for_pareto": 95,
+    "pareto_frontier_size": 5
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 68,
+    "pp_mean": 0.19726576174110041,
+    "county_splits": 34,
+    "cut_edges": 1076
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 84,
+    "pp_mean": 0.1969975604157381,
+    "county_splits": 33,
+    "cut_edges": 1122
+  },
+  "outputs": {
+    "best_map_compact": "data/nj/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/nj/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/nj/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

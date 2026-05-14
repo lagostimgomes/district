@@ -1,0 +1,27 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/mi/final/best_map_fewest_splits.gpkg",
+  "n_districts": 13,
+  "pp_min": 0.11082727613577405,
+  "pp_mean": 0.21239780766939184,
+  "pp_max": 0.3626100896460399,
+  "pop_dev_max": 0.004959130882889863,
+  "pop_dev_mean": 0.0019356474178259912,
+  "cut_edges": 1037.0,
+  "county_splits": 54.0,
+  "district_populations": {
+    "district_0": 776317,
+    "district_1": 772289,
+    "district_2": 778200,
+    "district_3": 775367,
+    "district_4": 774578,
+    "district_5": 772284,
+    "district_6": 777277,
+    "district_7": 773421,
+    "district_8": 774425,
+    "district_9": 778068,
+    "district_10": 774763,
+    "district_11": 778479,
+    "district_12": 771701
+  }
+}

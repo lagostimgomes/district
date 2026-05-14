@@ -1,0 +1,28 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/nc/final/best_map_fewest_splits.gpkg",
+  "n_districts": 14,
+  "pp_min": 0.10394353668497115,
+  "pp_mean": 0.17855552079840617,
+  "pp_max": 0.3035893983885237,
+  "pop_dev_max": 0.004953163921103354,
+  "pop_dev_mean": 0.0032060445360535465,
+  "cut_edges": 856.0,
+  "county_splits": 62.0,
+  "district_populations": {
+    "district_0": 743515,
+    "district_1": 744884,
+    "district_2": 742570,
+    "district_3": 748411,
+    "district_4": 747137,
+    "district_5": 747823,
+    "district_6": 743328,
+    "district_7": 747559,
+    "district_8": 744459,
+    "district_9": 745132,
+    "district_10": 747294,
+    "district_11": 746312,
+    "district_12": 746440,
+    "district_13": 744524
+  }
+}

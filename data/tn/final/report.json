@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T05:59:34.626684+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "Tennessee Blind Redistricting (generalized pipeline)",
+  "state": "Tennessee",
+  "abbr": "TN",
+  "fips": "47",
+  "k": 9,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/tn/graph/tn_precinct_dual_graph.gpickle",
+    "plans": "data/tn/ensemble/plans.parquet",
+    "metrics": "data/tn/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 122,
+    "plans_sampled_for_pareto": 122,
+    "pareto_frontier_size": 36
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 23,
+    "pp_mean": 0.16378072403228366,
+    "county_splits": 43,
+    "cut_edges": 480
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 19,
+    "pp_mean": 0.1553493760116192,
+    "county_splits": 39,
+    "cut_edges": 440
+  },
+  "outputs": {
+    "best_map_compact": "data/tn/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/tn/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/tn/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

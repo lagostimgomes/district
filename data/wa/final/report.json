@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T14:34:27.655941+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "Washington Blind Redistricting (generalized pipeline)",
+  "state": "Washington",
+  "abbr": "WA",
+  "fips": "53",
+  "k": 10,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/wa/graph/wa_precinct_dual_graph.gpickle",
+    "plans": "data/wa/ensemble/plans.parquet",
+    "metrics": "data/wa/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2500,
+    "plans_passing_hard_filters": 143,
+    "plans_sampled_for_pareto": 143,
+    "pareto_frontier_size": 22
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 89,
+    "pp_mean": 0.18866300335322028,
+    "county_splits": 37,
+    "cut_edges": 1196
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 0,
+    "pp_mean": 0.18028302735518892,
+    "county_splits": 35,
+    "cut_edges": 1184
+  },
+  "outputs": {
+    "best_map_compact": "data/wa/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/wa/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/wa/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

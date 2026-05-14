@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T14:06:37.807687+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "Missouri Blind Redistricting (generalized pipeline)",
+  "state": "Missouri",
+  "abbr": "MO",
+  "fips": "29",
+  "k": 8,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/mo/graph/mo_precinct_dual_graph.gpickle",
+    "plans": "data/mo/ensemble/plans.parquet",
+    "metrics": "data/mo/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 954,
+    "plans_sampled_for_pareto": 954,
+    "pareto_frontier_size": 45
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 32,
+    "pp_mean": 0.22154017558115097,
+    "county_splits": 49,
+    "cut_edges": 662
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 209,
+    "pp_mean": 0.19535929349943207,
+    "county_splits": 44,
+    "cut_edges": 702
+  },
+  "outputs": {
+    "best_map_compact": "data/mo/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/mo/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/mo/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

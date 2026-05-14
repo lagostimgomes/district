@@ -1,0 +1,31 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/pa/final/best_map_fewest_splits.gpkg",
+  "n_districts": 17,
+  "pp_min": 0.10403109543323996,
+  "pp_mean": 0.17845273342770948,
+  "pp_max": 0.30662116147988866,
+  "pop_dev_max": 0.004969632926413761,
+  "pop_dev_mean": 0.002706315660944675,
+  "cut_edges": 1795.0,
+  "county_splits": 71.0,
+  "district_populations": {
+    "district_0": 765520,
+    "district_1": 765784,
+    "district_2": 766087,
+    "district_3": 761404,
+    "district_4": 765387,
+    "district_5": 764684,
+    "district_6": 763851,
+    "district_7": 767127,
+    "district_8": 762996,
+    "district_9": 763281,
+    "district_10": 764649,
+    "district_11": 764767,
+    "district_12": 763701,
+    "district_13": 763423,
+    "district_14": 766937,
+    "district_15": 768058,
+    "district_16": 764914
+  }
+}

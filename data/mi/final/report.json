@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T06:20:28.659849+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "Michigan Blind Redistricting (generalized pipeline)",
+  "state": "Michigan",
+  "abbr": "MI",
+  "fips": "26",
+  "k": 13,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/mi/graph/mi_precinct_dual_graph.gpickle",
+    "plans": "data/mi/ensemble/plans.parquet",
+    "metrics": "data/mi/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 688,
+    "plans_sampled_for_pareto": 688,
+    "pareto_frontier_size": 32
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 461,
+    "pp_mean": 0.22692236081326006,
+    "county_splits": 66,
+    "cut_edges": 959
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 348,
+    "pp_mean": 0.21239780766939184,
+    "county_splits": 54,
+    "cut_edges": 1037
+  },
+  "outputs": {
+    "best_map_compact": "data/mi/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/mi/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/mi/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

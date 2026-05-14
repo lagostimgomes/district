@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data — raw downloads, large binaries, and intermediate files are not tracked.
+# Committed: final district maps (*.gpkg, *.png) and reports (*.json, *.csv).
+data/*/census_blocks/
+data/*/census_tracts/
+data/*/vtd_precincts/
+data/*/places/
+data/*/county_subdivisions/
+data/*/current_districts/
+data/*/counties/
+data/vest/
+data/*/ensemble/
+data/*/graph/*.gpickle
+data/maryland/
+
+# Logs (runtime output, not source)
+logs/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Node (used only for docx generation utility)
+node_modules/
+package-lock.json
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Misc
+*.bak
+nohup.out

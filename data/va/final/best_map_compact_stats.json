@@ -1,0 +1,25 @@
+{
+  "label": "best_map_compact",
+  "output_file": "data/va/final/best_map_compact.gpkg",
+  "n_districts": 11,
+  "pp_min": 0.10071548049158499,
+  "pp_mean": 0.19498430740701053,
+  "pp_max": 0.3764422876860307,
+  "pop_dev_max": 0.0043511098655240376,
+  "pop_dev_mean": 0.002543494378443705,
+  "cut_edges": 606.0,
+  "county_splits": 63.0,
+  "district_populations": {
+    "district_0": 784296,
+    "district_1": 784835,
+    "district_2": 782601,
+    "district_3": 785651,
+    "district_4": 788539,
+    "district_5": 787535,
+    "district_6": 781175,
+    "district_7": 780802,
+    "district_8": 783141,
+    "district_9": 786098,
+    "district_10": 786688
+  }
+}

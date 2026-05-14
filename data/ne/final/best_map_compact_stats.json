@@ -1,0 +1,17 @@
+{
+  "label": "best_map_compact",
+  "output_file": "data/ne/final/best_map_compact.gpkg",
+  "n_districts": 3,
+  "pp_min": 0.34478644315111945,
+  "pp_mean": 0.40932393803157047,
+  "pp_max": 0.5029834543492879,
+  "pop_dev_max": 0.0043643008349275175,
+  "pop_dev_mean": 0.0029095338899516195,
+  "cut_edges": 87.0,
+  "county_splits": 12.0,
+  "district_populations": {
+    "district_0": 650936,
+    "district_1": 653896,
+    "district_2": 656536
+  }
+}

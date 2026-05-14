@@ -1,0 +1,21 @@
+# Core geospatial
+geopandas>=0.14.0
+shapely>=2.0.0
+pyproj>=3.6.0
+fiona>=1.9.0
+
+# Graph and MCMC
+networkx>=3.2.0
+# GerryChain >= 0.3.1 required for weighted spanning tree support.
+# If the PyPI version is older, install from GitHub:
+#   pip install git+https://github.com/mggg/GerryChain.git
+gerrychain>=0.3.1
+
+# Data and I/O
+pandas>=2.0.0
+numpy>=1.24.0
+pyarrow>=14.0.0
+
+# Download
+requests>=2.31.0
+tqdm>=4.66.0

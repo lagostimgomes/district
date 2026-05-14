@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T04:49:23.611836+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "West Virginia Blind Redistricting (generalized pipeline)",
+  "state": "West Virginia",
+  "abbr": "WV",
+  "fips": "54",
+  "k": 2,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/wv/graph/wv_precinct_dual_graph.gpickle",
+    "plans": "data/wv/ensemble/plans.parquet",
+    "metrics": "data/wv/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 881,
+    "plans_sampled_for_pareto": 881,
+    "pareto_frontier_size": 24
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 589,
+    "pp_mean": 0.14805328218325975,
+    "county_splits": 7,
+    "cut_edges": 29
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 797,
+    "pp_mean": 0.133445554293453,
+    "county_splits": 6,
+    "cut_edges": 47
+  },
+  "outputs": {
+    "best_map_compact": "data/wv/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/wv/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/wv/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

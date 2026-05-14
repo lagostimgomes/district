@@ -1,0 +1,31 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/il/final/best_map_fewest_splits.gpkg",
+  "n_districts": 17,
+  "pp_min": 0.10129720345551461,
+  "pp_mean": 0.16985278426342176,
+  "pp_max": 0.2492882273416387,
+  "pop_dev_max": 0.004778084701324987,
+  "pop_dev_mean": 0.0026299131921954395,
+  "cut_edges": 2024.0,
+  "county_splits": 68.0,
+  "district_populations": {
+    "district_0": 754573,
+    "district_1": 754604,
+    "district_2": 756643,
+    "district_3": 752011,
+    "district_4": 751030,
+    "district_5": 757064,
+    "district_6": 756154,
+    "district_7": 753622,
+    "district_8": 753091,
+    "district_9": 755400,
+    "district_10": 750692,
+    "district_11": 752415,
+    "district_12": 752108,
+    "district_13": 755972,
+    "district_14": 751181,
+    "district_15": 755325,
+    "district_16": 750571
+  }
+}

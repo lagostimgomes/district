@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-05-11T05:19:55.487493+00:00",
+  "algorithm": "Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)",
+  "system": "Alabama Blind Redistricting (generalized pipeline)",
+  "state": "Alabama",
+  "abbr": "AL",
+  "fips": "01",
+  "k": 7,
+  "partisan_data_used": false,
+  "demographic_data_used": false,
+  "electoral_data_used": false,
+  "inputs": {
+    "graph": "data/al/graph/al_precinct_dual_graph.gpickle",
+    "plans": "data/al/ensemble/plans.parquet",
+    "metrics": "data/al/ensemble/metrics.parquet"
+  },
+  "ensemble": {
+    "total_plans": 2000,
+    "plans_passing_hard_filters": 257,
+    "plans_sampled_for_pareto": 257,
+    "pareto_frontier_size": 6
+  },
+  "hard_filters": {
+    "pp_min_threshold": 0.1,
+    "pop_dev_max_threshold": 0.005
+  },
+  "pareto_objectives": [
+    "maximise pp_mean",
+    "minimise county_splits",
+    "minimise cut_edges"
+  ],
+  "best_map_compact": {
+    "plan_row": 151,
+    "pp_mean": 0.18040484796741915,
+    "county_splits": 35,
+    "cut_edges": 384
+  },
+  "best_map_fewest_splits": {
+    "plan_row": 147,
+    "pp_mean": 0.17639126440367275,
+    "county_splits": 34,
+    "cut_edges": 376
+  },
+  "outputs": {
+    "best_map_compact": "data/al/final/best_map_compact.gpkg",
+    "best_map_fewest_splits": "data/al/final/best_map_fewest_splits.gpkg",
+    "pareto_frontier": "data/al/final/pareto_frontier.csv"
+  },
+  "note": "Maps selected on geographic criteria only. A post-hoc VRA audit may be applied externally. The algorithm never saw partisan, racial, or demographic data."
+}

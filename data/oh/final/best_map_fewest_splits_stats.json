@@ -1,0 +1,29 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/oh/final/best_map_fewest_splits.gpkg",
+  "n_districts": 15,
+  "pp_min": 0.10533457875167743,
+  "pp_mean": 0.16100378212950706,
+  "pp_max": 0.278356407274513,
+  "pop_dev_max": 0.00480214643114211,
+  "pop_dev_mean": 0.0026665520836661578,
+  "cut_edges": 1827.0,
+  "county_splits": 76.0,
+  "district_populations": {
+    "district_0": 783409,
+    "district_1": 790063,
+    "district_2": 789465,
+    "district_3": 783032,
+    "district_4": 784115,
+    "district_5": 789659,
+    "district_6": 789427,
+    "district_7": 786784,
+    "district_8": 787439,
+    "district_9": 788500,
+    "district_10": 783315,
+    "district_11": 787332,
+    "district_12": 784797,
+    "district_13": 785189,
+    "district_14": 786781
+  }
+}

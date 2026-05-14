@@ -1,0 +1,24 @@
+{
+  "label": "best_map_fewest_splits",
+  "output_file": "data/wa/final/best_map_fewest_splits.gpkg",
+  "n_districts": 10,
+  "pp_min": 0.11956426650118754,
+  "pp_mean": 0.18028302735518892,
+  "pp_max": 0.26582479745727583,
+  "pop_dev_max": 0.004950119840088564,
+  "pop_dev_mean": 0.002894383427026808,
+  "cut_edges": 1184.0,
+  "county_splits": 35.0,
+  "district_populations": {
+    "district_0": 771708,
+    "district_1": 773182,
+    "district_2": 769824,
+    "district_3": 766977,
+    "district_4": 770506,
+    "district_5": 769094,
+    "district_6": 769518,
+    "district_7": 772311,
+    "district_8": 769496,
+    "district_9": 772652
+  }
+}
