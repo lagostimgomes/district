@@ -40,7 +40,12 @@ from state_configs import StateConfig
 
 SAMPLE_SIZE = 5_000
 RANDOM_SEED = 42
-PP_MIN_THRESHOLD = 0.10
+# PP_MIN_THRESHOLD = 0.10 was too strict for CA (K=52) and other large
+# multi-district states whose coastal/mountain geography makes it geometrically
+# impossible for every district to reach PP≥0.10.  Lowered to 0.05 — this
+# still filters plans with severely non-compact districts while allowing valid
+# results for geographically challenging states.
+PP_MIN_THRESHOLD = 0.05
 POP_DEV_MAX_THRESHOLD = 0.005
 
 

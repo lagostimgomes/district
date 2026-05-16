@@ -116,25 +116,47 @@ def run_state(
     logger.info(f"=== Starting pipeline for {cfg.name} ({abbr}) — K={cfg.k}, steps={n_steps:,} ===")
 
     try:
-        # Stage 1: download.
-        logger.info("Stage 1: download")
-        download_state(cfg, DATA_ROOT, skip_water=True)
-        logger.info("Stage 1 complete")
+        abbr_lower   = cfg.abbr.lower()
+        graph_dir    = DATA_ROOT / abbr_lower / "graph"
+        ensemble_dir = DATA_ROOT / abbr_lower / "ensemble"
+        gpickle_path = graph_dir / f"{abbr_lower}_precinct_dual_graph.gpickle"
+        plans_path   = ensemble_dir / "plans.parquet"
+        final_dir    = DATA_ROOT / abbr_lower / "final"
+        report_path  = final_dir / "report.json"
 
-        # Stage 2: build graph.
-        logger.info("Stage 2: build_graph")
-        build_graph(cfg, DATA_ROOT, COUNTY_SHP, ROADS_SHP, skip_water=True)
-        logger.info("Stage 2 complete")
+        # Stage 1: download — skip if precinct geopackage already present.
+        gpkg_path = graph_dir / f"{abbr_lower}_precincts_pop.gpkg"
+        if gpkg_path.exists():
+            logger.info("Stage 1: download — SKIPPED (precincts already present)")
+        else:
+            logger.info("Stage 1: download")
+            download_state(cfg, DATA_ROOT, skip_water=True)
+            logger.info("Stage 1 complete")
 
-        # Stage 3: sample.
-        logger.info(f"Stage 3: run_sampling ({n_steps:,} steps)")
-        run_sampling(cfg, DATA_ROOT, n_steps=n_steps)
-        logger.info("Stage 3 complete")
+        # Stage 2: build graph — skip if gpickle already present.
+        if gpickle_path.exists():
+            logger.info("Stage 2: build_graph — SKIPPED (graph already present)")
+        else:
+            logger.info("Stage 2: build_graph")
+            build_graph(cfg, DATA_ROOT, COUNTY_SHP, ROADS_SHP, skip_water=True)
+            logger.info("Stage 2 complete")
 
-        # Stage 4: select maps.
-        logger.info("Stage 4: select_maps")
-        select_maps(cfg, DATA_ROOT)
-        logger.info("Stage 4 complete")
+        # Stage 3: sample — skip if plans.parquet already present AND no checkpoint.
+        ckpt_path = ensemble_dir / "checkpoint.pkl"
+        if plans_path.exists() and not ckpt_path.exists():
+            logger.info("Stage 3: run_sampling — SKIPPED (plans.parquet complete)")
+        else:
+            logger.info(f"Stage 3: run_sampling ({n_steps:,} steps)")
+            run_sampling(cfg, DATA_ROOT, n_steps=n_steps)
+            logger.info("Stage 3 complete")
+
+        # Stage 4: select maps — skip if report.json already present.
+        if report_path.exists():
+            logger.info("Stage 4: select_maps — SKIPPED (report.json already present)")
+        else:
+            logger.info("Stage 4: select_maps")
+            select_maps(cfg, DATA_ROOT)
+            logger.info("Stage 4 complete")
 
         elapsed = time.time() - t0
         logger.info(f"=== Pipeline complete for {abbr} in {elapsed:.1f}s ===")
