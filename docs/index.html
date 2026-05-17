@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blind Redistricting — Geography-Only Congressional Maps</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #21262d;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+      --warn: #d29922;
+      --red: #f85149;
+      --radius: 8px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,17,23,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; gap: 2rem;
+      height: 56px;
+    }
+    .nav-brand {
+      font-weight: 700; font-size: 1rem; color: var(--text);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .nav-brand svg { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; margin-left: auto; }
+    .nav-links a { color: var(--muted); font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 900px; margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(88,166,255,0.1);
+      border: 1px solid rgba(88,166,255,0.25);
+      border-radius: 99px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem; color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800; letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p {
+      font-size: 1.1rem; color: var(--muted);
+      max-width: 640px; margin: 0 auto 2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.6rem 1.3rem;
+      border-radius: var(--radius);
+      font-size: 0.9rem; font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #0d1117; }
+    .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+
+    /* ── PRINCIPLE PILLS ── */
+    .principles {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      justify-content: center;
+      max-width: 800px; margin: 2rem auto 4rem;
+      padding: 0 2rem;
+    }
+    .pill {
+      display: flex; align-items: center; gap: 0.35rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
+
+    /* ── SECTION ── */
+    section { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; }
+    .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .section-header h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .section-header p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ── NATIONAL STATUS ── */
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+    .status-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+    }
+    .status-card .state-name { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .status-card .state-abbr { font-size: 1.6rem; font-weight: 800; }
+    .status-card .badge {
+      display: inline-block; margin-top: 0.5rem;
+      font-size: 0.72rem; font-weight: 600;
+      padding: 0.2rem 0.6rem; border-radius: 99px;
+    }
+    .badge-done { background: rgba(63,185,80,0.15); color: var(--accent2); }
+    .badge-running { background: rgba(210,153,34,0.15); color: var(--warn); }
+    .badge-pending { background: rgba(139,148,158,0.1); color: var(--muted); }
+    .status-card .stat { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+    .status-card .stat strong { color: var(--text); }
+
+    /* ── STATE MAP SECTION ── */
+    .state-section {
+      margin-bottom: 5rem;
+    }
+    .state-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.5rem; padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .state-flag-abbr {
+      width: 52px; height: 52px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 800; color: var(--accent);
+    }
+    .state-title h3 { font-size: 1.4rem; font-weight: 700; }
+    .state-title p { color: var(--muted); font-size: 0.88rem; }
+
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .metric-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.9rem 1rem;
+    }
+    .metric-card .m-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.2rem; }
+    .metric-card .m-value { font-size: 1.25rem; font-weight: 700; }
+    .metric-card .m-sub { font-size: 0.72rem; color: var(--muted); }
+
+    .map-tabs {
+      display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;
+    }
+    .map-tab {
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius);
+      font-size: 0.85rem; font-weight: 500;
+      cursor: pointer; border: 1px solid var(--border);
+      background: var(--surface2); color: var(--muted);
+      transition: all 0.15s;
+    }
+    .map-tab.active {
+      background: var(--accent); color: #0d1117;
+      border-color: var(--accent);
+    }
+
+    .map-frame {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .map-frame img {
+      width: 100%; display: block;
+    }
+
+    /* ── ALGO CALLOUT ── */
+    .algo-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.8rem;
+      margin: 3rem 0;
+    }
+    .algo-box h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.8rem; }
+    .algo-box ol { padding-left: 1.4rem; color: var(--muted); font-size: 0.9rem; }
+    .algo-box ol li { margin-bottom: 0.4rem; }
+    .algo-box ol li strong { color: var(--text); }
+    .algo-box .no-partisan {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--accent2);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 1.5rem 2rem; }
+      section { padding: 0 1.5rem 3rem; }
+      .state-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ────────── NAV ────────── -->
+<nav>
+  <div class="nav-brand">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+    </svg>
+    Blind Redistricting
+  </div>
+  <div class="nav-links">
+    <a href="#maps">Maps</a>
+    <a href="#algorithm">Algorithm</a>
+    <a href="https://github.com/lagostimgomes/district/blob/main/CALIFORNIA_ANALYSIS.md" target="_blank">Deep Dive</a>
+    <a href="https://github.com/lagostimgomes/district" target="_blank">GitHub</a>
+  </div>
+</nav>
+
+<!-- ────────── HERO ────────── -->
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Zero partisan or demographic data used
+  </div>
+  <h1>Congressional Maps<br/>Drawn by <span>Geography Alone</span></h1>
+  <p>
+    An open-source MCMC algorithm samples hundreds of thousands of redistricting
+    plans, then selects Pareto-optimal maps maximising compactness and minimising
+    county splits — without ever seeing a vote or a census demographic.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#maps">View Maps</a>
+    <a class="btn btn-secondary" href="https://github.com/lagostimgomes/district" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.92.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      Source Code
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/lagostimgomes/district/blob/main/ALGORITHM.md" target="_blank">Read the Math</a>
+  </div>
+</div>
+
+<!-- ── PRINCIPLES ── -->
+<div class="principles">
+  <div class="pill"><span class="dot"></span> Weighted ReCom MCMC</div>
+  <div class="pill"><span class="dot"></span> Wilson's loop-erased random walk</div>
+  <div class="pill"><span class="dot"></span> Polsby-Popper compactness</div>
+  <div class="pill"><span class="dot"></span> Pareto-optimal selection</div>
+  <div class="pill"><span class="dot"></span> ≤ 0.5% population deviation</div>
+  <div class="pill"><span class="dot"></span> Open-source & reproducible</div>
+</div>
+
+<!-- ────────── PIPELINE STATUS ────────── -->
+<section>
+  <div class="section-header">
+    <h2>Pipeline Status</h2>
+    <p>Running the full 50-state pipeline. States complete as MCMC sampling finishes.</p>
+  </div>
+
+  <div class="status-grid">
+    <div class="status-card">
+      <div class="state-name">Maryland</div>
+      <div class="state-abbr">MD</div>
+      <span class="badge badge-done">Complete</span>
+      <div class="stat"><strong>8</strong> districts · <strong>2,000</strong> plans</div>
+    </div>
+    <div class="status-card">
+      <div class="state-name">New York</div>
+      <div class="state-abbr">NY</div>
+      <span class="badge badge-done">Complete</span>
+      <div class="stat"><strong>26</strong> districts · <strong>100,000</strong> plans</div>
+    </div>
+    <div class="status-card">
+      <div class="state-name">California</div>
+      <div class="state-abbr">CA</div>
+      <span class="badge badge-done">Complete</span>
+      <div class="stat"><strong>52</strong> districts · <strong>100,000</strong> plans</div>
+    </div>
+    <div class="status-card">
+      <div class="state-name">Texas</div>
+      <div class="state-abbr">TX</div>
+      <span class="badge badge-running">Sampling…</span>
+      <div class="stat"><strong>38</strong> districts · 100,000 target</div>
+    </div>
+    <div class="status-card">
+      <div class="state-name">Florida</div>
+      <div class="state-abbr">FL</div>
+      <span class="badge badge-running">Sampling…</span>
+      <div class="stat"><strong>28</strong> districts · 100,000 target</div>
+    </div>
+    <div class="status-card">
+      <div class="state-name">Remaining 45 states</div>
+      <div class="state-abbr" style="font-size:1.1rem">+45</div>
+      <span class="badge badge-pending">Queued</span>
+      <div class="stat">Scheduled after TX &amp; FL</div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────── MAPS ────────── -->
+<section id="maps">
+  <div class="section-header">
+    <h2>Published Maps</h2>
+    <p>Each state shows two Pareto-optimal plans: most compact districts, and fewest county splits.</p>
+  </div>
+
+  <!-- ── MARYLAND ── -->
+  <div class="state-section">
+    <div class="state-header">
+      <div class="state-flag-abbr">MD</div>
+      <div class="state-title">
+        <h3>Maryland — 8 Congressional Districts</h3>
+        <p>2,000 plans sampled · 495 passed hard filters · 9-plan Pareto frontier</p>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="m-label">Compact map · PP mean</div>
+        <div class="m-value">0.195</div>
+        <div class="m-sub">Polsby-Popper compactness</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Compact map · County splits</div>
+        <div class="m-value">22</div>
+        <div class="m-sub">Counties split across districts</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Low-split map · PP mean</div>
+        <div class="m-value">0.190</div>
+        <div class="m-sub">Polsby-Popper compactness</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Low-split map · County splits</div>
+        <div class="m-value">21</div>
+        <div class="m-sub">Counties split across districts</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Pop. deviation max</div>
+        <div class="m-value">≤ 0.5%</div>
+        <div class="m-sub">One-person-one-vote constraint</div>
+      </div>
+    </div>
+
+    <div class="map-tabs">
+      <button class="map-tab active" onclick="showMap('md','comparison',this)">Side-by-side comparison</button>
+      <button class="map-tab" onclick="showMap('md','compact',this)">Most compact</button>
+      <button class="map-tab" onclick="showMap('md','splits',this)">Fewest county splits</button>
+    </div>
+    <div class="map-frame">
+      <img id="md-map" src="maps/md/map_comparison.png" alt="Maryland congressional district maps" />
+    </div>
+  </div>
+
+  <!-- ── CALIFORNIA ── -->
+  <div class="state-section">
+    <div class="state-header">
+      <div class="state-flag-abbr">CA</div>
+      <div class="state-title">
+        <h3>California — 52 Congressional Districts</h3>
+        <p>100,000 plans sampled · 75,300 passed hard filters · 53-plan Pareto frontier</p>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="m-label">Compact map · PP mean</div>
+        <div class="m-value">0.174</div>
+        <div class="m-sub">Polsby-Popper compactness</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Compact map · County splits</div>
+        <div class="m-value">117</div>
+        <div class="m-sub">Counties split across districts</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Low-split map · PP mean</div>
+        <div class="m-value">0.164</div>
+        <div class="m-sub">Polsby-Popper compactness</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Low-split map · County splits</div>
+        <div class="m-value">115</div>
+        <div class="m-sub">Counties split across districts</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Pop. deviation max</div>
+        <div class="m-value">≤ 0.5%</div>
+        <div class="m-sub">One-person-one-vote constraint</div>
+      </div>
+    </div>
+
+    <div class="map-tabs">
+      <button class="map-tab active" onclick="showMap('ca','comparison',this)">Side-by-side comparison</button>
+      <button class="map-tab" onclick="showMap('ca','compact',this)">Most compact</button>
+      <button class="map-tab" onclick="showMap('ca','splits',this)">Fewest county splits</button>
+    </div>
+    <div class="map-frame">
+      <img id="ca-map" src="maps/ca/map_comparison.png" alt="California congressional district maps" />
+    </div>
+  </div>
+
+  <!-- ── NEW YORK ── -->
+  <div class="state-section">
+    <div class="state-header">
+      <div class="state-flag-abbr">NY</div>
+      <div class="state-title">
+        <h3>New York — 26 Congressional Districts</h3>
+        <p>100,000 plans sampled · 640 passed hard filters · 81-plan Pareto frontier</p>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="m-label">Compact map · PP mean</div>
+        <div class="m-value">0.188</div>
+        <div class="m-sub">Polsby-Popper compactness</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Compact map · County splits</div>
+        <div class="m-value">70</div>
+        <div class="m-sub">Counties split across districts</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Low-split map · PP mean</div>
+        <div class="m-value">0.188</div>
+        <div class="m-sub">Polsby-Popper compactness</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Low-split map · County splits</div>
+        <div class="m-value">70</div>
+        <div class="m-sub">Counties split across districts</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-label">Pop. deviation max</div>
+        <div class="m-value">≤ 0.5%</div>
+        <div class="m-sub">One-person-one-vote constraint</div>
+      </div>
+    </div>
+
+    <div class="map-tabs">
+      <button class="map-tab active" onclick="showMap('ny','comparison',this)">Side-by-side comparison</button>
+      <button class="map-tab" onclick="showMap('ny','compact',this)">Most compact</button>
+      <button class="map-tab" onclick="showMap('ny','splits',this)">Fewest county splits</button>
+    </div>
+    <div class="map-frame">
+      <img id="ny-map" src="maps/ny/map_comparison.png" alt="New York congressional district maps" />
+    </div>
+  </div>
+
+</section>
+
+<!-- ────────── ALGORITHM ────────── -->
+<section id="algorithm">
+  <div class="section-header">
+    <h2>How It Works</h2>
+    <p>Five pipeline stages, zero partisan input.</p>
+  </div>
+
+  <div class="algo-box">
+    <h4>Pipeline Overview</h4>
+    <ol>
+      <li><strong>Build precinct graph</strong> — Census TIGER 2020 VTDs become graph nodes; edge weights encode inverse road-network distance (highways penalise cuts across natural barriers)</li>
+      <li><strong>MCMC sampling</strong> — Weighted ReCom (DeFord, Duchin &amp; Solomon 2021): at each step, select a random boundary edge, merge the two districts, sample a spanning tree via Wilson's loop-erased random walk with weights w<sup>−β</sup>, find a population-balanced cut</li>
+      <li><strong>Hard filters</strong> — keep only plans with Polsby-Popper minimum ≥ 0.05 <em>and</em> max population deviation ≤ 0.5%</li>
+      <li><strong>Pareto frontier</strong> — from up to 5,000 sampled plans compute county splits; select the non-dominated set across four objectives: maximise PP mean, minimise county splits, minimise cut edges, minimise max county fragmentation</li>
+      <li><strong>Extract two maps</strong> — most compact plan and fewest-splits plan from the frontier, both subject to minimising worst-case county fragmentation first</li>
+    </ol>
+    <div class="no-partisan">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      The algorithm never reads partisan registration, election results, race, income, or any demographic variable.
+    </div>
+  </div>
+
+  <p style="text-align:center; color: var(--muted); font-size: 0.9rem;">
+    Full mathematical derivation and pseudocode:
+    <a href="https://github.com/lagostimgomes/district/blob/main/ALGORITHM.md">ALGORITHM.md</a>
+    &nbsp;·&nbsp;
+    California failure analysis &amp; proposed improvements:
+    <a href="https://github.com/lagostimgomes/district/blob/main/CALIFORNIA_ANALYSIS.md">CALIFORNIA_ANALYSIS.md</a>
+  </p>
+</section>
+
+<!-- ────────── FOOTER ────────── -->
+<footer>
+  <p>
+    Built with <a href="https://mggg.org/gerrychain/" target="_blank">GerryChain</a> ·
+    <a href="https://github.com/lagostimgomes/district" target="_blank">Source on GitHub</a> ·
+    Strictly geography-only — no partisan or demographic data
+  </p>
+  <p style="margin-top: 0.4rem; font-size: 0.78rem;">
+    Maps are produced for research and transparency purposes.
+    A post-hoc Voting Rights Act audit should be applied before any plan is considered for adoption.
+  </p>
+</footer>
+
+<script>
+  const mapFiles = {
+    compact: 'map_compact.png',
+    splits: 'map_fewest_splits.png',
+    comparison: 'map_comparison.png',
+  };
+
+  function showMap(state, type, btn) {
+    // Update image
+    const img = document.getElementById(state + '-map');
+    img.src = 'maps/' + state + '/' + mapFiles[type];
+
+    // Update tab active state
+    const tabs = btn.parentElement.querySelectorAll('.map-tab');
+    tabs.forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
