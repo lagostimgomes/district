@@ -175,6 +175,7 @@
   </div>
   <div class="nav-links">
     <a href="#national">National Map</a>
+    <a href="#diversity">Diversity</a>
     <a href="#maps">State Maps</a>
     <a href="#algorithm">Algorithm</a>
     <a href="https://github.com/lagostimgomes/district/blob/main/CALIFORNIA_ANALYSIS.md" target="_blank">Deep Dive</a>
@@ -317,6 +318,44 @@
 
   <!-- STATE BREAKDOWN -->
   <div id="breakdown-grid" class="breakdown-grid" style="margin-top: 2rem;"></div>
+</section>
+
+<!-- DIVERSITY SECTION -->
+<section id="diversity">
+  <div class="section-header">
+    <h2>Racial Diversity Analysis</h2>
+    <p>
+      Post-hoc audit using 2020 Census PL 94-171 redistricting data (block-level race by Hispanic origin).<br/>
+      <strong>This data was never seen by the algorithm.</strong> Districts were drawn on geography alone.
+    </p>
+  </div>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:2rem;">
+    <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--d-color); border-radius:var(--radius); padding:1.1rem;">
+      <div style="font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem;">Blind Algorithm · Mean diversity</div>
+      <div style="font-size:2rem; font-weight:800; color:var(--d-color)">0.521</div>
+      <div style="font-size:0.8rem; color:var(--muted)">median 0.555 · σ 0.147 · N=435</div>
+    </div>
+    <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--r-color); border-radius:var(--radius); padding:1.1rem;">
+      <div style="font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem;">Enacted 118th Congress · Mean diversity</div>
+      <div style="font-size:2rem; font-weight:800; color:var(--r-color)">0.511</div>
+      <div style="font-size:0.8rem; color:var(--muted)">median 0.542 · σ 0.146 · N=437</div>
+    </div>
+    <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent2); border-radius:var(--radius); padding:1.1rem;">
+      <div style="font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem;">Blind advantage (mean)</div>
+      <div style="font-size:2rem; font-weight:800; color:var(--accent2)">+0.010</div>
+      <div style="font-size:0.8rem; color:var(--muted)">Geography-only maps are slightly more diverse despite using no racial data</div>
+    </div>
+  </div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-bottom:1rem;">
+    <img src="maps/diversity_comparison.png" style="width:100%; display:block;" alt="Racial diversity histogram comparison" />
+  </div>
+  <p style="color:var(--muted); font-size:0.8rem; text-align:center;">
+    Herfindahl diversity index = 1 − Σpᵢ² across 7 groups: Hispanic, NH White, NH Black, NH AIAN, NH Asian, NH NHPI, NH Other/Two+.
+    Score 0 = fully homogeneous · ~0.86 = all 7 groups equally represented.
+    Source: 2020 Census P.L. 94-171 redistricting data, census-tract level.
+  </p>
 </section>
 
 <!-- STATE MAPS (MD, CA, NY) -->
