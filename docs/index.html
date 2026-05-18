@@ -236,33 +236,84 @@
   <div class="scoreboard">
     <div class="score-side dem">
       <div class="score-party">Democrat-leaning</div>
-      <div class="score-num dem">202</div>
+      <div class="score-num dem">204</div>
       <div class="score-label">districts</div>
     </div>
     <div class="score-vs">vs</div>
     <div class="score-side rep">
       <div class="score-party">Republican-leaning</div>
-      <div class="score-num rep">227</div>
+      <div class="score-num rep">231</div>
       <div class="score-label">districts</div>
     </div>
   </div>
 
   <div class="partisan-bar-wrap">
     <div class="partisan-bar">
-      <div class="seg-d" style="width: 47.1%"></div>
-      <div class="seg-r" style="width: 52.9%"></div>
+      <div class="seg-d" style="width: 46.9%"></div>
+      <div class="seg-r" style="width: 53.1%"></div>
     </div>
     <div class="bar-labels">
-      <span style="color: var(--d-color);">D 202 (47.1%)</span>
-      <span>429 total districts</span>
-      <span style="color: var(--r-color);">R 227 (52.9%)</span>
+      <span style="color: var(--d-color);">D 204 (46.9%)</span>
+      <span>435 total seats</span>
+      <span style="color: var(--r-color);">R 231 (53.1%)</span>
     </div>
   </div>
   <p class="bar-note">
-    Based on 2024 presidential results (Harris vs Trump). A district is D-leaning if Harris would have won it
-    under the proposed boundaries, R-leaning otherwise. 6 at-large states (AK, DE, ND, SD, VT, WY) excluded.
-    Method: VEST 2020 precinct-level returns uniformly shifted by each state's 2020→2024 swing.
+    Based on 2024 presidential results (Harris vs Trump). Includes all 435 House seats: 429 districts from
+    44 multi-district states + 6 at-large states (AK, DE, ND, SD, VT, WY) counted as single districts.
+    At-large lean: D — DE, VT &nbsp;|&nbsp; R — AK, ND, SD, WY.
+    Method: VEST 2020 precinct-level returns shifted by each state's 2020→2024 swing; at-large states use certified statewide totals.
   </p>
+
+  <!-- COMPETITIVE MARGINS -->
+  <div style="margin: 2.5rem 0 1rem;">
+    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.4rem;">Competitive Districts by Margin</h3>
+    <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.2rem;">
+      Margin = winner's two-party lead. "Within X%" means the district could flip with a shift of X pp or less.
+    </p>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem;">
+        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:0.6rem;">Within 2% margin &nbsp;<span style="color:var(--warn)">●</span> Toss-up</div>
+        <div style="font-size:2rem; font-weight:800; margin-bottom:0.3rem;">20 districts</div>
+        <div style="display:flex; gap:1.5rem; font-size:0.9rem; margin-bottom:0.7rem;">
+          <span style="color:var(--d-color)">D-leaning: <strong>10</strong></span>
+          <span style="color:var(--r-color)">R-leaning: <strong>10</strong></span>
+        </div>
+        <div style="font-size:0.78rem; color:var(--muted); line-height:1.7;">
+          <div><span style="color:var(--d-color)">D:</span> CA, FL, MD, MI, NH, NJ, NY, OH</div>
+          <div><span style="color:var(--r-color)">R:</span> FL, MD, MI, MO, MS, NC, OH, PA, SC, TX</div>
+        </div>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem;">
+        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:0.6rem;">Within 5% margin &nbsp;<span style="color:var(--accent)">●</span> Competitive</div>
+        <div style="font-size:2rem; font-weight:800; margin-bottom:0.3rem;">50 districts</div>
+        <div style="display:flex; gap:1.5rem; font-size:0.9rem; margin-bottom:0.7rem;">
+          <span style="color:var(--d-color)">D-leaning: <strong>25</strong></span>
+          <span style="color:var(--r-color)">R-leaning: <strong>25</strong></span>
+        </div>
+        <div style="font-size:0.78rem; color:var(--muted); line-height:1.7;">
+          <div><span style="color:var(--d-color)">D:</span> CA, CO, FL, LA, MD, MI, NH, NJ, NV, NY, OH, SC, TX, VA, WI</div>
+          <div><span style="color:var(--r-color)">R:</span> AZ, CO, FL, GA, IA, IL, IN, KS, MD, MI, MO, MS, NC, NY, OH, PA, SC, TN, TX, UT, WA</div>
+        </div>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem;">
+        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:0.6rem;">Within 10% margin &nbsp;<span style="color:var(--accent2)">●</span> Lean</div>
+        <div style="font-size:2rem; font-weight:800; margin-bottom:0.3rem;">103 districts</div>
+        <div style="display:flex; gap:1.5rem; font-size:0.9rem; margin-bottom:0.7rem;">
+          <span style="color:var(--d-color)">D-leaning: <strong>55</strong></span>
+          <span style="color:var(--r-color)">R-leaning: <strong>48</strong></span>
+        </div>
+        <div style="font-size:0.78rem; color:var(--muted); line-height:1.7;">
+          <div><span style="color:var(--d-color)">D:</span> CA, CO, CT, FL, GA, IL, KY, LA, MA, MD, ME, MI, MN, NH, NJ, NV, NY, OH, OR, PA, SC, TX, VA, WA, WI</div>
+          <div><span style="color:var(--r-color)">R:</span> AL, AZ, CA, CO, FL, GA, IA, IL, IN, KS, MD, MI, MO, MS, NC, NE, NJ, NV, NY, OH, PA, SC, TN, TX, UT, VA, WA, WI</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- STATE BREAKDOWN -->
   <div id="breakdown-grid" class="breakdown-grid" style="margin-top: 2rem;"></div>
@@ -400,22 +451,25 @@
   }
 
   // State breakdown grid
+  // All 50 states — at-large states (k=1) counted as 1 district
   const stateData = [
-    {"abbr":"AL","D":0,"R":7},{"abbr":"AR","D":0,"R":4},{"abbr":"AZ","D":3,"R":6},
-    {"abbr":"CA","D":43,"R":9},{"abbr":"CO","D":5,"R":3},{"abbr":"CT","D":5,"R":0},
-    {"abbr":"FL","D":7,"R":21},{"abbr":"GA","D":6,"R":8},{"abbr":"HI","D":2,"R":0},
-    {"abbr":"IA","D":0,"R":4},{"abbr":"ID","D":0,"R":2},{"abbr":"IL","D":10,"R":7},
-    {"abbr":"IN","D":0,"R":9},{"abbr":"KS","D":0,"R":4},{"abbr":"KY","D":1,"R":5},
-    {"abbr":"LA","D":1,"R":5},{"abbr":"MA","D":9,"R":0},{"abbr":"MD","D":7,"R":1},
-    {"abbr":"ME","D":2,"R":0},{"abbr":"MI","D":5,"R":8},{"abbr":"MN","D":5,"R":3},
-    {"abbr":"MO","D":2,"R":6},{"abbr":"MS","D":0,"R":4},{"abbr":"MT","D":0,"R":2},
-    {"abbr":"NC","D":5,"R":9},{"abbr":"NE","D":0,"R":3},{"abbr":"NH","D":2,"R":0},
+    {"abbr":"AK","D":0,"R":1},{"abbr":"AL","D":0,"R":7},{"abbr":"AR","D":0,"R":4},
+    {"abbr":"AZ","D":3,"R":6},{"abbr":"CA","D":43,"R":9},{"abbr":"CO","D":5,"R":3},
+    {"abbr":"CT","D":5,"R":0},{"abbr":"DE","D":1,"R":0},{"abbr":"FL","D":7,"R":21},
+    {"abbr":"GA","D":6,"R":8},{"abbr":"HI","D":2,"R":0},{"abbr":"IA","D":0,"R":4},
+    {"abbr":"ID","D":0,"R":2},{"abbr":"IL","D":10,"R":7},{"abbr":"IN","D":0,"R":9},
+    {"abbr":"KS","D":0,"R":4},{"abbr":"KY","D":1,"R":5},{"abbr":"LA","D":1,"R":5},
+    {"abbr":"MA","D":9,"R":0},{"abbr":"MD","D":7,"R":1},{"abbr":"ME","D":2,"R":0},
+    {"abbr":"MI","D":5,"R":8},{"abbr":"MN","D":5,"R":3},{"abbr":"MO","D":2,"R":6},
+    {"abbr":"MS","D":0,"R":4},{"abbr":"MT","D":0,"R":2},{"abbr":"NC","D":5,"R":9},
+    {"abbr":"ND","D":0,"R":1},{"abbr":"NE","D":0,"R":3},{"abbr":"NH","D":2,"R":0},
     {"abbr":"NJ","D":9,"R":3},{"abbr":"NM","D":2,"R":1},{"abbr":"NV","D":2,"R":2},
     {"abbr":"NY","D":18,"R":8},{"abbr":"OH","D":4,"R":11},{"abbr":"OK","D":0,"R":5},
     {"abbr":"OR","D":5,"R":1},{"abbr":"PA","D":6,"R":11},{"abbr":"RI","D":2,"R":0},
-    {"abbr":"SC","D":1,"R":6},{"abbr":"TN","D":1,"R":8},{"abbr":"TX","D":14,"R":24},
-    {"abbr":"UT","D":0,"R":4},{"abbr":"VA","D":7,"R":4},{"abbr":"WA","D":7,"R":3},
-    {"abbr":"WI","D":4,"R":4},{"abbr":"WV","D":0,"R":2}
+    {"abbr":"SC","D":1,"R":6},{"abbr":"SD","D":0,"R":1},{"abbr":"TN","D":1,"R":8},
+    {"abbr":"TX","D":14,"R":24},{"abbr":"UT","D":0,"R":4},{"abbr":"VA","D":7,"R":4},
+    {"abbr":"VT","D":1,"R":0},{"abbr":"WA","D":7,"R":3},{"abbr":"WI","D":4,"R":4},
+    {"abbr":"WV","D":0,"R":2},{"abbr":"WY","D":0,"R":1}
   ];
 
   const grid = document.getElementById('breakdown-grid');
