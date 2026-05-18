@@ -227,15 +227,18 @@
 
   <div class="map-mode-bar">
     <button class="mode-btn all active" onclick="setMapMode('all',this)">All districts</button>
-    <button class="mode-btn" onclick="setMapMode('m2',this)" style="--mc:#FFD700">≤ 2% margin &nbsp;<span style="color:var(--gold)">● 20 toss-ups</span></button>
-    <button class="mode-btn" onclick="setMapMode('m5',this)">≤ 5% margin &nbsp;<span style="color:var(--gold)">● 50 competitive</span></button>
-    <button class="mode-btn" onclick="setMapMode('m10',this)">≤ 10% margin &nbsp;<span style="color:var(--gold)">● 103 lean</span></button>
+    <button class="mode-btn" onclick="setMapMode('partisan',this)" id="btn-partisan">
+      <span style="background:linear-gradient(to right,#8B0000,#F5F0F8,#003087);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">D / R Spectrum</span>
+    </button>
+    <button class="mode-btn" onclick="setMapMode('m2',this)">≤ 2% &nbsp;<span style="color:var(--gold)">● 20 toss-ups</span></button>
+    <button class="mode-btn" onclick="setMapMode('m5',this)">≤ 5% &nbsp;<span style="color:var(--gold)">● 50 competitive</span></button>
+    <button class="mode-btn" onclick="setMapMode('m10',this)">≤ 10% &nbsp;<span style="color:var(--gold)">● 103 lean</span></button>
     <span class="mode-label" id="map-mode-label">Showing all districts</span>
   </div>
 
   <div class="map-stage" id="national-map-stage" onclick="cycleMapMode()">
     <img id="national-map-img" src="maps/us_map.png" alt="US Congressional Redistricting National Map" />
-    <div class="map-click-hint">Click to cycle competitive districts →</div>
+    <div class="map-click-hint">Click to cycle views →</div>
   </div>
 </section>
 
@@ -454,18 +457,20 @@ const stateData = [
 const stateByAbbr = Object.fromEntries(stateData.map(s => [s.abbr, s]));
 
 // ─── NATIONAL MAP ─────────────────────────────────────────────────────────────
-const mapModes = ['all','m2','m5','m10'];
+const mapModes = ['all','partisan','m2','m5','m10'];
 const mapFiles = {
-  'all':  'maps/us_map.png',
-  'm2':   'maps/us_map_margin2.png',
-  'm5':   'maps/us_map_margin5.png',
-  'm10':  'maps/us_map_margin10.png',
+  'all':      'maps/us_map.png',
+  'partisan': 'maps/us_map_partisan.png',
+  'm2':       'maps/us_map_margin2.png',
+  'm5':       'maps/us_map_margin5.png',
+  'm10':      'maps/us_map_margin10.png',
 };
 const mapLabels = {
-  'all': 'Showing all districts',
-  'm2':  'Highlighting 20 toss-up districts (≤ 2% margin)',
-  'm5':  'Highlighting 50 competitive districts (≤ 5% margin)',
-  'm10': 'Highlighting 103 lean districts (≤ 10% margin)',
+  'all':      'Showing all districts (geographic coloring)',
+  'partisan': 'D / R partisan spectrum — deep blue → white → deep red by 2024 Harris two-party share',
+  'm2':       'Highlighting 20 toss-up districts (≤ 2% margin)',
+  'm5':       'Highlighting 50 competitive districts (≤ 5% margin)',
+  'm10':      'Highlighting 103 lean districts (≤ 10% margin)',
 };
 let currentMapMode = 'all';
 
