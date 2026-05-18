@@ -15,11 +15,11 @@
       --accent: #58a6ff;
       --accent2: #3fb950;
       --warn: #d29922;
-      --red: #f85149;
       --d-color: #4a90d9;
       --d-bg: rgba(74,144,217,0.12);
       --r-color: #e05c5c;
       --r-bg: rgba(224,92,92,0.12);
+      --gold: #FFD700;
       --radius: 8px;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
@@ -43,19 +43,14 @@
 
     /* HERO */
     .hero { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 3rem; text-align: center; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.25);
-      border-radius: 99px; padding: 0.3rem 0.9rem; font-size: 0.8rem; color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.25); border-radius: 99px; padding: 0.3rem 0.9rem; font-size: 0.8rem; color: var(--accent); margin-bottom: 1.5rem; }
     .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 1.2rem; }
     .hero h1 span { color: var(--accent); }
     .hero p { font-size: 1.1rem; color: var(--muted); max-width: 640px; margin: 0 auto 2rem; }
     .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.3rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 600; transition: opacity 0.15s; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.3rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 600; transition: opacity 0.15s; cursor: pointer; }
     .btn:hover { opacity: 0.85; text-decoration: none; }
-    .btn-primary { background: var(--accent); color: #0d1117; }
+    .btn-primary { background: var(--accent); color: #0d1117; border: none; }
     .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
 
     /* PILLS */
@@ -63,28 +58,27 @@
     .pill { display: flex; align-items: center; gap: 0.35rem; background: var(--surface); border: 1px solid var(--border); border-radius: 99px; padding: 0.35rem 0.85rem; font-size: 0.82rem; color: var(--muted); }
     .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
 
-    /* SECTION */
+    /* SECTIONS */
     section { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; }
     .section-header { text-align: center; margin-bottom: 2.5rem; }
     .section-header h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
     .section-header p { color: var(--muted); font-size: 0.95rem; }
 
-    /* NATIONAL MAP */
-    .national-map-frame {
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; margin-bottom: 2.5rem;
-    }
-    .national-map-frame img { width: 100%; display: block; }
+    /* NATIONAL MAP INTERACTIVE */
+    .map-stage { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; cursor: pointer; user-select: none; }
+    .map-stage img { width: 100%; display: block; transition: opacity 0.2s; }
+    .map-stage:hover .map-click-hint { opacity: 1; }
+    .map-click-hint { position: absolute; bottom: 1rem; right: 1rem; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.78rem; padding: 0.3rem 0.7rem; border-radius: 99px; opacity: 0.7; transition: opacity 0.2s; pointer-events: none; }
+
+    .map-mode-bar { display: flex; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; align-items: center; }
+    .mode-btn { padding: 0.4rem 1rem; border-radius: var(--radius); font-size: 0.82rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--surface2); color: var(--muted); transition: all 0.15s; }
+    .mode-btn.active { background: var(--gold); color: #0d1117; border-color: var(--gold); }
+    .mode-btn.all.active { background: var(--accent); color: #0d1117; border-color: var(--accent); }
+    .mode-label { margin-left: auto; font-size: 0.8rem; color: var(--muted); }
 
     /* PARTISAN SCOREBOARD */
-    .scoreboard {
-      display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem;
-      align-items: center; margin-bottom: 2.5rem;
-    }
-    .score-side {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem 2rem; text-align: center;
-    }
+    .scoreboard { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; align-items: center; margin-bottom: 2.5rem; }
+    .score-side { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 2rem; text-align: center; }
     .score-side.dem { border-top: 3px solid var(--d-color); }
     .score-side.rep { border-top: 3px solid var(--r-color); }
     .score-party { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.3rem; }
@@ -95,60 +89,72 @@
     .score-vs { font-size: 1.4rem; font-weight: 800; color: var(--muted); text-align: center; }
 
     /* PARTISAN BAR */
-    .partisan-bar-wrap { margin-bottom: 0.5rem; }
-    .partisan-bar {
-      height: 18px; border-radius: 99px; overflow: hidden;
-      display: flex; background: var(--surface2);
-    }
+    .partisan-bar { height: 18px; border-radius: 99px; overflow: hidden; display: flex; background: var(--surface2); }
     .partisan-bar .seg-d { background: var(--d-color); }
     .partisan-bar .seg-r { background: var(--r-color); }
     .bar-labels { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
     .bar-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 0.8rem; }
 
-    /* STATE BREAKDOWN TABLE */
-    .breakdown-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.6rem;
-      margin-top: 1.5rem;
-    }
-    .breakdown-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 0.7rem 0.8rem;
-    }
-    .breakdown-card .bc-abbr { font-size: 1rem; font-weight: 700; }
-    .breakdown-card .bc-bar { height: 5px; border-radius: 99px; margin: 0.4rem 0; background: var(--surface2); overflow: hidden; display: flex; }
+    /* COMPETITIVE CARDS */
+    .margin-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 2rem 0 1.5rem; }
+    .margin-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; }
+    .margin-card .mc-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem; }
+    .mc-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .margin-card .mc-num { font-size: 2rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .margin-card .mc-dr { display: flex; gap: 1.5rem; font-size: 0.9rem; margin-bottom: 0.7rem; }
+    .margin-card .mc-states { font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
+
+    /* STATE BREAKDOWN */
+    .breakdown-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; margin-top: 1.5rem; }
+    .breakdown-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.7rem; }
+    .breakdown-card .bc-abbr { font-size: 0.95rem; font-weight: 700; }
+    .breakdown-card .bc-bar { height: 4px; border-radius: 99px; margin: 0.35rem 0; background: var(--surface2); overflow: hidden; display: flex; }
     .bc-bar .seg-d { background: var(--d-color); }
     .bc-bar .seg-r { background: var(--r-color); }
-    .breakdown-card .bc-counts { font-size: 0.75rem; color: var(--muted); display: flex; justify-content: space-between; }
+    .breakdown-card .bc-counts { font-size: 0.72rem; color: var(--muted); display: flex; justify-content: space-between; }
     .bc-counts .d { color: var(--d-color); font-weight: 600; }
     .bc-counts .r { color: var(--r-color); font-weight: 600; }
 
-    /* ALGO BOX */
-    .algo-box {
-      background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent);
-      border-radius: var(--radius); padding: 1.5rem 1.8rem; margin: 3rem 0;
+    /* STATE MAP VIEWER */
+    .state-picker { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .state-btn {
+      width: 48px; height: 36px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--muted);
+      font-size: 0.72rem; font-weight: 700;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
     }
+    .state-btn:hover { background: var(--surface); color: var(--text); border-color: var(--accent); }
+    .state-btn.active { background: var(--accent); color: #0d1117; border-color: var(--accent); }
+    .state-btn.at-large { opacity: 0.45; cursor: default; }
+
+    .state-map-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .state-map-header { padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+    .state-map-header .smh-name { font-weight: 700; font-size: 1.05rem; }
+    .state-map-header .smh-meta { font-size: 0.82rem; color: var(--muted); }
+    .state-map-header .smh-lean { font-size: 0.82rem; margin-left: auto; }
+
+    .state-map-tabs { display: flex; gap: 0.4rem; padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); background: var(--surface2); flex-wrap: wrap; }
+    .sm-tab { padding: 0.35rem 0.85rem; border-radius: 6px; font-size: 0.82rem; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--muted); transition: all 0.15s; }
+    .sm-tab.active { background: var(--accent); color: #0d1117; border-color: var(--accent); }
+
+    .state-map-img { width: 100%; display: block; }
+
+    /* DIVERSITY SECTION */
+    .diversity-stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .div-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem; }
+    .div-card-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem; }
+    .div-card-num { font-size: 2rem; font-weight: 800; }
+    .div-card-sub { font-size: 0.8rem; color: var(--muted); }
+
+    /* ALGO BOX */
+    .algo-box { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin: 3rem 0; }
     .algo-box h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.8rem; }
     .algo-box ol { padding-left: 1.4rem; color: var(--muted); font-size: 0.9rem; }
     .algo-box ol li { margin-bottom: 0.4rem; }
     .algo-box ol li strong { color: var(--text); }
     .algo-box .no-partisan { margin-top: 1rem; font-size: 0.85rem; color: var(--accent2); display: flex; align-items: center; gap: 0.4rem; }
-
-    /* STATE MAP SECTION */
-    .state-section { margin-bottom: 5rem; }
-    .state-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
-    .state-flag-abbr { width: 52px; height: 52px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 800; color: var(--accent); }
-    .state-title h3 { font-size: 1.4rem; font-weight: 700; }
-    .state-title p { color: var(--muted); font-size: 0.88rem; }
-    .metrics-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.8rem; margin-bottom: 1.5rem; }
-    .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; }
-    .metric-card .m-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.2rem; }
-    .metric-card .m-value { font-size: 1.25rem; font-weight: 700; }
-    .metric-card .m-sub { font-size: 0.72rem; color: var(--muted); }
-    .map-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-    .map-tab { padding: 0.45rem 1rem; border-radius: var(--radius); font-size: 0.85rem; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: var(--surface2); color: var(--muted); transition: all 0.15s; }
-    .map-tab.active { background: var(--accent); color: #0d1117; border-color: var(--accent); }
-    .map-frame { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    .map-frame img { width: 100%; display: block; }
 
     /* FOOTER */
     footer { border-top: 1px solid var(--border); text-align: center; padding: 2.5rem 2rem; color: var(--muted); font-size: 0.85rem; }
@@ -175,10 +181,10 @@
   </div>
   <div class="nav-links">
     <a href="#national">National Map</a>
+    <a href="#partisan">Partisan Lean</a>
+    <a href="#states">State Maps</a>
     <a href="#diversity">Diversity</a>
-    <a href="#maps">State Maps</a>
     <a href="#algorithm">Algorithm</a>
-    <a href="https://github.com/lagostimgomes/district/blob/main/CALIFORNIA_ANALYSIS.md" target="_blank">Deep Dive</a>
     <a href="https://github.com/lagostimgomes/district" target="_blank">GitHub</a>
   </div>
 </nav>
@@ -190,11 +196,7 @@
     Zero partisan or demographic data used in map drawing
   </div>
   <h1>Congressional Maps<br/>Drawn by <span>Geography Alone</span></h1>
-  <p>
-    An open-source MCMC algorithm samples hundreds of thousands of redistricting plans,
-    then selects Pareto-optimal maps maximising compactness and minimising county splits —
-    without ever seeing a vote, a party registration, or a demographic.
-  </p>
+  <p>An open-source MCMC algorithm samples hundreds of thousands of redistricting plans, then selects Pareto-optimal maps maximising compactness and minimising county splits — without ever seeing a vote, a party registration, or a demographic.</p>
   <div class="hero-actions">
     <a class="btn btn-primary" href="#national">National Map</a>
     <a class="btn btn-secondary" href="https://github.com/lagostimgomes/district" target="_blank">
@@ -214,231 +216,188 @@
   <div class="pill"><span class="dot"></span> 44 states · 4.5M+ plans sampled</div>
 </div>
 
-<!-- NATIONAL MAP -->
+<!-- ══════════════════════════════════════════════════
+     NATIONAL MAP — INTERACTIVE
+══════════════════════════════════════════════════ -->
 <section id="national">
   <div class="section-header">
     <h2>National Map</h2>
-    <p>Best-compact plan for all 44 multi-district states. At-large states (AK, DE, ND, SD, VT, WY) shown in blue.</p>
+    <p>Best-compact plan for all 44 multi-district states. Click the buttons — or the map — to highlight competitive districts.</p>
   </div>
 
-  <div class="national-map-frame">
-    <img src="maps/us_map.png" alt="US Congressional Redistricting National Map" />
+  <div class="map-mode-bar">
+    <button class="mode-btn all active" onclick="setMapMode('all',this)">All districts</button>
+    <button class="mode-btn" onclick="setMapMode('m2',this)" style="--mc:#FFD700">≤ 2% margin &nbsp;<span style="color:var(--gold)">● 20 toss-ups</span></button>
+    <button class="mode-btn" onclick="setMapMode('m5',this)">≤ 5% margin &nbsp;<span style="color:var(--gold)">● 50 competitive</span></button>
+    <button class="mode-btn" onclick="setMapMode('m10',this)">≤ 10% margin &nbsp;<span style="color:var(--gold)">● 103 lean</span></button>
+    <span class="mode-label" id="map-mode-label">Showing all districts</span>
   </div>
 
-  <!-- PARTISAN SCOREBOARD -->
-  <div class="section-header" style="margin-bottom: 1.5rem;">
+  <div class="map-stage" id="national-map-stage" onclick="cycleMapMode()">
+    <img id="national-map-img" src="maps/us_map.png" alt="US Congressional Redistricting National Map" />
+    <div class="map-click-hint">Click to cycle competitive districts →</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PARTISAN LEAN
+══════════════════════════════════════════════════ -->
+<section id="partisan">
+  <div class="section-header">
     <h2>Post-Hoc Partisan Lean</h2>
-    <p>
-      Applied after map selection using VEST 2020 precinct data adjusted for 2024 statewide presidential results.<br/>
-      <strong>The algorithm never used this data.</strong> This is purely an external audit.
-    </p>
+    <p>Applied after map selection using VEST 2020 precinct data adjusted for 2024 statewide presidential results.<br/><strong>The algorithm never used this data.</strong></p>
   </div>
 
   <div class="scoreboard">
     <div class="score-side dem">
       <div class="score-party">Democrat-leaning</div>
       <div class="score-num dem">204</div>
-      <div class="score-label">districts</div>
+      <div class="score-label">seats</div>
     </div>
     <div class="score-vs">vs</div>
     <div class="score-side rep">
       <div class="score-party">Republican-leaning</div>
       <div class="score-num rep">231</div>
-      <div class="score-label">districts</div>
+      <div class="score-label">seats</div>
     </div>
   </div>
 
-  <div class="partisan-bar-wrap">
+  <div style="margin-bottom:0.5rem;">
     <div class="partisan-bar">
-      <div class="seg-d" style="width: 46.9%"></div>
-      <div class="seg-r" style="width: 53.1%"></div>
+      <div class="seg-d" style="width:46.9%"></div>
+      <div class="seg-r" style="width:53.1%"></div>
     </div>
     <div class="bar-labels">
-      <span style="color: var(--d-color);">D 204 (46.9%)</span>
+      <span style="color:var(--d-color)">D 204 (46.9%)</span>
       <span>435 total seats</span>
-      <span style="color: var(--r-color);">R 231 (53.1%)</span>
+      <span style="color:var(--r-color)">R 231 (53.1%)</span>
     </div>
   </div>
   <p class="bar-note">
-    Based on 2024 presidential results (Harris vs Trump). Includes all 435 House seats: 429 districts from
-    44 multi-district states + 6 at-large states (AK, DE, ND, SD, VT, WY) counted as single districts.
+    All 435 seats including 6 at-large states (AK, DE, ND, SD, VT, WY).
     At-large lean: D — DE, VT &nbsp;|&nbsp; R — AK, ND, SD, WY.
-    Method: VEST 2020 precinct-level returns shifted by each state's 2020→2024 swing; at-large states use certified statewide totals.
+    Method: VEST 2020 precinct-level returns shifted by each state's 2020→2024 presidential swing.
   </p>
 
   <!-- COMPETITIVE MARGINS -->
-  <div style="margin: 2.5rem 0 1rem;">
-    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.4rem;">Competitive Districts by Margin</h3>
-    <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1.2rem;">
-      Margin = winner's two-party lead. "Within X%" means the district could flip with a shift of X pp or less.
-    </p>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+  <h3 style="font-size:1.1rem;font-weight:700;margin:2.5rem 0 0.4rem;">Competitive Districts by Margin</h3>
+  <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.2rem;">Margin = winner's two-party lead. "Within X%" = could flip with a ≤X pp shift.</p>
 
-      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem;">
-        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:0.6rem;">Within 2% margin &nbsp;<span style="color:var(--warn)">●</span> Toss-up</div>
-        <div style="font-size:2rem; font-weight:800; margin-bottom:0.3rem;">20 districts</div>
-        <div style="display:flex; gap:1.5rem; font-size:0.9rem; margin-bottom:0.7rem;">
-          <span style="color:var(--d-color)">D-leaning: <strong>10</strong></span>
-          <span style="color:var(--r-color)">R-leaning: <strong>10</strong></span>
-        </div>
-        <div style="font-size:0.78rem; color:var(--muted); line-height:1.7;">
-          <div><span style="color:var(--d-color)">D:</span> CA, FL, MD, MI, NH, NJ, NY, OH</div>
-          <div><span style="color:var(--r-color)">R:</span> FL, MD, MI, MO, MS, NC, OH, PA, SC, TX</div>
-        </div>
+  <div class="margin-cards">
+    <div class="margin-card">
+      <div class="mc-label"><span class="mc-dot" style="background:var(--warn)"></span> Within 2% — Toss-up</div>
+      <div class="mc-num">20</div>
+      <div class="mc-dr">
+        <span style="color:var(--d-color)">D-leaning: <strong>10</strong></span>
+        <span style="color:var(--r-color)">R-leaning: <strong>10</strong></span>
       </div>
-
-      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem;">
-        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:0.6rem;">Within 5% margin &nbsp;<span style="color:var(--accent)">●</span> Competitive</div>
-        <div style="font-size:2rem; font-weight:800; margin-bottom:0.3rem;">50 districts</div>
-        <div style="display:flex; gap:1.5rem; font-size:0.9rem; margin-bottom:0.7rem;">
-          <span style="color:var(--d-color)">D-leaning: <strong>25</strong></span>
-          <span style="color:var(--r-color)">R-leaning: <strong>25</strong></span>
-        </div>
-        <div style="font-size:0.78rem; color:var(--muted); line-height:1.7;">
-          <div><span style="color:var(--d-color)">D:</span> CA, CO, FL, LA, MD, MI, NH, NJ, NV, NY, OH, SC, TX, VA, WI</div>
-          <div><span style="color:var(--r-color)">R:</span> AZ, CO, FL, GA, IA, IL, IN, KS, MD, MI, MO, MS, NC, NY, OH, PA, SC, TN, TX, UT, WA</div>
-        </div>
+      <div class="mc-states">
+        <div><span style="color:var(--d-color)">D:</span> CA, FL, MD, MI, NH, NJ, NY, OH</div>
+        <div><span style="color:var(--r-color)">R:</span> FL, MD, MI, MO, MS, NC, OH, PA, SC, TX</div>
       </div>
-
-      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem;">
-        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:0.6rem;">Within 10% margin &nbsp;<span style="color:var(--accent2)">●</span> Lean</div>
-        <div style="font-size:2rem; font-weight:800; margin-bottom:0.3rem;">103 districts</div>
-        <div style="display:flex; gap:1.5rem; font-size:0.9rem; margin-bottom:0.7rem;">
-          <span style="color:var(--d-color)">D-leaning: <strong>55</strong></span>
-          <span style="color:var(--r-color)">R-leaning: <strong>48</strong></span>
-        </div>
-        <div style="font-size:0.78rem; color:var(--muted); line-height:1.7;">
-          <div><span style="color:var(--d-color)">D:</span> CA, CO, CT, FL, GA, IL, KY, LA, MA, MD, ME, MI, MN, NH, NJ, NV, NY, OH, OR, PA, SC, TX, VA, WA, WI</div>
-          <div><span style="color:var(--r-color)">R:</span> AL, AZ, CA, CO, FL, GA, IA, IL, IN, KS, MD, MI, MO, MS, NC, NE, NJ, NV, NY, OH, PA, SC, TN, TX, UT, VA, WA, WI</div>
-        </div>
+    </div>
+    <div class="margin-card">
+      <div class="mc-label"><span class="mc-dot" style="background:var(--accent)"></span> Within 5% — Competitive</div>
+      <div class="mc-num">50</div>
+      <div class="mc-dr">
+        <span style="color:var(--d-color)">D-leaning: <strong>25</strong></span>
+        <span style="color:var(--r-color)">R-leaning: <strong>25</strong></span>
       </div>
-
+      <div class="mc-states">
+        <div><span style="color:var(--d-color)">D:</span> CA, CO, FL, LA, MD, MI, NH, NJ, NV, NY, OH, SC, TX, VA, WI</div>
+        <div><span style="color:var(--r-color)">R:</span> AZ, CO, FL, GA, IA, IL, IN, KS, MD, MI, MO, MS, NC, NY, OH, PA, SC, TN, TX, UT, WA</div>
+      </div>
+    </div>
+    <div class="margin-card">
+      <div class="mc-label"><span class="mc-dot" style="background:var(--accent2)"></span> Within 10% — Lean</div>
+      <div class="mc-num">103</div>
+      <div class="mc-dr">
+        <span style="color:var(--d-color)">D-leaning: <strong>55</strong></span>
+        <span style="color:var(--r-color)">R-leaning: <strong>48</strong></span>
+      </div>
+      <div class="mc-states">
+        <div><span style="color:var(--d-color)">D:</span> CA, CO, CT, FL, GA, IL, KY, LA, MA, MD, ME, MI, MN, NH, NJ, NV, NY, OH, OR, PA, SC, TX, VA, WA, WI</div>
+        <div><span style="color:var(--r-color)">R:</span> AL, AZ, CA, CO, FL, GA, IA, IL, IN, KS, MD, MI, MO, MS, NC, NE, NJ, NV, NY, OH, PA, SC, TN, TX, UT, VA, WA, WI</div>
+      </div>
     </div>
   </div>
 
-  <!-- STATE BREAKDOWN -->
-  <div id="breakdown-grid" class="breakdown-grid" style="margin-top: 2rem;"></div>
+  <!-- PER-STATE BREAKDOWN -->
+  <div id="breakdown-grid" class="breakdown-grid"></div>
 </section>
 
-<!-- DIVERSITY SECTION -->
+<!-- ══════════════════════════════════════════════════
+     STATE MAPS — ALL STATES
+══════════════════════════════════════════════════ -->
+<section id="states">
+  <div class="section-header">
+    <h2>State Maps</h2>
+    <p>Select a state to view the proposed blind map alongside the enacted 118th Congress districts.</p>
+  </div>
+
+  <!-- STATE PICKER -->
+  <div class="state-picker" id="state-picker"></div>
+
+  <!-- MAP PANEL -->
+  <div class="state-map-panel" id="state-map-panel">
+    <div class="state-map-header">
+      <div>
+        <div class="smh-name" id="smh-name">Select a state above</div>
+        <div class="smh-meta" id="smh-meta">Click any state button to view its map</div>
+      </div>
+      <div class="smh-lean" id="smh-lean"></div>
+    </div>
+    <div class="state-map-tabs" id="state-map-tabs" style="display:none;">
+      <button class="sm-tab active" onclick="setStateTab('vs_enacted',this)">vs Enacted (side-by-side)</button>
+      <button class="sm-tab" onclick="setStateTab('compact',this)">Most Compact</button>
+      <button class="sm-tab" onclick="setStateTab('splits',this)">Fewest Splits</button>
+    </div>
+    <img class="state-map-img" id="state-map-img" src="" alt="" style="display:none;" />
+    <div id="state-map-placeholder" style="padding:3rem;text-align:center;color:var(--muted);font-size:0.9rem;">
+      ↑ Select a state above to view its district map
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     DIVERSITY
+══════════════════════════════════════════════════ -->
 <section id="diversity">
   <div class="section-header">
     <h2>Racial Diversity Analysis</h2>
-    <p>
-      Post-hoc audit using 2020 Census PL 94-171 redistricting data (block-level race by Hispanic origin).<br/>
-      <strong>This data was never seen by the algorithm.</strong> Districts were drawn on geography alone.
-    </p>
+    <p>Post-hoc audit using 2020 Census PL 94-171 redistricting data.<br/><strong>This data was never seen by the algorithm.</strong></p>
   </div>
 
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:2rem;">
-    <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--d-color); border-radius:var(--radius); padding:1.1rem;">
-      <div style="font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem;">Blind Algorithm · Mean diversity</div>
-      <div style="font-size:2rem; font-weight:800; color:var(--d-color)">0.521</div>
-      <div style="font-size:0.8rem; color:var(--muted)">median 0.555 · σ 0.147 · N=435</div>
+  <div class="diversity-stat-cards">
+    <div class="div-card" style="border-left:3px solid var(--d-color)">
+      <div class="div-card-label">Blind Algorithm · Mean diversity</div>
+      <div class="div-card-num" style="color:var(--d-color)">0.521</div>
+      <div class="div-card-sub">median 0.555 · σ 0.147 · N=435</div>
     </div>
-    <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--r-color); border-radius:var(--radius); padding:1.1rem;">
-      <div style="font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem;">Enacted 118th Congress · Mean diversity</div>
-      <div style="font-size:2rem; font-weight:800; color:var(--r-color)">0.511</div>
-      <div style="font-size:0.8rem; color:var(--muted)">median 0.542 · σ 0.146 · N=437</div>
+    <div class="div-card" style="border-left:3px solid var(--r-color)">
+      <div class="div-card-label">Enacted 118th Congress · Mean diversity</div>
+      <div class="div-card-num" style="color:var(--r-color)">0.511</div>
+      <div class="div-card-sub">median 0.542 · σ 0.146 · N=437</div>
     </div>
-    <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent2); border-radius:var(--radius); padding:1.1rem;">
-      <div style="font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem;">Blind advantage (mean)</div>
-      <div style="font-size:2rem; font-weight:800; color:var(--accent2)">+0.010</div>
-      <div style="font-size:0.8rem; color:var(--muted)">Geography-only maps are slightly more diverse despite using no racial data</div>
+    <div class="div-card" style="border-left:3px solid var(--accent2)">
+      <div class="div-card-label">Blind advantage (mean)</div>
+      <div class="div-card-num" style="color:var(--accent2)">+0.010</div>
+      <div class="div-card-sub">Geography-only maps are slightly more diverse despite using no racial data</div>
     </div>
   </div>
 
-  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-bottom:1rem;">
-    <img src="maps/diversity_comparison.png" style="width:100%; display:block;" alt="Racial diversity histogram comparison" />
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:1rem;">
+    <img src="maps/diversity_comparison.png" style="width:100%;display:block;" alt="Racial diversity histogram comparison" />
   </div>
-  <p style="color:var(--muted); font-size:0.8rem; text-align:center;">
+  <p style="color:var(--muted);font-size:0.8rem;text-align:center;">
     Herfindahl diversity index = 1 − Σpᵢ² across 7 groups: Hispanic, NH White, NH Black, NH AIAN, NH Asian, NH NHPI, NH Other/Two+.
-    Score 0 = fully homogeneous · ~0.86 = all 7 groups equally represented.
-    Source: 2020 Census P.L. 94-171 redistricting data, census-tract level.
+    0 = fully homogeneous · ~0.86 = all 7 groups equal. Source: 2020 Census P.L. 94-171 redistricting data.
   </p>
 </section>
 
-<!-- STATE MAPS (MD, CA, NY) -->
-<section id="maps">
-  <div class="section-header">
-    <h2>State Maps</h2>
-    <p>Detailed views for selected states. Each shows two Pareto-optimal plans.</p>
-  </div>
-
-  <!-- MD -->
-  <div class="state-section">
-    <div class="state-header">
-      <div class="state-flag-abbr">MD</div>
-      <div class="state-title">
-        <h3>Maryland — 8 Districts</h3>
-        <p>2,000 plans · 495 passed filters · 9-plan Pareto frontier · <span style="color:var(--d-color)">D 7</span> / <span style="color:var(--r-color)">R 1</span></p>
-      </div>
-    </div>
-    <div class="metrics-row">
-      <div class="metric-card"><div class="m-label">Compact · PP mean</div><div class="m-value">0.195</div><div class="m-sub">Polsby-Popper</div></div>
-      <div class="metric-card"><div class="m-label">Compact · County splits</div><div class="m-value">22</div><div class="m-sub">Counties split</div></div>
-      <div class="metric-card"><div class="m-label">Low-split · PP mean</div><div class="m-value">0.190</div><div class="m-sub">Polsby-Popper</div></div>
-      <div class="metric-card"><div class="m-label">Low-split · County splits</div><div class="m-value">21</div><div class="m-sub">Counties split</div></div>
-      <div class="metric-card"><div class="m-label">Pop. deviation max</div><div class="m-value">≤ 0.5%</div><div class="m-sub">One-person-one-vote</div></div>
-    </div>
-    <div class="map-tabs">
-      <button class="map-tab active" onclick="showMap('md','comparison',this)">Side-by-side</button>
-      <button class="map-tab" onclick="showMap('md','compact',this)">Most compact</button>
-      <button class="map-tab" onclick="showMap('md','splits',this)">Fewest splits</button>
-    </div>
-    <div class="map-frame"><img id="md-map" src="maps/md/map_comparison.png" alt="Maryland district maps" /></div>
-  </div>
-
-  <!-- CA -->
-  <div class="state-section">
-    <div class="state-header">
-      <div class="state-flag-abbr">CA</div>
-      <div class="state-title">
-        <h3>California — 52 Districts</h3>
-        <p>100,000 plans · 75,300 passed filters · 53-plan Pareto frontier · <span style="color:var(--d-color)">D 43</span> / <span style="color:var(--r-color)">R 9</span></p>
-      </div>
-    </div>
-    <div class="metrics-row">
-      <div class="metric-card"><div class="m-label">Compact · PP mean</div><div class="m-value">0.174</div><div class="m-sub">Polsby-Popper</div></div>
-      <div class="metric-card"><div class="m-label">Compact · County splits</div><div class="m-value">117</div><div class="m-sub">Counties split</div></div>
-      <div class="metric-card"><div class="m-label">Low-split · PP mean</div><div class="m-value">0.164</div><div class="m-sub">Polsby-Popper</div></div>
-      <div class="metric-card"><div class="m-label">Low-split · County splits</div><div class="m-value">115</div><div class="m-sub">Counties split</div></div>
-      <div class="metric-card"><div class="m-label">Pop. deviation max</div><div class="m-value">≤ 0.5%</div><div class="m-sub">One-person-one-vote</div></div>
-    </div>
-    <div class="map-tabs">
-      <button class="map-tab active" onclick="showMap('ca','comparison',this)">Side-by-side</button>
-      <button class="map-tab" onclick="showMap('ca','compact',this)">Most compact</button>
-      <button class="map-tab" onclick="showMap('ca','splits',this)">Fewest splits</button>
-    </div>
-    <div class="map-frame"><img id="ca-map" src="maps/ca/map_comparison.png" alt="California district maps" /></div>
-  </div>
-
-  <!-- NY -->
-  <div class="state-section">
-    <div class="state-header">
-      <div class="state-flag-abbr">NY</div>
-      <div class="state-title">
-        <h3>New York — 26 Districts</h3>
-        <p>100,000 plans · 640 passed filters · 81-plan Pareto frontier · <span style="color:var(--d-color)">D 18</span> / <span style="color:var(--r-color)">R 8</span></p>
-      </div>
-    </div>
-    <div class="metrics-row">
-      <div class="metric-card"><div class="m-label">Compact · PP mean</div><div class="m-value">0.188</div><div class="m-sub">Polsby-Popper</div></div>
-      <div class="metric-card"><div class="m-label">Compact · County splits</div><div class="m-value">70</div><div class="m-sub">Counties split</div></div>
-      <div class="metric-card"><div class="m-label">Low-split · PP mean</div><div class="m-value">0.188</div><div class="m-sub">Polsby-Popper</div></div>
-      <div class="metric-card"><div class="m-label">Low-split · County splits</div><div class="m-value">70</div><div class="m-sub">Counties split</div></div>
-      <div class="metric-card"><div class="m-label">Pop. deviation max</div><div class="m-value">≤ 0.5%</div><div class="m-sub">One-person-one-vote</div></div>
-    </div>
-    <div class="map-tabs">
-      <button class="map-tab active" onclick="showMap('ny','comparison',this)">Side-by-side</button>
-      <button class="map-tab" onclick="showMap('ny','compact',this)">Most compact</button>
-      <button class="map-tab" onclick="showMap('ny','splits',this)">Fewest splits</button>
-    </div>
-    <div class="map-frame"><img id="ny-map" src="maps/ny/map_comparison.png" alt="New York district maps" /></div>
-  </div>
-</section>
-
-<!-- ALGORITHM -->
+<!-- ══════════════════════════════════════════════════
+     ALGORITHM
+══════════════════════════════════════════════════ -->
 <section id="algorithm">
   <div class="section-header">
     <h2>How It Works</h2>
@@ -447,10 +406,10 @@
   <div class="algo-box">
     <h4>Pipeline Overview</h4>
     <ol>
-      <li><strong>Build precinct graph</strong> — Census TIGER 2020 VTDs become graph nodes; edge weights encode inverse road-network distance (highways penalise cuts across natural barriers)</li>
-      <li><strong>MCMC sampling</strong> — Weighted ReCom (DeFord, Duchin &amp; Solomon 2021): select a random boundary edge, merge the two districts, sample a spanning tree via Wilson's loop-erased random walk with weights w<sup>−β</sup>, find a population-balanced cut</li>
-      <li><strong>Hard filters</strong> — keep only plans with Polsby-Popper minimum ≥ 0.05 and max population deviation ≤ 0.5%</li>
-      <li><strong>Pareto frontier</strong> — non-dominated set across four objectives: maximise PP mean, minimise county splits, minimise cut edges, minimise max county fragmentation</li>
+      <li><strong>Build precinct graph</strong> — Census TIGER 2020 VTDs as nodes; edge weights encode inverse road-network distance</li>
+      <li><strong>MCMC sampling</strong> — Weighted ReCom (DeFord, Duchin &amp; Solomon 2021): boundary edge selection → district merge → Wilson's LERW spanning tree → population-balanced cut</li>
+      <li><strong>Hard filters</strong> — Polsby-Popper min ≥ 0.05, max population deviation ≤ 0.5%</li>
+      <li><strong>Pareto frontier</strong> — non-dominated set: maximise PP mean, minimise county splits, cut edges, max county fragmentation</li>
       <li><strong>Extract two maps</strong> — most compact and fewest-splits plans from the frontier</li>
     </ol>
     <div class="no-partisan">
@@ -458,79 +417,159 @@
       The algorithm never reads partisan registration, election results, race, income, or any demographic variable.
     </div>
   </div>
-  <p style="text-align:center; color: var(--muted); font-size: 0.9rem;">
-    Full mathematical derivation and pseudocode:
-    <a href="https://github.com/lagostimgomes/district/blob/main/ALGORITHM.md">ALGORITHM.md</a>
+  <p style="text-align:center;color:var(--muted);font-size:0.9rem;">
+    Full mathematical derivation: <a href="https://github.com/lagostimgomes/district/blob/main/ALGORITHM.md">ALGORITHM.md</a>
     &nbsp;·&nbsp;
-    California failure analysis &amp; proposed improvements:
-    <a href="https://github.com/lagostimgomes/district/blob/main/CALIFORNIA_ANALYSIS.md">CALIFORNIA_ANALYSIS.md</a>
+    California failure analysis: <a href="https://github.com/lagostimgomes/district/blob/main/CALIFORNIA_ANALYSIS.md">CALIFORNIA_ANALYSIS.md</a>
   </p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>
-    Built with <a href="https://mggg.org/gerrychain/" target="_blank">GerryChain</a> ·
-    <a href="https://github.com/lagostimgomes/district" target="_blank">Source on GitHub</a> ·
-    Strictly geography-only — no partisan or demographic data used in map drawing
-  </p>
-  <p style="margin-top: 0.4rem; font-size: 0.78rem;">
-    Partisan lean is a post-hoc external analysis using 2024 presidential results and VEST 2020 precinct data.
-    A post-hoc Voting Rights Act audit should be applied before any plan is considered for adoption.
-  </p>
+  <p>Built with <a href="https://mggg.org/gerrychain/" target="_blank">GerryChain</a> · <a href="https://github.com/lagostimgomes/district" target="_blank">Source on GitHub</a> · Geography-only — no partisan or demographic data used in map drawing</p>
+  <p style="margin-top:0.4rem;font-size:0.78rem;">Partisan lean and diversity are post-hoc external analyses. A Voting Rights Act audit should be applied before any plan is considered for adoption.</p>
 </footer>
 
 <script>
-  // Map viewer
-  const mapFiles = { compact: 'map_compact.png', splits: 'map_fewest_splits.png', comparison: 'map_comparison.png' };
-  function showMap(state, type, btn) {
-    document.getElementById(state + '-map').src = 'maps/' + state + '/' + mapFiles[type];
-    btn.parentElement.querySelectorAll('.map-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-  }
+// ─── DATA ────────────────────────────────────────────────────────────────────
+const stateData = [
+  {"abbr":"AK","D":0,"R":1,"k":1},{"abbr":"AL","D":0,"R":7,"k":7},{"abbr":"AR","D":0,"R":4,"k":4},
+  {"abbr":"AZ","D":3,"R":6,"k":9},{"abbr":"CA","D":43,"R":9,"k":52},{"abbr":"CO","D":5,"R":3,"k":8},
+  {"abbr":"CT","D":5,"R":0,"k":5},{"abbr":"DE","D":1,"R":0,"k":1},{"abbr":"FL","D":7,"R":21,"k":28},
+  {"abbr":"GA","D":6,"R":8,"k":14},{"abbr":"HI","D":2,"R":0,"k":2},{"abbr":"IA","D":0,"R":4,"k":4},
+  {"abbr":"ID","D":0,"R":2,"k":2},{"abbr":"IL","D":10,"R":7,"k":17},{"abbr":"IN","D":0,"R":9,"k":9},
+  {"abbr":"KS","D":0,"R":4,"k":4},{"abbr":"KY","D":1,"R":5,"k":6},{"abbr":"LA","D":1,"R":5,"k":6},
+  {"abbr":"MA","D":9,"R":0,"k":9},{"abbr":"MD","D":7,"R":1,"k":8},{"abbr":"ME","D":2,"R":0,"k":2},
+  {"abbr":"MI","D":5,"R":8,"k":13},{"abbr":"MN","D":5,"R":3,"k":8},{"abbr":"MO","D":2,"R":6,"k":8},
+  {"abbr":"MS","D":0,"R":4,"k":4},{"abbr":"MT","D":0,"R":2,"k":2},{"abbr":"NC","D":5,"R":9,"k":14},
+  {"abbr":"ND","D":0,"R":1,"k":1},{"abbr":"NE","D":0,"R":3,"k":3},{"abbr":"NH","D":2,"R":0,"k":2},
+  {"abbr":"NJ","D":9,"R":3,"k":12},{"abbr":"NM","D":2,"R":1,"k":3},{"abbr":"NV","D":2,"R":2,"k":4},
+  {"abbr":"NY","D":18,"R":8,"k":26},{"abbr":"OH","D":4,"R":11,"k":15},{"abbr":"OK","D":0,"R":5,"k":5},
+  {"abbr":"OR","D":5,"R":1,"k":6},{"abbr":"PA","D":6,"R":11,"k":17},{"abbr":"RI","D":2,"R":0,"k":2},
+  {"abbr":"SC","D":1,"R":6,"k":7},{"abbr":"SD","D":0,"R":1,"k":1},{"abbr":"TN","D":1,"R":8,"k":9},
+  {"abbr":"TX","D":14,"R":24,"k":38},{"abbr":"UT","D":0,"R":4,"k":4},{"abbr":"VA","D":7,"R":4,"k":11},
+  {"abbr":"VT","D":1,"R":0,"k":1},{"abbr":"WA","D":7,"R":3,"k":10},{"abbr":"WI","D":4,"R":4,"k":8},
+  {"abbr":"WV","D":0,"R":2,"k":2},{"abbr":"WY","D":0,"R":1,"k":1}
+];
+const stateByAbbr = Object.fromEntries(stateData.map(s => [s.abbr, s]));
 
-  // State breakdown grid
-  // All 50 states — at-large states (k=1) counted as 1 district
-  const stateData = [
-    {"abbr":"AK","D":0,"R":1},{"abbr":"AL","D":0,"R":7},{"abbr":"AR","D":0,"R":4},
-    {"abbr":"AZ","D":3,"R":6},{"abbr":"CA","D":43,"R":9},{"abbr":"CO","D":5,"R":3},
-    {"abbr":"CT","D":5,"R":0},{"abbr":"DE","D":1,"R":0},{"abbr":"FL","D":7,"R":21},
-    {"abbr":"GA","D":6,"R":8},{"abbr":"HI","D":2,"R":0},{"abbr":"IA","D":0,"R":4},
-    {"abbr":"ID","D":0,"R":2},{"abbr":"IL","D":10,"R":7},{"abbr":"IN","D":0,"R":9},
-    {"abbr":"KS","D":0,"R":4},{"abbr":"KY","D":1,"R":5},{"abbr":"LA","D":1,"R":5},
-    {"abbr":"MA","D":9,"R":0},{"abbr":"MD","D":7,"R":1},{"abbr":"ME","D":2,"R":0},
-    {"abbr":"MI","D":5,"R":8},{"abbr":"MN","D":5,"R":3},{"abbr":"MO","D":2,"R":6},
-    {"abbr":"MS","D":0,"R":4},{"abbr":"MT","D":0,"R":2},{"abbr":"NC","D":5,"R":9},
-    {"abbr":"ND","D":0,"R":1},{"abbr":"NE","D":0,"R":3},{"abbr":"NH","D":2,"R":0},
-    {"abbr":"NJ","D":9,"R":3},{"abbr":"NM","D":2,"R":1},{"abbr":"NV","D":2,"R":2},
-    {"abbr":"NY","D":18,"R":8},{"abbr":"OH","D":4,"R":11},{"abbr":"OK","D":0,"R":5},
-    {"abbr":"OR","D":5,"R":1},{"abbr":"PA","D":6,"R":11},{"abbr":"RI","D":2,"R":0},
-    {"abbr":"SC","D":1,"R":6},{"abbr":"SD","D":0,"R":1},{"abbr":"TN","D":1,"R":8},
-    {"abbr":"TX","D":14,"R":24},{"abbr":"UT","D":0,"R":4},{"abbr":"VA","D":7,"R":4},
-    {"abbr":"VT","D":1,"R":0},{"abbr":"WA","D":7,"R":3},{"abbr":"WI","D":4,"R":4},
-    {"abbr":"WV","D":0,"R":2},{"abbr":"WY","D":0,"R":1}
-  ];
+// ─── NATIONAL MAP ─────────────────────────────────────────────────────────────
+const mapModes = ['all','m2','m5','m10'];
+const mapFiles = {
+  'all':  'maps/us_map.png',
+  'm2':   'maps/us_map_margin2.png',
+  'm5':   'maps/us_map_margin5.png',
+  'm10':  'maps/us_map_margin10.png',
+};
+const mapLabels = {
+  'all': 'Showing all districts',
+  'm2':  'Highlighting 20 toss-up districts (≤ 2% margin)',
+  'm5':  'Highlighting 50 competitive districts (≤ 5% margin)',
+  'm10': 'Highlighting 103 lean districts (≤ 10% margin)',
+};
+let currentMapMode = 'all';
 
+function setMapMode(mode, btn) {
+  currentMapMode = mode;
+  document.getElementById('national-map-img').src = mapFiles[mode];
+  document.getElementById('map-mode-label').textContent = mapLabels[mode];
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}
+
+function cycleMapMode() {
+  const idx = (mapModes.indexOf(currentMapMode) + 1) % mapModes.length;
+  const next = mapModes[idx];
+  const btn = document.querySelectorAll('.mode-btn')[idx];
+  setMapMode(next, btn);
+}
+
+// ─── STATE BREAKDOWN GRID ────────────────────────────────────────────────────
+(function buildBreakdown() {
   const grid = document.getElementById('breakdown-grid');
   stateData.forEach(s => {
     const total = s.D + s.R;
     const dPct = total > 0 ? (s.D / total * 100).toFixed(0) : 0;
     const rPct = total > 0 ? (s.R / total * 100).toFixed(0) : 0;
-    const dominant = s.D > s.R ? 'dem' : s.R > s.D ? 'rep' : 'tie';
-    const color = dominant === 'dem' ? 'var(--d-color)' : dominant === 'rep' ? 'var(--r-color)' : 'var(--muted)';
+    const color = s.D > s.R ? 'var(--d-color)' : s.R > s.D ? 'var(--r-color)' : 'var(--muted)';
     grid.innerHTML += `
       <div class="breakdown-card">
         <div class="bc-abbr" style="color:${color}">${s.abbr}</div>
-        <div class="bc-bar">
-          <div class="seg-d" style="width:${dPct}%"></div>
-          <div class="seg-r" style="width:${rPct}%"></div>
-        </div>
-        <div class="bc-counts">
-          <span class="d">D ${s.D}</span>
-          <span class="r">R ${s.R}</span>
-        </div>
+        <div class="bc-bar"><div class="seg-d" style="width:${dPct}%"></div><div class="seg-r" style="width:${rPct}%"></div></div>
+        <div class="bc-counts"><span class="d">D ${s.D}</span><span class="r">R ${s.R}</span></div>
       </div>`;
   });
+})();
+
+// ─── STATE MAP VIEWER ────────────────────────────────────────────────────────
+let currentState = null;
+let currentStateTab = 'vs_enacted';
+
+const stateNames = {
+  AK:"Alaska",AL:"Alabama",AR:"Arkansas",AZ:"Arizona",CA:"California",CO:"Colorado",
+  CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",HI:"Hawaii",IA:"Iowa",
+  ID:"Idaho",IL:"Illinois",IN:"Indiana",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",
+  MA:"Massachusetts",MD:"Maryland",ME:"Maine",MI:"Michigan",MN:"Minnesota",MO:"Missouri",
+  MS:"Mississippi",MT:"Montana",NC:"North Carolina",ND:"North Dakota",NE:"Nebraska",
+  NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NV:"Nevada",NY:"New York",
+  OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",
+  SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",
+  VA:"Virginia",VT:"Vermont",WA:"Washington",WI:"Wisconsin",WV:"West Virginia",WY:"Wyoming"
+};
+
+(function buildStatePicker() {
+  const picker = document.getElementById('state-picker');
+  stateData.forEach(s => {
+    const isAtLarge = s.k === 1;
+    const btn = document.createElement('button');
+    btn.className = 'state-btn' + (isAtLarge ? ' at-large' : '');
+    btn.textContent = s.abbr;
+    btn.title = stateNames[s.abbr] + (isAtLarge ? ' (at-large, no redistricting)' : ` — ${s.k} districts`);
+    if (!isAtLarge) btn.onclick = () => selectState(s.abbr, btn);
+    picker.appendChild(btn);
+  });
+})();
+
+function selectState(abbr, btn) {
+  currentState = abbr;
+  currentStateTab = 'vs_enacted';
+  const s = stateByAbbr[abbr];
+  const lean = s.D > s.R ? `<span style="color:var(--d-color)">D ${s.D}</span> / <span style="color:var(--r-color)">R ${s.R}</span>` :
+               s.R > s.D ? `<span style="color:var(--d-color)">D ${s.D}</span> / <span style="color:var(--r-color)">R ${s.R}</span>` :
+               `<span style="color:var(--muted)">D ${s.D} / R ${s.R}</span>`;
+
+  document.querySelectorAll('.state-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('smh-name').textContent = `${stateNames[abbr]} — ${s.k} Districts`;
+  document.getElementById('smh-meta').textContent = `Post-hoc 2024 partisan lean:`;
+  document.getElementById('smh-lean').innerHTML = lean;
+  document.getElementById('state-map-tabs').style.display = 'flex';
+  document.getElementById('state-map-placeholder').style.display = 'none';
+  document.getElementById('state-map-img').style.display = 'block';
+
+  // Reset tabs
+  document.querySelectorAll('.sm-tab').forEach((t,i) => t.classList.toggle('active', i===0));
+  loadStateMap(abbr, 'vs_enacted');
+}
+
+function setStateTab(tab, btn) {
+  currentStateTab = tab;
+  document.querySelectorAll('.sm-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (currentState) loadStateMap(currentState, tab);
+}
+
+function loadStateMap(abbr, tab) {
+  const img = document.getElementById('state-map-img');
+  const lower = abbr.toLowerCase();
+  const files = {
+    'vs_enacted': `maps/${lower}/map_vs_enacted.png`,
+    'compact':    `maps/${lower}/map_compact.png`,
+    'splits':     `maps/${lower}/map_fewest_splits.png`,
+  };
+  img.src = files[tab] || files['compact'];
+  img.alt = `${stateNames[abbr]} — ${tab}`;
+}
 </script>
 
 </body>
