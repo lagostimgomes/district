@@ -156,6 +156,30 @@
     .algo-box ol li strong { color: var(--text); }
     .algo-box .no-partisan { margin-top: 1rem; font-size: 0.85rem; color: var(--accent2); display: flex; align-items: center; gap: 0.4rem; }
 
+    /* Q&A ANALYSIS */
+    .qa-list { display: flex; flex-direction: column; gap: 0; }
+    .qa-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 0.65rem; }
+    .qa-question { width: 100%; background: var(--surface); border: none; text-align: left; padding: 1.1rem 1.4rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .qa-question:hover { background: var(--surface2); }
+    .qa-q-text { font-size: 0.97rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .qa-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.2rem 0.55rem; border-radius: 99px; white-space: nowrap; flex-shrink: 0; }
+    .qa-tag-findings  { background: rgba(88,166,255,0.12); color: var(--accent); }
+    .qa-tag-methods   { background: rgba(63,185,80,0.12);  color: var(--accent2); }
+    .qa-tag-politics  { background: rgba(255,160,72,0.12); color: var(--warn); }
+    .qa-tag-limits    { background: rgba(139,148,158,0.18); color: var(--muted); }
+    .qa-chevron { flex-shrink: 0; transition: transform 0.2s; color: var(--muted); }
+    .qa-item.open .qa-chevron { transform: rotate(180deg); }
+    .qa-answer { display: none; padding: 0 1.4rem 1.3rem; background: var(--surface); border-top: 1px solid var(--border); }
+    .qa-item.open .qa-answer { display: block; }
+    .qa-answer p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-top: 1rem; }
+    .qa-answer p + p { margin-top: 0.7rem; }
+    .qa-answer strong { color: var(--text); }
+    .qa-answer .qa-stat-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1rem 0; }
+    .qa-stat { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 1rem; text-align: center; min-width: 110px; flex: 1; }
+    .qa-stat .qs-val { font-size: 1.5rem; font-weight: 800; line-height: 1; }
+    .qa-stat .qs-lbl { font-size: 0.72rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.3; }
+    .qa-answer em { color: var(--accent); font-style: normal; font-weight: 600; }
+
     /* FOOTER */
     footer { border-top: 1px solid var(--border); text-align: center; padding: 2.5rem 2rem; color: var(--muted); font-size: 0.85rem; }
     footer a { color: var(--muted); }
@@ -184,6 +208,7 @@
     <a href="#partisan">Partisan Lean</a>
     <a href="#states">State Maps</a>
     <a href="#diversity">Diversity</a>
+    <a href="#analysis">Analysis</a>
     <a href="#algorithm">Algorithm</a>
     <a href="https://github.com/lagostimgomes/district" target="_blank">GitHub</a>
   </div>
@@ -479,6 +504,156 @@
   </p>
 </section>
 
+<!-- ══════════════════════════════════════════════════
+     ANALYSIS — Q & A
+══════════════════════════════════════════════════ -->
+<section id="analysis">
+  <div class="section-header">
+    <h2>Analysis</h2>
+    <p>Questions this project can directly answer with data.</p>
+  </div>
+
+  <div class="qa-list">
+
+    <!-- Q1 -->
+    <div class="qa-item open">
+      <button class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-q-text">Does drawing districts on geography alone still favor one party?</span>
+        <span class="qa-tag qa-tag-findings">Key Finding</span>
+        <svg class="qa-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="qa-answer">
+        <p>Yes — but the advantage is geographic, not manufactured. For the 429 seats that can be redrawn (excluding at-large states), the blind algorithm produces <strong>D&thinsp;202 / R&thinsp;227</strong>, while the enacted 118th Congress gives <strong>D&thinsp;203 / R&thinsp;226</strong>. The split is within a single seat of each other.</p>
+        <div class="qa-stat-row">
+          <div class="qa-stat"><div class="qs-val" style="color:var(--accent)">47.1%</div><div class="qs-lbl">Democrat seats<br/>blind algorithm</div></div>
+          <div class="qa-stat"><div class="qs-val" style="color:var(--accent)">47.3%</div><div class="qs-lbl">Democrat seats<br/>enacted 118th</div></div>
+          <div class="qa-stat"><div class="qs-val">≈0</div><div class="qs-lbl">Seat-count<br/>difference</div></div>
+        </div>
+        <p>The Republican lean reflects where Americans live. Democratic voters are extraordinarily concentrated in cities and university towns. Compact, equal-population districts naturally fill those areas with landslide D seats, leaving the surrounding suburbs and rural counties R-leaning by default. This <em>geographic sorting effect</em> is structural — no map-drawing methodology eliminates it. The blind algorithm reveals it clearly because it has no incentive to counteract or exploit it.</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qa-item">
+      <button class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-q-text">Does blind redistricting produce more competitive elections?</span>
+        <span class="qa-tag qa-tag-findings">Key Finding</span>
+        <svg class="qa-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="qa-answer">
+        <p>Yes, and the difference is substantial. Applying the same 2024 presidential lean estimate to both maps, the blind draw produces <strong>80 competitive seats</strong> (≤8% margin) compared to <strong>70 under the enacted plan</strong> — 14% more seats where the outcome is genuinely in doubt.</p>
+        <div class="qa-stat-row">
+          <div class="qa-stat"><div class="qs-val" style="color:var(--accent)">20</div><div class="qs-lbl">Toss-ups ≤2%<br/>blind</div></div>
+          <div class="qa-stat"><div class="qs-val">17</div><div class="qs-lbl">Toss-ups ≤2%<br/>enacted</div></div>
+          <div class="qa-stat"><div class="qs-val" style="color:var(--accent)">80</div><div class="qs-lbl">Competitive ≤8%<br/>blind</div></div>
+          <div class="qa-stat"><div class="qs-val">70</div><div class="qs-lbl">Competitive ≤8%<br/>enacted</div></div>
+        </div>
+        <p>The balance matters too. At the toss-up level, the blind draw is exactly <em>10D / 10R</em>. The enacted plan is skewed: <strong>12 R-leaning toss-ups vs only 5 D-leaning</strong> — a 7-seat asymmetry at the most competitive tier. Competitive elections require both parties to defend their seats; the enacted map insulates many Republican-held seats from challenge while leaving more Democratic-held districts marginally exposed.</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="qa-item">
+      <button class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-q-text">Which states show the strongest evidence of partisan gerrymandering?</span>
+        <span class="qa-tag qa-tag-politics">Politics</span>
+        <svg class="qa-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="qa-answer">
+        <p>The clearest signal is a large gap between the number of competitive R-leaning seats geography would naturally produce versus what the enacted map actually contains. States where Republicans held redistricting control dominate the list.</p>
+        <div class="qa-stat-row">
+          <div class="qa-stat"><div class="qs-val" style="color:var(--r-color)">FL</div><div class="qs-lbl">Blind: 5 competitive R<br/>Enacted: <strong>0</strong></div></div>
+          <div class="qa-stat"><div class="qs-val" style="color:var(--r-color)">TX</div><div class="qs-lbl">Blind: 4 competitive R<br/>Enacted: <strong>1</strong></div></div>
+          <div class="qa-stat"><div class="qs-val" style="color:var(--r-color)">GA</div><div class="qs-lbl">Blind: D 6 / R 8<br/>Enacted: D 5 / R 9</div></div>
+          <div class="qa-stat"><div class="qs-val" style="color:var(--r-color)">OH</div><div class="qs-lbl">Blind: D 4 / R 11<br/>Enacted: D 3 / R 12</div></div>
+        </div>
+        <p><strong>Florida (28 seats)</strong> is the most striking case. Geography alone produces five R-leaning seats with a ≤8% margin — seats that could realistically flip. The enacted map has eliminated every one of them. All 20 Republican-held seats in Florida are now won by comfortable margins. Texas (38 seats) similarly reduces its competitive R seats from 4 to 1, while also converting two D-leaning blind-draw seats into R seats in the enacted plan (blind D=14, enacted D=12).</p>
+        <p>It is worth noting that Democratic-controlled states show analogous patterns in the opposite direction. Maryland's enacted plan converts what would be a competitive R seat under the blind draw into a safely Democratic one. The phenomenon of incumbent protection through map-drawing is bipartisan; Republicans simply controlled more high-population states during the 2020 redistricting cycle.</p>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="qa-item">
+      <button class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-q-text">Why does Congress lean Republican even under a geography-only draw?</span>
+        <span class="qa-tag qa-tag-politics">Politics</span>
+        <svg class="qa-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="qa-answer">
+        <p>This is the <em>efficiency gap</em> — a structural feature of American political geography, not a product of gerrymandering. Democratic voters are concentrated in dense urban cores: central cities, university districts, and inner suburbs. When you draw a compact, equal-population district around any major American city, you create a seat the Democrat wins by a very large margin (D+40 or more). Those surplus Democratic votes are "wasted" — they win the seat by far more than necessary.</p>
+        <p>The Republican coalition is more evenly spread across suburbs, exurbs, and rural areas. Compact districts in those geographies produce many R+10 to R+25 wins — enough to take the seat, but not so lopsided as to waste votes. The net effect is that Democrats win some seats very efficiently (large margins, few seats) while Republicans win more seats at moderate margins, accumulating a seat-count advantage without any map-drawing at all.</p>
+        <p>Under the blind draw, the Republican seat share (52.9%) slightly exceeds the Republican two-party presidential vote share (~51% in 2024) — a <strong>~2-point seat premium</strong> attributable purely to voter geography. The enacted plan adds a further ~1-point premium through deliberate map-drawing.</p>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="qa-item">
+      <button class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-q-text">Does the blind algorithm produce racially diverse districts?</span>
+        <span class="qa-tag qa-tag-findings">Key Finding</span>
+        <svg class="qa-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="qa-answer">
+        <p>Virtually identically to the enacted plan, which is a striking result given the algorithm has no knowledge of race. Racial diversity is measured here using the <em>Herfindahl index</em> — the probability that two randomly chosen residents from a district belong to different racial groups (0 = fully homogeneous, ~0.86 = all seven groups equally represented).</p>
+        <div class="qa-stat-row">
+          <div class="qa-stat"><div class="qs-val" style="color:var(--accent)">0.521</div><div class="qs-lbl">Blind mean<br/>diversity score</div></div>
+          <div class="qa-stat"><div class="qs-val">0.511</div><div class="qs-lbl">Enacted mean<br/>diversity score</div></div>
+          <div class="qa-stat"><div class="qs-val" style="color:var(--accent)">0.555</div><div class="qs-lbl">Blind median<br/>diversity score</div></div>
+          <div class="qa-stat"><div class="qs-val">0.542</div><div class="qs-lbl">Enacted median<br/>diversity score</div></div>
+        </div>
+        <p>The blind algorithm scores slightly <em>higher</em> on diversity at both mean and median. This suggests that when districts follow compact geographic boundaries, racial communities — which are geographically clustered — remain reasonably intact. The enacted plan's deliberate line-drawing does not materially improve diversity and in some cases fragments naturally diverse communities across multiple districts. <strong>Important caveat:</strong> the Voting Rights Act requires more than aggregate diversity. It requires that minority communities have an equal opportunity to elect representatives of their choice, which is a district-level standard the blind algorithm does not explicitly optimize for. A full VRA audit remains necessary before any plan could be considered for adoption.</p>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="qa-item">
+      <button class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-q-text">How reliable are the partisan lean estimates?</span>
+        <span class="qa-tag qa-tag-methods">Method</span>
+        <svg class="qa-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="qa-answer">
+        <p>The estimates use a <em>uniform partisan swing</em> method: VEST 2020 precinct-level presidential returns are shifted by each state's 2020→2024 two-party margin change. If a state moved 3 points toward Republicans between 2020 and 2024, every precinct in that state is shifted 3 points. The technique is standard in academic redistricting analysis and produces results consistent with post-election precinct returns where those are available.</p>
+        <p><strong>Strengths:</strong> Uses actual precinct geography (not smoothed estimates), leverages the most granular available data, and the 2024 certified state results are the gold standard for statewide calibration.</p>
+        <p><strong>Limitations:</strong> Real swings are not uniform — cities and suburbs may have moved differently than rural areas within the same state. The method also uses presidential votes as a proxy for congressional preferences; incumbency effects, candidate quality, and local issues cause real congressional results to differ from presidential lean by ±5–10 points in some districts. Treat margins below 5% as approximately competitive rather than precise predictions of outcomes.</p>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="qa-item">
+      <button class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-q-text">Could these maps actually be adopted?</span>
+        <span class="qa-tag qa-tag-limits">Limitations</span>
+        <svg class="qa-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="qa-answer">
+        <p>Not without additional review, but the pipeline produces legally defensible starting points. Three requirements would need to be verified before any plan is considered for adoption:</p>
+        <p><strong>1. Voting Rights Act compliance.</strong> Section 2 of the VRA prohibits maps that dilute minority voting power. A full VRA audit must confirm that minority communities retain an effective opportunity to elect their preferred candidates. The blind algorithm ignores race, so some plans may inadvertently crack majority-minority districts. The post-hoc diversity analysis shows aggregate scores similar to enacted plans, but VRA compliance is evaluated district by district, not on averages.</p>
+        <p><strong>2. State-specific legal requirements.</strong> Many states mandate that districts preserve municipalities, counties, or named communities of interest. The blind algorithm minimizes county splits (a Pareto objective) but does not know that a particular city or historic community should stay whole. State redistricting criteria vary significantly.</p>
+        <p><strong>3. Public input and transparency.</strong> Redistricting processes typically require public hearings and comment periods. A purely algorithmic result would need to be presented alongside the criteria used, the ensemble of alternatives considered, and an explanation of why the selected plan was chosen — all of which this pipeline provides via the Pareto frontier CSV and per-state reports.</p>
+        <p>The most realistic use case today is as an <em>independent benchmark</em>: a court or independent commission can compare any proposed map against the blind-draw ensemble to test whether the human-drawn plan is an outlier with respect to partisan outcomes, compactness, or community preservation.</p>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="qa-item">
+      <button class="qa-question" onclick="toggleQA(this)">
+        <span class="qa-q-text">What are the main limitations of this analysis?</span>
+        <span class="qa-tag qa-tag-limits">Limitations</span>
+        <svg class="qa-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="qa-answer">
+        <p><strong>Sample size.</strong> Each state runs 2,000–20,000 MCMC steps, producing a few thousand sampled plans. For large states (CA with 52 districts, TX with 38), the space of valid plans is astronomically large. The Pareto-selected plan is the best among what was sampled, not necessarily the global optimum. Running more steps would likely improve compactness scores, particularly for geographically complex states.</p>
+        <p><strong>Compactness as a proxy for quality.</strong> Polsby-Popper and cut-edge minimization are reasonable mathematical surrogates for "good" districts, but they don't capture everything voters care about — historical representation patterns, language communities, economic ties between cities and their hinterlands, or the cohesion of Native American tribal territories, for example.</p>
+        <p><strong>Single plan selection.</strong> The pipeline selects one "best compact" and one "fewest splits" plan per state. Real redistricting involves many trade-offs, and presenting the full Pareto frontier (available in the per-state <code>pareto_frontier.csv</code> files) would give a more honest picture of the range of defensible outcomes.</p>
+        <p><strong>No Senate or state-legislative analysis.</strong> Congressional districts are only one layer. State legislative districts follow the same dynamics but at smaller geographic units, and the effects of partisan line-drawing are often more extreme at the state level.</p>
+        <p><strong>West Virginia geometry.</strong> WV's mountain-ridge geography and very irregular precinct boundaries make it genuinely difficult to produce visually clean 2-district plans. Even with 20,000 MCMC steps the best plan has a Polsby-Popper score of only 0.15. This is a real geographic constraint, not an algorithmic failure, but it is worth noting when interpreting WV's map.</p>
+      </div>
+    </div>
+
+  </div><!-- /qa-list -->
+</section>
+
 <!-- FOOTER -->
 <footer>
   <p>Built with <a href="https://mggg.org/gerrychain/" target="_blank">GerryChain</a> · <a href="https://github.com/lagostimgomes/district" target="_blank">Source on GitHub</a> · Geography-only — no partisan or demographic data used in map drawing</p>
@@ -626,6 +801,12 @@ function loadStateMap(abbr, tab) {
   };
   img.src = files[tab] || files['compact'];
   img.alt = `${stateNames[abbr]} — ${tab}`;
+}
+
+// ─── Q&A ACCORDION ───────────────────────────────────────────────────────────
+function toggleQA(btn) {
+  const item = btn.closest('.qa-item');
+  item.classList.toggle('open');
 }
 </script>
 
