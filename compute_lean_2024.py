@@ -170,17 +170,56 @@ def main():
             total_d += res["D"]
             total_r += res["R"]
 
-    output["totals"] = {"D": total_d, "R": total_r}
+    # At-large states (k=1): single district = whole state, lean from RESULTS_2024 directly.
+    AT_LARGE = {"AK": 0.436, "DE": 0.583, "ND": 0.321, "SD": 0.361, "VT": 0.676, "WY": 0.233}
+    for abbr, harris_pct in AT_LARGE.items():
+        margin = round(abs(harris_pct - 0.5) * 200)
+        lean = "D" if harris_pct >= 0.5 else "R"
+        output[abbr] = {
+            "districts": {0: {"harris_pct": harris_pct, "lean": lean, "margin": margin,
+                               "label": f"{'D' if lean=='D' else 'R'}+{margin}"}},
+            "D": 1 if lean == "D" else 0,
+            "R": 1 if lean == "R" else 0,
+        }
+        if lean == "D":
+            total_d += 1
+        else:
+            total_r += 1
+
+    output["totals"] = {"D": total_d, "R": total_r, "total": total_d + total_r}
+
+    # Margin breakdowns — 2 / 5 / 8 percent
+    margins = {}
+    for thresh, key in [(2, "within_2pct"), (5, "within_5pct"), (8, "within_8pct")]:
+        d_cnt, r_cnt, d_states, r_states = 0, 0, set(), set()
+        for abbr, v in output.items():
+            if abbr in ("totals", "margins") or "districts" not in v:
+                continue
+            for did, d in v["districts"].items():
+                if d["margin"] <= thresh:
+                    if d["lean"] == "D":
+                        d_cnt += 1
+                        d_states.add(abbr)
+                    else:
+                        r_cnt += 1
+                        r_states.add(abbr)
+        margins[key] = {
+            "D": d_cnt, "R": r_cnt, "total": d_cnt + r_cnt,
+            "D_states": sorted(d_states), "R_states": sorted(r_states),
+        }
+    output["margins"] = margins
 
     out_path = DATA_ROOT / "lean_2024.json"
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2)
 
     print(f"\n{'='*50}")
-    print(f"TOTALS across {len(output)-1} states:")
+    print(f"TOTALS across {len(output)-2} states:")
     print(f"  Democrat-leaning  : {total_d} districts")
     print(f"  Republican-leaning: {total_r} districts")
     print(f"  Total             : {total_d + total_r} districts")
+    for key, m in margins.items():
+        print(f"  {key}: D={m['D']} R={m['R']} total={m['total']}")
     print(f"\nSaved: {out_path}")
 
 

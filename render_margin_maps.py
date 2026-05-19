@@ -132,9 +132,9 @@ def render_margin_map(threshold, out_path, title_suffix):
     print(f"  Saved: {out_path}")
 
 for thresh, suffix, fname in [
-    (2,  "≤ 2% margin highlighted — 20 toss-up districts", "us_map_margin2.png"),
-    (5,  "≤ 5% margin highlighted — 50 competitive districts", "us_map_margin5.png"),
-    (10, "≤ 10% margin highlighted — 103 lean districts", "us_map_margin10.png"),
+    (2, "≤ 2% margin highlighted — 20 toss-up districts", "us_map_margin2.png"),
+    (5, "≤ 5% margin highlighted — 50 competitive districts", "us_map_margin5.png"),
+    (8, "≤ 8% margin highlighted — lean districts", "us_map_margin8.png"),
 ]:
     print(f"\nRendering margin{thresh} map...")
     render_margin_map(thresh, DATA_ROOT / fname, suffix)

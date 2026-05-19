@@ -91,9 +91,18 @@ def load_state_boundaries() -> gpd.GeoDataFrame:
 # Load one state's districts
 # ---------------------------------------------------------------------------
 
-def load_districts(abbr: str, gpkg_path: Path) -> gpd.GeoDataFrame | None:
+def load_districts(abbr: str, gpkg_path: Path, simplify_m: float = 1000.0) -> gpd.GeoDataFrame | None:
+    """Load district polygons, reprojecting to CRS_MAIN and simplifying geometry.
+
+    simplify_m : Douglas-Peucker tolerance in metres (default 1000 m for national maps).
+                 Reduces extreme vertex counts caused by tracing individual precinct edges,
+                 which otherwise render as visual noise at national scale.
+    """
     try:
         gdf = gpd.read_file(gpkg_path).to_crs(CRS_MAIN)
+        if simplify_m > 0:
+            gdf = gdf.copy()
+            gdf["geometry"] = gdf.geometry.simplify(simplify_m, preserve_topology=True)
         gdf["abbr"] = abbr.upper()
         return gdf
     except Exception as e:

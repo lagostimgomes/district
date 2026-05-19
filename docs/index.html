@@ -232,7 +232,7 @@
     </button>
     <button class="mode-btn" onclick="setMapMode('m2',this)">≤ 2% &nbsp;<span style="color:var(--gold)">● 20 toss-ups</span></button>
     <button class="mode-btn" onclick="setMapMode('m5',this)">≤ 5% &nbsp;<span style="color:var(--gold)">● 50 competitive</span></button>
-    <button class="mode-btn" onclick="setMapMode('m10',this)">≤ 10% &nbsp;<span style="color:var(--gold)">● 103 lean</span></button>
+    <button class="mode-btn" onclick="setMapMode('m8',this)">≤ 8% &nbsp;<span style="color:var(--gold)">● 80 lean</span></button>
     <span class="mode-label" id="map-mode-label">Showing all districts</span>
   </div>
 
@@ -312,18 +312,70 @@
       </div>
     </div>
     <div class="margin-card">
-      <div class="mc-label"><span class="mc-dot" style="background:var(--accent2)"></span> Within 10% — Lean</div>
-      <div class="mc-num">103</div>
+      <div class="mc-label"><span class="mc-dot" style="background:var(--accent2)"></span> Within 8% — Lean</div>
+      <div class="mc-num">80</div>
       <div class="mc-dr">
-        <span style="color:var(--d-color)">D-leaning: <strong>55</strong></span>
-        <span style="color:var(--r-color)">R-leaning: <strong>48</strong></span>
+        <span style="color:var(--d-color)">D-leaning: <strong>41</strong></span>
+        <span style="color:var(--r-color)">R-leaning: <strong>39</strong></span>
       </div>
       <div class="mc-states">
-        <div><span style="color:var(--d-color)">D:</span> CA, CO, CT, FL, GA, IL, KY, LA, MA, MD, ME, MI, MN, NH, NJ, NV, NY, OH, OR, PA, SC, TX, VA, WA, WI</div>
-        <div><span style="color:var(--r-color)">R:</span> AL, AZ, CA, CO, FL, GA, IA, IL, IN, KS, MD, MI, MO, MS, NC, NE, NJ, NV, NY, OH, PA, SC, TN, TX, UT, VA, WA, WI</div>
+        <div><span style="color:var(--d-color)">D:</span> CA, CO, CT, FL, GA, IL, KY, LA, MD, MI, NH, NJ, NV, NY, OH, OR, PA, SC, TX, VA, WI</div>
+        <div><span style="color:var(--r-color)">R:</span> AL, AZ, CA, CO, FL, GA, IA, IL, IN, KS, MD, MI, MO, MS, NC, NE, NJ, NV, NY, OH, PA, SC, TN, TX, UT, WA</div>
       </div>
     </div>
   </div>
+
+  <!-- vs ENACTED COMPARISON -->
+  <h3 style="font-size:1.1rem;font-weight:700;margin:2.5rem 0 0.4rem;">
+    Blind Algorithm vs. Enacted 118th Congress — Competitive Seats
+  </h3>
+  <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.2rem;">
+    Same VEST 2020 + 2024 swing method applied to both maps. Enacted covers 429 redistricted seats (excludes 6 at-large states). Does a geography-only blind draw produce more competitive elections?
+  </p>
+  <div style="overflow-x:auto;">
+  <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+    <thead>
+      <tr style="border-bottom:1px solid var(--border);">
+        <th style="text-align:left;padding:0.6rem 0.8rem;color:var(--muted);font-weight:600;">Threshold</th>
+        <th style="text-align:center;padding:0.6rem 0.8rem;color:var(--accent);font-weight:600;">Blind Algorithm</th>
+        <th style="text-align:center;padding:0.6rem 0.8rem;color:var(--muted);font-weight:600;">Enacted 118th</th>
+        <th style="text-align:center;padding:0.6rem 0.8rem;color:#4dbd74;font-weight:600;">Difference</th>
+        <th style="text-align:center;padding:0.6rem 0.8rem;color:var(--muted);font-weight:600;">Blind D / R split</th>
+        <th style="text-align:center;padding:0.6rem 0.8rem;color:var(--muted);font-weight:600;">Enacted D / R split</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:0.6rem 0.8rem;font-weight:600;"><span style="color:var(--warn)">●</span> ≤ 2% toss-ups</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-size:1.15rem;font-weight:800;color:var(--accent)">20</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-size:1.15rem;font-weight:800;">17</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-weight:700;color:#4dbd74;">+3</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;"><span style="color:var(--d-color)">D 10</span> / <span style="color:var(--r-color)">R 10</span></td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;"><span style="color:var(--d-color)">D 5</span> / <span style="color:var(--r-color)">R 12</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:0.6rem 0.8rem;font-weight:600;"><span style="color:var(--accent)">●</span> ≤ 5% competitive</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-size:1.15rem;font-weight:800;color:var(--accent)">50</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-size:1.15rem;font-weight:800;">45</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-weight:700;color:#4dbd74;">+5</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;"><span style="color:var(--d-color)">D 25</span> / <span style="color:var(--r-color)">R 25</span></td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;"><span style="color:var(--d-color)">D 26</span> / <span style="color:var(--r-color)">R 19</span></td>
+      </tr>
+      <tr>
+        <td style="padding:0.6rem 0.8rem;font-weight:600;"><span style="color:var(--accent2)">●</span> ≤ 8% lean</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-size:1.15rem;font-weight:800;color:var(--accent)">80</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-size:1.15rem;font-weight:800;">70</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;font-weight:700;color:#4dbd74;">+10</td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;"><span style="color:var(--d-color)">D 41</span> / <span style="color:var(--r-color)">R 39</span></td>
+        <td style="text-align:center;padding:0.6rem 0.8rem;"><span style="color:var(--d-color)">D 39</span> / <span style="color:var(--r-color)">R 31</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="color:var(--muted);font-size:0.8rem;margin-top:0.8rem;">
+    The blind algorithm yields <strong style="color:#4dbd74;">10 more competitive seats at ≤ 8%</strong> (80 vs 70) and a more balanced D/R split at every threshold — despite never using any partisan data.
+    At ≤ 2%, enacted maps produce 12 R-leaning toss-ups vs only 5 D-leaning, while the blind draw is exactly 10/10.
+  </p>
 
   <!-- PER-STATE BREAKDOWN -->
   <div id="breakdown-grid" class="breakdown-grid"></div>
@@ -457,20 +509,20 @@ const stateData = [
 const stateByAbbr = Object.fromEntries(stateData.map(s => [s.abbr, s]));
 
 // ─── NATIONAL MAP ─────────────────────────────────────────────────────────────
-const mapModes = ['all','partisan','m2','m5','m10'];
+const mapModes = ['all','partisan','m2','m5','m8'];
 const mapFiles = {
   'all':      'maps/us_map.png',
   'partisan': 'maps/us_map_partisan.png',
   'm2':       'maps/us_map_margin2.png',
   'm5':       'maps/us_map_margin5.png',
-  'm10':      'maps/us_map_margin10.png',
+  'm8':       'maps/us_map_margin8.png',
 };
 const mapLabels = {
   'all':      'Showing all districts (geographic coloring)',
   'partisan': 'D / R partisan spectrum — deep blue → white → deep red by 2024 Harris two-party share',
   'm2':       'Highlighting 20 toss-up districts (≤ 2% margin)',
   'm5':       'Highlighting 50 competitive districts (≤ 5% margin)',
-  'm10':      'Highlighting 103 lean districts (≤ 10% margin)',
+  'm8':       'Highlighting 80 lean-competitive districts (≤ 8% margin)',
 };
 let currentMapMode = 'all';
 

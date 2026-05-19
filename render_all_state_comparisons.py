@@ -30,6 +30,11 @@ def render_comparison(cfg):
 
     try:
         proposed = gpd.read_file(proposed_gpkg)
+        # Simplify district boundaries — precinct-traced edges can have tens of
+        # thousands of vertices that render as visual noise.  300 m in native CRS
+        # (EPSG:5070 metres) preserves recognisable shapes at state-map scale.
+        proposed = proposed.copy()
+        proposed["geometry"] = proposed.geometry.simplify(300, preserve_topology=True)
         crs = proposed.crs
 
         # State boundary for county overlay
