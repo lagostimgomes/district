@@ -1,0 +1,4379 @@
+{
+  "blind": [
+    {
+      "state": "AL",
+      "district": 0,
+      "diversity": 0.414139
+    },
+    {
+      "state": "AL",
+      "district": 1,
+      "diversity": 0.529815
+    },
+    {
+      "state": "AL",
+      "district": 2,
+      "diversity": 0.564077
+    },
+    {
+      "state": "AL",
+      "district": 3,
+      "diversity": 0.486886
+    },
+    {
+      "state": "AL",
+      "district": 4,
+      "diversity": 0.56272
+    },
+    {
+      "state": "AL",
+      "district": 5,
+      "diversity": 0.502405
+    },
+    {
+      "state": "AL",
+      "district": 6,
+      "diversity": 0.578703
+    },
+    {
+      "state": "AK",
+      "district": 1,
+      "diversity": 0.627213
+    },
+    {
+      "state": "AZ",
+      "district": 0,
+      "diversity": 0.548335
+    },
+    {
+      "state": "AZ",
+      "district": 1,
+      "diversity": 0.601414
+    },
+    {
+      "state": "AZ",
+      "district": 2,
+      "diversity": 0.591168
+    },
+    {
+      "state": "AZ",
+      "district": 3,
+      "diversity": 0.522648
+    },
+    {
+      "state": "AZ",
+      "district": 4,
+      "diversity": 0.679699
+    },
+    {
+      "state": "AZ",
+      "district": 5,
+      "diversity": 0.540074
+    },
+    {
+      "state": "AZ",
+      "district": 6,
+      "diversity": 0.536562
+    },
+    {
+      "state": "AZ",
+      "district": 7,
+      "diversity": 0.547921
+    },
+    {
+      "state": "AZ",
+      "district": 8,
+      "diversity": 0.614156
+    },
+    {
+      "state": "AR",
+      "district": 0.0,
+      "diversity": 0.557232
+    },
+    {
+      "state": "AR",
+      "district": 1.0,
+      "diversity": 0.513041
+    },
+    {
+      "state": "AR",
+      "district": 2.0,
+      "diversity": 0.360763
+    },
+    {
+      "state": "AR",
+      "district": 3.0,
+      "diversity": 0.495241
+    },
+    {
+      "state": "CA",
+      "district": 0.0,
+      "diversity": 0.650685
+    },
+    {
+      "state": "CA",
+      "district": 1.0,
+      "diversity": 0.73452
+    },
+    {
+      "state": "CA",
+      "district": 2.0,
+      "diversity": 0.735439
+    },
+    {
+      "state": "CA",
+      "district": 3.0,
+      "diversity": 0.690282
+    },
+    {
+      "state": "CA",
+      "district": 4.0,
+      "diversity": 0.618189
+    },
+    {
+      "state": "CA",
+      "district": 5.0,
+      "diversity": 0.670177
+    },
+    {
+      "state": "CA",
+      "district": 6.0,
+      "diversity": 0.643908
+    },
+    {
+      "state": "CA",
+      "district": 7.0,
+      "diversity": 0.627175
+    },
+    {
+      "state": "CA",
+      "district": 8.0,
+      "diversity": 0.629667
+    },
+    {
+      "state": "CA",
+      "district": 9.0,
+      "diversity": 0.660506
+    },
+    {
+      "state": "CA",
+      "district": 10.0,
+      "diversity": 0.554888
+    },
+    {
+      "state": "CA",
+      "district": 11.0,
+      "diversity": 0.566709
+    },
+    {
+      "state": "CA",
+      "district": 12.0,
+      "diversity": 0.620582
+    },
+    {
+      "state": "CA",
+      "district": 13.0,
+      "diversity": 0.699362
+    },
+    {
+      "state": "CA",
+      "district": 14.0,
+      "diversity": 0.654071
+    },
+    {
+      "state": "CA",
+      "district": 15.0,
+      "diversity": 0.681705
+    },
+    {
+      "state": "CA",
+      "district": 16.0,
+      "diversity": 0.698332
+    },
+    {
+      "state": "CA",
+      "district": 17.0,
+      "diversity": 0.693461
+    },
+    {
+      "state": "CA",
+      "district": 18.0,
+      "diversity": 0.666813
+    },
+    {
+      "state": "CA",
+      "district": 19.0,
+      "diversity": 0.606541
+    },
+    {
+      "state": "CA",
+      "district": 20.0,
+      "diversity": 0.434506
+    },
+    {
+      "state": "CA",
+      "district": 21.0,
+      "diversity": 0.504418
+    },
+    {
+      "state": "CA",
+      "district": 22.0,
+      "diversity": 0.601018
+    },
+    {
+      "state": "CA",
+      "district": 23.0,
+      "diversity": 0.636858
+    },
+    {
+      "state": "CA",
+      "district": 24.0,
+      "diversity": 0.652714
+    },
+    {
+      "state": "CA",
+      "district": 25.0,
+      "diversity": 0.653008
+    },
+    {
+      "state": "CA",
+      "district": 26.0,
+      "diversity": 0.560815
+    },
+    {
+      "state": "CA",
+      "district": 27.0,
+      "diversity": 0.725889
+    },
+    {
+      "state": "CA",
+      "district": 28.0,
+      "diversity": 0.553562
+    },
+    {
+      "state": "CA",
+      "district": 29.0,
+      "diversity": 0.584617
+    },
+    {
+      "state": "CA",
+      "district": 30.0,
+      "diversity": 0.664131
+    },
+    {
+      "state": "CA",
+      "district": 31.0,
+      "diversity": 0.645051
+    },
+    {
+      "state": "CA",
+      "district": 32.0,
+      "diversity": 0.713423
+    },
+    {
+      "state": "CA",
+      "district": 33.0,
+      "diversity": 0.674641
+    },
+    {
+      "state": "CA",
+      "district": 34.0,
+      "diversity": 0.618708
+    },
+    {
+      "state": "CA",
+      "district": 35.0,
+      "diversity": 0.606611
+    },
+    {
+      "state": "CA",
+      "district": 36.0,
+      "diversity": 0.715088
+    },
+    {
+      "state": "CA",
+      "district": 37.0,
+      "diversity": 0.589995
+    },
+    {
+      "state": "CA",
+      "district": 38.0,
+      "diversity": 0.689561
+    },
+    {
+      "state": "CA",
+      "district": 39.0,
+      "diversity": 0.611562
+    },
+    {
+      "state": "CA",
+      "district": 40.0,
+      "diversity": 0.664616
+    },
+    {
+      "state": "CA",
+      "district": 41.0,
+      "diversity": 0.61975
+    },
+    {
+      "state": "CA",
+      "district": 42.0,
+      "diversity": 0.722538
+    },
+    {
+      "state": "CA",
+      "district": 43.0,
+      "diversity": 0.752797
+    },
+    {
+      "state": "CA",
+      "district": 44.0,
+      "diversity": 0.717686
+    },
+    {
+      "state": "CA",
+      "district": 45.0,
+      "diversity": 0.665411
+    },
+    {
+      "state": "CA",
+      "district": 46.0,
+      "diversity": 0.723208
+    },
+    {
+      "state": "CA",
+      "district": 47.0,
+      "diversity": 0.559685
+    },
+    {
+      "state": "CA",
+      "district": 48.0,
+      "diversity": 0.667761
+    },
+    {
+      "state": "CA",
+      "district": 49.0,
+      "diversity": 0.262129
+    },
+    {
+      "state": "CA",
+      "district": 50.0,
+      "diversity": 0.67747
+    },
+    {
+      "state": "CA",
+      "district": 51.0,
+      "diversity": 0.599032
+    },
+    {
+      "state": "CO",
+      "district": 0,
+      "diversity": 0.432759
+    },
+    {
+      "state": "CO",
+      "district": 1,
+      "diversity": 0.437564
+    },
+    {
+      "state": "CO",
+      "district": 2,
+      "diversity": 0.527463
+    },
+    {
+      "state": "CO",
+      "district": 3,
+      "diversity": 0.408208
+    },
+    {
+      "state": "CO",
+      "district": 4,
+      "diversity": 0.57854
+    },
+    {
+      "state": "CO",
+      "district": 5,
+      "diversity": 0.573154
+    },
+    {
+      "state": "CO",
+      "district": 6,
+      "diversity": 0.453811
+    },
+    {
+      "state": "CO",
+      "district": 7,
+      "diversity": 0.645622
+    },
+    {
+      "state": "CT",
+      "district": 0,
+      "diversity": 0.543674
+    },
+    {
+      "state": "CT",
+      "district": 1,
+      "diversity": 0.595897
+    },
+    {
+      "state": "CT",
+      "district": 2,
+      "diversity": 0.499562
+    },
+    {
+      "state": "CT",
+      "district": 3,
+      "diversity": 0.592632
+    },
+    {
+      "state": "CT",
+      "district": 4,
+      "diversity": 0.532108
+    },
+    {
+      "state": "DE",
+      "district": 1,
+      "diversity": 0.595379
+    },
+    {
+      "state": "FL",
+      "district": 0,
+      "diversity": 0.669394
+    },
+    {
+      "state": "FL",
+      "district": 1,
+      "diversity": 0.610214
+    },
+    {
+      "state": "FL",
+      "district": 2,
+      "diversity": 0.54686
+    },
+    {
+      "state": "FL",
+      "district": 3,
+      "diversity": 0.627635
+    },
+    {
+      "state": "FL",
+      "district": 4,
+      "diversity": 0.491373
+    },
+    {
+      "state": "FL",
+      "district": 5,
+      "diversity": 0.642668
+    },
+    {
+      "state": "FL",
+      "district": 6,
+      "diversity": 0.375363
+    },
+    {
+      "state": "FL",
+      "district": 7,
+      "diversity": 0.562642
+    },
+    {
+      "state": "FL",
+      "district": 8,
+      "diversity": 0.540334
+    },
+    {
+      "state": "FL",
+      "district": 9,
+      "diversity": 0.663509
+    },
+    {
+      "state": "FL",
+      "district": 10,
+      "diversity": 0.675599
+    },
+    {
+      "state": "FL",
+      "district": 11,
+      "diversity": 0.505695
+    },
+    {
+      "state": "FL",
+      "district": 12,
+      "diversity": 0.558671
+    },
+    {
+      "state": "FL",
+      "district": 13,
+      "diversity": 0.474429
+    },
+    {
+      "state": "FL",
+      "district": 14,
+      "diversity": 0.608653
+    },
+    {
+      "state": "FL",
+      "district": 15,
+      "diversity": 0.419595
+    },
+    {
+      "state": "FL",
+      "district": 16,
+      "diversity": 0.657792
+    },
+    {
+      "state": "FL",
+      "district": 17,
+      "diversity": 0.712497
+    },
+    {
+      "state": "FL",
+      "district": 18,
+      "diversity": 0.651366
+    },
+    {
+      "state": "FL",
+      "district": 19,
+      "diversity": 0.547944
+    },
+    {
+      "state": "FL",
+      "district": 20,
+      "diversity": 0.541692
+    },
+    {
+      "state": "FL",
+      "district": 21,
+      "diversity": 0.70101
+    },
+    {
+      "state": "FL",
+      "district": 22,
+      "diversity": 0.54042
+    },
+    {
+      "state": "FL",
+      "district": 23,
+      "diversity": 0.629158
+    },
+    {
+      "state": "FL",
+      "district": 24,
+      "diversity": 0.49616
+    },
+    {
+      "state": "FL",
+      "district": 25,
+      "diversity": 0.339115
+    },
+    {
+      "state": "FL",
+      "district": 26,
+      "diversity": 0.482969
+    },
+    {
+      "state": "FL",
+      "district": 27,
+      "diversity": 0.638373
+    },
+    {
+      "state": "GA",
+      "district": 0,
+      "diversity": 0.563044
+    },
+    {
+      "state": "GA",
+      "district": 1,
+      "diversity": 0.647827
+    },
+    {
+      "state": "GA",
+      "district": 2,
+      "diversity": 0.755208
+    },
+    {
+      "state": "GA",
+      "district": 3,
+      "diversity": 0.623064
+    },
+    {
+      "state": "GA",
+      "district": 4,
+      "diversity": 0.590759
+    },
+    {
+      "state": "GA",
+      "district": 5,
+      "diversity": 0.577561
+    },
+    {
+      "state": "GA",
+      "district": 6,
+      "diversity": 0.601174
+    },
+    {
+      "state": "GA",
+      "district": 7,
+      "diversity": 0.6092
+    },
+    {
+      "state": "GA",
+      "district": 8,
+      "diversity": 0.410075
+    },
+    {
+      "state": "GA",
+      "district": 9,
+      "diversity": 0.594125
+    },
+    {
+      "state": "GA",
+      "district": 10,
+      "diversity": 0.586962
+    },
+    {
+      "state": "GA",
+      "district": 11,
+      "diversity": 0.466296
+    },
+    {
+      "state": "GA",
+      "district": 12,
+      "diversity": 0.616653
+    },
+    {
+      "state": "GA",
+      "district": 13,
+      "diversity": 0.62714
+    },
+    {
+      "state": "HI",
+      "district": 0.0,
+      "diversity": 0.748706
+    },
+    {
+      "state": "HI",
+      "district": 1.0,
+      "diversity": 0.715458
+    },
+    {
+      "state": "ID",
+      "district": 0,
+      "diversity": 0.375681
+    },
+    {
+      "state": "ID",
+      "district": 1,
+      "diversity": 0.340542
+    },
+    {
+      "state": "IL",
+      "district": 0,
+      "diversity": 0.454595
+    },
+    {
+      "state": "IL",
+      "district": 1,
+      "diversity": 0.2258
+    },
+    {
+      "state": "IL",
+      "district": 2,
+      "diversity": 0.347371
+    },
+    {
+      "state": "IL",
+      "district": 3,
+      "diversity": 0.58815
+    },
+    {
+      "state": "IL",
+      "district": 4,
+      "diversity": 0.387156
+    },
+    {
+      "state": "IL",
+      "district": 5,
+      "diversity": 0.514005
+    },
+    {
+      "state": "IL",
+      "district": 6,
+      "diversity": 0.616417
+    },
+    {
+      "state": "IL",
+      "district": 7,
+      "diversity": 0.493882
+    },
+    {
+      "state": "IL",
+      "district": 8,
+      "diversity": 0.638173
+    },
+    {
+      "state": "IL",
+      "district": 9,
+      "diversity": 0.636711
+    },
+    {
+      "state": "IL",
+      "district": 10,
+      "diversity": 0.595167
+    },
+    {
+      "state": "IL",
+      "district": 11,
+      "diversity": 0.720028
+    },
+    {
+      "state": "IL",
+      "district": 12,
+      "diversity": 0.613304
+    },
+    {
+      "state": "IL",
+      "district": 13,
+      "diversity": 0.689476
+    },
+    {
+      "state": "IL",
+      "district": 14,
+      "diversity": 0.598951
+    },
+    {
+      "state": "IL",
+      "district": 15,
+      "diversity": 0.420576
+    },
+    {
+      "state": "IL",
+      "district": 16,
+      "diversity": 0.600762
+    },
+    {
+      "state": "IN",
+      "district": 0,
+      "diversity": 0.440969
+    },
+    {
+      "state": "IN",
+      "district": 1,
+      "diversity": 0.259215
+    },
+    {
+      "state": "IN",
+      "district": 2,
+      "diversity": 0.519618
+    },
+    {
+      "state": "IN",
+      "district": 3,
+      "diversity": 0.409771
+    },
+    {
+      "state": "IN",
+      "district": 4,
+      "diversity": 0.335786
+    },
+    {
+      "state": "IN",
+      "district": 5,
+      "diversity": 0.57942
+    },
+    {
+      "state": "IN",
+      "district": 6,
+      "diversity": 0.414547
+    },
+    {
+      "state": "IN",
+      "district": 7,
+      "diversity": 0.291872
+    },
+    {
+      "state": "IN",
+      "district": 8,
+      "diversity": 0.368713
+    },
+    {
+      "state": "IA",
+      "district": 0,
+      "diversity": 0.321395
+    },
+    {
+      "state": "IA",
+      "district": 1,
+      "diversity": 0.258253
+    },
+    {
+      "state": "IA",
+      "district": 2,
+      "diversity": 0.281576
+    },
+    {
+      "state": "IA",
+      "district": 3,
+      "diversity": 0.366243
+    },
+    {
+      "state": "KS",
+      "district": 0,
+      "diversity": 0.375655
+    },
+    {
+      "state": "KS",
+      "district": 1,
+      "diversity": 0.421147
+    },
+    {
+      "state": "KS",
+      "district": 2,
+      "diversity": 0.517732
+    },
+    {
+      "state": "KS",
+      "district": 3,
+      "diversity": 0.49053
+    },
+    {
+      "state": "KY",
+      "district": 0,
+      "diversity": 0.373472
+    },
+    {
+      "state": "KY",
+      "district": 1,
+      "diversity": 0.329414
+    },
+    {
+      "state": "KY",
+      "district": 2,
+      "diversity": 0.298503
+    },
+    {
+      "state": "KY",
+      "district": 3,
+      "diversity": 0.218193
+    },
+    {
+      "state": "KY",
+      "district": 4,
+      "diversity": 0.530023
+    },
+    {
+      "state": "KY",
+      "district": 5,
+      "diversity": 0.144799
+    },
+    {
+      "state": "LA",
+      "district": 0.0,
+      "diversity": 0.541802
+    },
+    {
+      "state": "LA",
+      "district": 1.0,
+      "diversity": 0.650207
+    },
+    {
+      "state": "LA",
+      "district": 2.0,
+      "diversity": 0.573213
+    },
+    {
+      "state": "LA",
+      "district": 3.0,
+      "diversity": 0.520919
+    },
+    {
+      "state": "LA",
+      "district": 4.0,
+      "diversity": 0.596108
+    },
+    {
+      "state": "LA",
+      "district": 5.0,
+      "diversity": 0.577003
+    },
+    {
+      "state": "ME",
+      "district": 0.0,
+      "diversity": 0.186261
+    },
+    {
+      "state": "ME",
+      "district": 1.0,
+      "diversity": 0.22143
+    },
+    {
+      "state": "MD",
+      "district": 0,
+      "diversity": 0.605652
+    },
+    {
+      "state": "MD",
+      "district": 1,
+      "diversity": 0.636379
+    },
+    {
+      "state": "MD",
+      "district": 2,
+      "diversity": 0.54037
+    },
+    {
+      "state": "MD",
+      "district": 3,
+      "diversity": 0.72958
+    },
+    {
+      "state": "MD",
+      "district": 4,
+      "diversity": 0.583872
+    },
+    {
+      "state": "MD",
+      "district": 5,
+      "diversity": 0.741674
+    },
+    {
+      "state": "MD",
+      "district": 6,
+      "diversity": 0.49151
+    },
+    {
+      "state": "MD",
+      "district": 7,
+      "diversity": 0.591264
+    },
+    {
+      "state": "MA",
+      "district": 0.0,
+      "diversity": 0.46387
+    },
+    {
+      "state": "MA",
+      "district": 1.0,
+      "diversity": 0.490833
+    },
+    {
+      "state": "MA",
+      "district": 2.0,
+      "diversity": 0.601338
+    },
+    {
+      "state": "MA",
+      "district": 3.0,
+      "diversity": 0.621715
+    },
+    {
+      "state": "MA",
+      "district": 4.0,
+      "diversity": 0.649442
+    },
+    {
+      "state": "MA",
+      "district": 5.0,
+      "diversity": 0.351527
+    },
+    {
+      "state": "MA",
+      "district": 6.0,
+      "diversity": 0.393005
+    },
+    {
+      "state": "MA",
+      "district": 7.0,
+      "diversity": 0.463453
+    },
+    {
+      "state": "MA",
+      "district": 8.0,
+      "diversity": 0.493157
+    },
+    {
+      "state": "MI",
+      "district": 0,
+      "diversity": 0.193553
+    },
+    {
+      "state": "MI",
+      "district": 1,
+      "diversity": 0.613604
+    },
+    {
+      "state": "MI",
+      "district": 2,
+      "diversity": 0.296875
+    },
+    {
+      "state": "MI",
+      "district": 3,
+      "diversity": 0.42176
+    },
+    {
+      "state": "MI",
+      "district": 4,
+      "diversity": 0.396113
+    },
+    {
+      "state": "MI",
+      "district": 5,
+      "diversity": 0.530085
+    },
+    {
+      "state": "MI",
+      "district": 6,
+      "diversity": 0.294223
+    },
+    {
+      "state": "MI",
+      "district": 7,
+      "diversity": 0.507269
+    },
+    {
+      "state": "MI",
+      "district": 8,
+      "diversity": 0.605398
+    },
+    {
+      "state": "MI",
+      "district": 9,
+      "diversity": 0.385661
+    },
+    {
+      "state": "MI",
+      "district": 10,
+      "diversity": 0.457958
+    },
+    {
+      "state": "MI",
+      "district": 11,
+      "diversity": 0.40286
+    },
+    {
+      "state": "MI",
+      "district": 12,
+      "diversity": 0.33344
+    },
+    {
+      "state": "MN",
+      "district": 0.0,
+      "diversity": 0.252183
+    },
+    {
+      "state": "MN",
+      "district": 1.0,
+      "diversity": 0.368909
+    },
+    {
+      "state": "MN",
+      "district": 2.0,
+      "diversity": 0.235337
+    },
+    {
+      "state": "MN",
+      "district": 3.0,
+      "diversity": 0.572809
+    },
+    {
+      "state": "MN",
+      "district": 4.0,
+      "diversity": 0.461199
+    },
+    {
+      "state": "MN",
+      "district": 5.0,
+      "diversity": 0.440202
+    },
+    {
+      "state": "MN",
+      "district": 6.0,
+      "diversity": 0.534143
+    },
+    {
+      "state": "MN",
+      "district": 7.0,
+      "diversity": 0.282459
+    },
+    {
+      "state": "MS",
+      "district": 0.0,
+      "diversity": 0.569501
+    },
+    {
+      "state": "MS",
+      "district": 1.0,
+      "diversity": 0.508099
+    },
+    {
+      "state": "MS",
+      "district": 2.0,
+      "diversity": 0.514597
+    },
+    {
+      "state": "MS",
+      "district": 3.0,
+      "diversity": 0.554856
+    },
+    {
+      "state": "MO",
+      "district": 0.0,
+      "diversity": 0.346
+    },
+    {
+      "state": "MO",
+      "district": 1.0,
+      "diversity": 0.286007
+    },
+    {
+      "state": "MO",
+      "district": 2.0,
+      "diversity": 0.597003
+    },
+    {
+      "state": "MO",
+      "district": 3.0,
+      "diversity": 0.306213
+    },
+    {
+      "state": "MO",
+      "district": 4.0,
+      "diversity": 0.233261
+    },
+    {
+      "state": "MO",
+      "district": 5.0,
+      "diversity": 0.264467
+    },
+    {
+      "state": "MO",
+      "district": 6.0,
+      "diversity": 0.616721
+    },
+    {
+      "state": "MO",
+      "district": 7.0,
+      "diversity": 0.281051
+    },
+    {
+      "state": "MT",
+      "district": 0,
+      "diversity": 0.275984
+    },
+    {
+      "state": "MT",
+      "district": 1,
+      "diversity": 0.324469
+    },
+    {
+      "state": "NE",
+      "district": 0,
+      "diversity": 0.476739
+    },
+    {
+      "state": "NE",
+      "district": 1,
+      "diversity": 0.404085
+    },
+    {
+      "state": "NE",
+      "district": 2,
+      "diversity": 0.33267
+    },
+    {
+      "state": "NV",
+      "district": 0,
+      "diversity": 0.694977
+    },
+    {
+      "state": "NV",
+      "district": 1,
+      "diversity": 0.689878
+    },
+    {
+      "state": "NV",
+      "district": 2,
+      "diversity": 0.740233
+    },
+    {
+      "state": "NV",
+      "district": 3,
+      "diversity": 0.545221
+    },
+    {
+      "state": "NH",
+      "district": 0.0,
+      "diversity": 0.283269
+    },
+    {
+      "state": "NH",
+      "district": 1.0,
+      "diversity": 0.185537
+    },
+    {
+      "state": "NJ",
+      "district": 0,
+      "diversity": 0.58046
+    },
+    {
+      "state": "NJ",
+      "district": 1,
+      "diversity": 0.725441
+    },
+    {
+      "state": "NJ",
+      "district": 2,
+      "diversity": 0.585255
+    },
+    {
+      "state": "NJ",
+      "district": 3,
+      "diversity": 0.673958
+    },
+    {
+      "state": "NJ",
+      "district": 4,
+      "diversity": 0.44382
+    },
+    {
+      "state": "NJ",
+      "district": 5,
+      "diversity": 0.605415
+    },
+    {
+      "state": "NJ",
+      "district": 6,
+      "diversity": 0.731794
+    },
+    {
+      "state": "NJ",
+      "district": 7,
+      "diversity": 0.568132
+    },
+    {
+      "state": "NJ",
+      "district": 8,
+      "diversity": 0.627104
+    },
+    {
+      "state": "NJ",
+      "district": 9,
+      "diversity": 0.469922
+    },
+    {
+      "state": "NJ",
+      "district": 10,
+      "diversity": 0.672567
+    },
+    {
+      "state": "NJ",
+      "district": 11,
+      "diversity": 0.688471
+    },
+    {
+      "state": "NM",
+      "district": 0,
+      "diversity": 0.622457
+    },
+    {
+      "state": "NM",
+      "district": 1,
+      "diversity": 0.666555
+    },
+    {
+      "state": "NM",
+      "district": 2,
+      "diversity": 0.551142
+    },
+    {
+      "state": "NY",
+      "district": 0.0,
+      "diversity": 0.27027
+    },
+    {
+      "state": "NY",
+      "district": 1.0,
+      "diversity": 0.711271
+    },
+    {
+      "state": "NY",
+      "district": 2.0,
+      "diversity": 0.505794
+    },
+    {
+      "state": "NY",
+      "district": 3.0,
+      "diversity": 0.482889
+    },
+    {
+      "state": "NY",
+      "district": 4.0,
+      "diversity": 0.269334
+    },
+    {
+      "state": "NY",
+      "district": 5.0,
+      "diversity": 0.680452
+    },
+    {
+      "state": "NY",
+      "district": 6.0,
+      "diversity": 0.651482
+    },
+    {
+      "state": "NY",
+      "district": 7.0,
+      "diversity": 0.620465
+    },
+    {
+      "state": "NY",
+      "district": 8.0,
+      "diversity": 0.689113
+    },
+    {
+      "state": "NY",
+      "district": 9.0,
+      "diversity": 0.600583
+    },
+    {
+      "state": "NY",
+      "district": 10.0,
+      "diversity": 0.518988
+    },
+    {
+      "state": "NY",
+      "district": 11.0,
+      "diversity": 0.726908
+    },
+    {
+      "state": "NY",
+      "district": 12.0,
+      "diversity": 0.349566
+    },
+    {
+      "state": "NY",
+      "district": 13.0,
+      "diversity": 0.722316
+    },
+    {
+      "state": "NY",
+      "district": 14.0,
+      "diversity": 0.44707
+    },
+    {
+      "state": "NY",
+      "district": 15.0,
+      "diversity": 0.715354
+    },
+    {
+      "state": "NY",
+      "district": 16.0,
+      "diversity": 0.539522
+    },
+    {
+      "state": "NY",
+      "district": 17.0,
+      "diversity": 0.4603
+    },
+    {
+      "state": "NY",
+      "district": 18.0,
+      "diversity": 0.726367
+    },
+    {
+      "state": "NY",
+      "district": 19.0,
+      "diversity": 0.491914
+    },
+    {
+      "state": "NY",
+      "district": 20.0,
+      "diversity": 0.270902
+    },
+    {
+      "state": "NY",
+      "district": 21.0,
+      "diversity": 0.722032
+    },
+    {
+      "state": "NY",
+      "district": 22.0,
+      "diversity": 0.762017
+    },
+    {
+      "state": "NY",
+      "district": 23.0,
+      "diversity": 0.686209
+    },
+    {
+      "state": "NY",
+      "district": 24.0,
+      "diversity": 0.575771
+    },
+    {
+      "state": "NY",
+      "district": 25.0,
+      "diversity": 0.763384
+    },
+    {
+      "state": "NC",
+      "district": 0.0,
+      "diversity": 0.640631
+    },
+    {
+      "state": "NC",
+      "district": 1.0,
+      "diversity": 0.640085
+    },
+    {
+      "state": "NC",
+      "district": 2.0,
+      "diversity": 0.626837
+    },
+    {
+      "state": "NC",
+      "district": 3.0,
+      "diversity": 0.56337
+    },
+    {
+      "state": "NC",
+      "district": 4.0,
+      "diversity": 0.477869
+    },
+    {
+      "state": "NC",
+      "district": 5.0,
+      "diversity": 0.580998
+    },
+    {
+      "state": "NC",
+      "district": 6.0,
+      "diversity": 0.400658
+    },
+    {
+      "state": "NC",
+      "district": 7.0,
+      "diversity": 0.55536
+    },
+    {
+      "state": "NC",
+      "district": 8.0,
+      "diversity": 0.614687
+    },
+    {
+      "state": "NC",
+      "district": 9.0,
+      "diversity": 0.573374
+    },
+    {
+      "state": "NC",
+      "district": 10.0,
+      "diversity": 0.313988
+    },
+    {
+      "state": "NC",
+      "district": 11.0,
+      "diversity": 0.609619
+    },
+    {
+      "state": "NC",
+      "district": 12.0,
+      "diversity": 0.620713
+    },
+    {
+      "state": "NC",
+      "district": 13.0,
+      "diversity": 0.66812
+    },
+    {
+      "state": "ND",
+      "district": 1,
+      "diversity": 0.326022
+    },
+    {
+      "state": "OH",
+      "district": 0.0,
+      "diversity": 0.559492
+    },
+    {
+      "state": "OH",
+      "district": 1.0,
+      "diversity": 0.582156
+    },
+    {
+      "state": "OH",
+      "district": 2.0,
+      "diversity": 0.476839
+    },
+    {
+      "state": "OH",
+      "district": 3.0,
+      "diversity": 0.352707
+    },
+    {
+      "state": "OH",
+      "district": 4.0,
+      "diversity": 0.399664
+    },
+    {
+      "state": "OH",
+      "district": 5.0,
+      "diversity": 0.442228
+    },
+    {
+      "state": "OH",
+      "district": 6.0,
+      "diversity": 0.446718
+    },
+    {
+      "state": "OH",
+      "district": 7.0,
+      "diversity": 0.205059
+    },
+    {
+      "state": "OH",
+      "district": 8.0,
+      "diversity": 0.560218
+    },
+    {
+      "state": "OH",
+      "district": 9.0,
+      "diversity": 0.296024
+    },
+    {
+      "state": "OH",
+      "district": 10.0,
+      "diversity": 0.42833
+    },
+    {
+      "state": "OH",
+      "district": 11.0,
+      "diversity": 0.214785
+    },
+    {
+      "state": "OH",
+      "district": 12.0,
+      "diversity": 0.163416
+    },
+    {
+      "state": "OH",
+      "district": 13.0,
+      "diversity": 0.214069
+    },
+    {
+      "state": "OH",
+      "district": 14.0,
+      "diversity": 0.419128
+    },
+    {
+      "state": "OK",
+      "district": 0,
+      "diversity": 0.618825
+    },
+    {
+      "state": "OK",
+      "district": 1,
+      "diversity": 0.564316
+    },
+    {
+      "state": "OK",
+      "district": 2,
+      "diversity": 0.642507
+    },
+    {
+      "state": "OK",
+      "district": 3,
+      "diversity": 0.556956
+    },
+    {
+      "state": "OK",
+      "district": 4,
+      "diversity": 0.563417
+    },
+    {
+      "state": "OR",
+      "district": 0,
+      "diversity": 0.554458
+    },
+    {
+      "state": "OR",
+      "district": 1,
+      "diversity": 0.387891
+    },
+    {
+      "state": "OR",
+      "district": 2,
+      "diversity": 0.424049
+    },
+    {
+      "state": "OR",
+      "district": 3,
+      "diversity": 0.451554
+    },
+    {
+      "state": "OR",
+      "district": 4,
+      "diversity": 0.416875
+    },
+    {
+      "state": "OR",
+      "district": 5,
+      "diversity": 0.508523
+    },
+    {
+      "state": "PA",
+      "district": 0,
+      "diversity": 0.211699
+    },
+    {
+      "state": "PA",
+      "district": 1,
+      "diversity": 0.185779
+    },
+    {
+      "state": "PA",
+      "district": 2,
+      "diversity": 0.428842
+    },
+    {
+      "state": "PA",
+      "district": 3,
+      "diversity": 0.558941
+    },
+    {
+      "state": "PA",
+      "district": 4,
+      "diversity": 0.202821
+    },
+    {
+      "state": "PA",
+      "district": 5,
+      "diversity": 0.344376
+    },
+    {
+      "state": "PA",
+      "district": 6,
+      "diversity": 0.418268
+    },
+    {
+      "state": "PA",
+      "district": 7,
+      "diversity": 0.360337
+    },
+    {
+      "state": "PA",
+      "district": 8,
+      "diversity": 0.220967
+    },
+    {
+      "state": "PA",
+      "district": 9,
+      "diversity": 0.386347
+    },
+    {
+      "state": "PA",
+      "district": 10,
+      "diversity": 0.728766
+    },
+    {
+      "state": "PA",
+      "district": 11,
+      "diversity": 0.384442
+    },
+    {
+      "state": "PA",
+      "district": 12,
+      "diversity": 0.484108
+    },
+    {
+      "state": "PA",
+      "district": 13,
+      "diversity": 0.63864
+    },
+    {
+      "state": "PA",
+      "district": 14,
+      "diversity": 0.393513
+    },
+    {
+      "state": "PA",
+      "district": 15,
+      "diversity": 0.37613
+    },
+    {
+      "state": "PA",
+      "district": 16,
+      "diversity": 0.41895
+    },
+    {
+      "state": "RI",
+      "district": 0.0,
+      "diversity": 0.578871
+    },
+    {
+      "state": "RI",
+      "district": 1.0,
+      "diversity": 0.385542
+    },
+    {
+      "state": "SC",
+      "district": 0,
+      "diversity": 0.529846
+    },
+    {
+      "state": "SC",
+      "district": 1,
+      "diversity": 0.580912
+    },
+    {
+      "state": "SC",
+      "district": 2,
+      "diversity": 0.600191
+    },
+    {
+      "state": "SC",
+      "district": 3,
+      "diversity": 0.552606
+    },
+    {
+      "state": "SC",
+      "district": 4,
+      "diversity": 0.518727
+    },
+    {
+      "state": "SC",
+      "district": 5,
+      "diversity": 0.524692
+    },
+    {
+      "state": "SC",
+      "district": 6,
+      "diversity": 0.456841
+    },
+    {
+      "state": "SD",
+      "district": 1,
+      "diversity": 0.355457
+    },
+    {
+      "state": "TN",
+      "district": 0.0,
+      "diversity": 0.625371
+    },
+    {
+      "state": "TN",
+      "district": 1.0,
+      "diversity": 0.586688
+    },
+    {
+      "state": "TN",
+      "district": 2.0,
+      "diversity": 0.296778
+    },
+    {
+      "state": "TN",
+      "district": 3.0,
+      "diversity": 0.335225
+    },
+    {
+      "state": "TN",
+      "district": 4.0,
+      "diversity": 0.376395
+    },
+    {
+      "state": "TN",
+      "district": 5.0,
+      "diversity": 0.20442
+    },
+    {
+      "state": "TN",
+      "district": 6.0,
+      "diversity": 0.408379
+    },
+    {
+      "state": "TN",
+      "district": 7.0,
+      "diversity": 0.526845
+    },
+    {
+      "state": "TN",
+      "district": 8.0,
+      "diversity": 0.445636
+    },
+    {
+      "state": "TX",
+      "district": 0.0,
+      "diversity": 0.630089
+    },
+    {
+      "state": "TX",
+      "district": 1.0,
+      "diversity": 0.532301
+    },
+    {
+      "state": "TX",
+      "district": 2.0,
+      "diversity": 0.712161
+    },
+    {
+      "state": "TX",
+      "district": 3.0,
+      "diversity": 0.149747
+    },
+    {
+      "state": "TX",
+      "district": 4.0,
+      "diversity": 0.624319
+    },
+    {
+      "state": "TX",
+      "district": 5.0,
+      "diversity": 0.467144
+    },
+    {
+      "state": "TX",
+      "district": 6.0,
+      "diversity": 0.710637
+    },
+    {
+      "state": "TX",
+      "district": 7.0,
+      "diversity": 0.469942
+    },
+    {
+      "state": "TX",
+      "district": 8.0,
+      "diversity": 0.730017
+    },
+    {
+      "state": "TX",
+      "district": 9.0,
+      "diversity": 0.641728
+    },
+    {
+      "state": "TX",
+      "district": 10.0,
+      "diversity": 0.624724
+    },
+    {
+      "state": "TX",
+      "district": 11.0,
+      "diversity": 0.709259
+    },
+    {
+      "state": "TX",
+      "district": 12.0,
+      "diversity": 0.70808
+    },
+    {
+      "state": "TX",
+      "district": 13.0,
+      "diversity": 0.694071
+    },
+    {
+      "state": "TX",
+      "district": 14.0,
+      "diversity": 0.71596
+    },
+    {
+      "state": "TX",
+      "district": 15.0,
+      "diversity": 0.322469
+    },
+    {
+      "state": "TX",
+      "district": 16.0,
+      "diversity": 0.668408
+    },
+    {
+      "state": "TX",
+      "district": 17.0,
+      "diversity": 0.576631
+    },
+    {
+      "state": "TX",
+      "district": 18.0,
+      "diversity": 0.626853
+    },
+    {
+      "state": "TX",
+      "district": 19.0,
+      "diversity": 0.744956
+    },
+    {
+      "state": "TX",
+      "district": 20.0,
+      "diversity": 0.585073
+    },
+    {
+      "state": "TX",
+      "district": 21.0,
+      "diversity": 0.597354
+    },
+    {
+      "state": "TX",
+      "district": 22.0,
+      "diversity": 0.575878
+    },
+    {
+      "state": "TX",
+      "district": 23.0,
+      "diversity": 0.646786
+    },
+    {
+      "state": "TX",
+      "district": 24.0,
+      "diversity": 0.6103
+    },
+    {
+      "state": "TX",
+      "district": 25.0,
+      "diversity": 0.616999
+    },
+    {
+      "state": "TX",
+      "district": 26.0,
+      "diversity": 0.685351
+    },
+    {
+      "state": "TX",
+      "district": 27.0,
+      "diversity": 0.507393
+    },
+    {
+      "state": "TX",
+      "district": 28.0,
+      "diversity": 0.588261
+    },
+    {
+      "state": "TX",
+      "district": 29.0,
+      "diversity": 0.685675
+    },
+    {
+      "state": "TX",
+      "district": 30.0,
+      "diversity": 0.450395
+    },
+    {
+      "state": "TX",
+      "district": 31.0,
+      "diversity": 0.695844
+    },
+    {
+      "state": "TX",
+      "district": 32.0,
+      "diversity": 0.654297
+    },
+    {
+      "state": "TX",
+      "district": 33.0,
+      "diversity": 0.706661
+    },
+    {
+      "state": "TX",
+      "district": 34.0,
+      "diversity": 0.160568
+    },
+    {
+      "state": "TX",
+      "district": 35.0,
+      "diversity": 0.543364
+    },
+    {
+      "state": "TX",
+      "district": 36.0,
+      "diversity": 0.55016
+    },
+    {
+      "state": "TX",
+      "district": 37.0,
+      "diversity": 0.618193
+    },
+    {
+      "state": "UT",
+      "district": 0,
+      "diversity": 0.445166
+    },
+    {
+      "state": "UT",
+      "district": 1,
+      "diversity": 0.458968
+    },
+    {
+      "state": "UT",
+      "district": 2,
+      "diversity": 0.357512
+    },
+    {
+      "state": "UT",
+      "district": 3,
+      "diversity": 0.356568
+    },
+    {
+      "state": "VT",
+      "district": 1,
+      "diversity": 0.201929
+    },
+    {
+      "state": "VA",
+      "district": 0.0,
+      "diversity": 0.471274
+    },
+    {
+      "state": "VA",
+      "district": 1.0,
+      "diversity": 0.51863
+    },
+    {
+      "state": "VA",
+      "district": 2.0,
+      "diversity": 0.525805
+    },
+    {
+      "state": "VA",
+      "district": 3.0,
+      "diversity": 0.27919
+    },
+    {
+      "state": "VA",
+      "district": 4.0,
+      "diversity": 0.636446
+    },
+    {
+      "state": "VA",
+      "district": 5.0,
+      "diversity": 0.443216
+    },
+    {
+      "state": "VA",
+      "district": 6.0,
+      "diversity": 0.73639
+    },
+    {
+      "state": "VA",
+      "district": 7.0,
+      "diversity": 0.678691
+    },
+    {
+      "state": "VA",
+      "district": 8.0,
+      "diversity": 0.671766
+    },
+    {
+      "state": "VA",
+      "district": 9.0,
+      "diversity": 0.60826
+    },
+    {
+      "state": "VA",
+      "district": 10.0,
+      "diversity": 0.652981
+    },
+    {
+      "state": "WA",
+      "district": 0,
+      "diversity": 0.657792
+    },
+    {
+      "state": "WA",
+      "district": 1,
+      "diversity": 0.62633
+    },
+    {
+      "state": "WA",
+      "district": 2,
+      "diversity": 0.528617
+    },
+    {
+      "state": "WA",
+      "district": 3,
+      "diversity": 0.637317
+    },
+    {
+      "state": "WA",
+      "district": 4,
+      "diversity": 0.573777
+    },
+    {
+      "state": "WA",
+      "district": 5,
+      "diversity": 0.36404
+    },
+    {
+      "state": "WA",
+      "district": 6,
+      "diversity": 0.496177
+    },
+    {
+      "state": "WA",
+      "district": 7,
+      "diversity": 0.413051
+    },
+    {
+      "state": "WA",
+      "district": 8,
+      "diversity": 0.505954
+    },
+    {
+      "state": "WA",
+      "district": 9,
+      "diversity": 0.567442
+    },
+    {
+      "state": "WV",
+      "district": 0.0,
+      "diversity": 0.179279
+    },
+    {
+      "state": "WV",
+      "district": 1.0,
+      "diversity": 0.131937
+    },
+    {
+      "state": "WI",
+      "district": 0,
+      "diversity": 0.334175
+    },
+    {
+      "state": "WI",
+      "district": 1,
+      "diversity": 0.227283
+    },
+    {
+      "state": "WI",
+      "district": 2,
+      "diversity": 0.546821
+    },
+    {
+      "state": "WI",
+      "district": 3,
+      "diversity": 0.290385
+    },
+    {
+      "state": "WI",
+      "district": 4,
+      "diversity": 0.275202
+    },
+    {
+      "state": "WI",
+      "district": 5,
+      "diversity": 0.550981
+    },
+    {
+      "state": "WI",
+      "district": 6,
+      "diversity": 0.392814
+    },
+    {
+      "state": "WI",
+      "district": 7,
+      "diversity": 0.200167
+    },
+    {
+      "state": "WY",
+      "district": 1,
+      "diversity": 0.324015
+    }
+  ],
+  "enacted": [
+    {
+      "state": "AL",
+      "district": "01",
+      "diversity": 0.527002
+    },
+    {
+      "state": "AL",
+      "district": "02",
+      "diversity": 0.552729
+    },
+    {
+      "state": "AL",
+      "district": "03",
+      "diversity": 0.503041
+    },
+    {
+      "state": "AL",
+      "district": "04",
+      "diversity": 0.348511
+    },
+    {
+      "state": "AL",
+      "district": "05",
+      "diversity": 0.495216
+    },
+    {
+      "state": "AL",
+      "district": "06",
+      "diversity": 0.490768
+    },
+    {
+      "state": "AL",
+      "district": "07",
+      "diversity": 0.559738
+    },
+    {
+      "state": "AK",
+      "district": 1,
+      "diversity": 0.627213
+    },
+    {
+      "state": "AZ",
+      "district": "01",
+      "diversity": 0.477468
+    },
+    {
+      "state": "AZ",
+      "district": "02",
+      "diversity": 0.620864
+    },
+    {
+      "state": "AZ",
+      "district": "03",
+      "diversity": 0.560085
+    },
+    {
+      "state": "AZ",
+      "district": "04",
+      "diversity": 0.615917
+    },
+    {
+      "state": "AZ",
+      "district": "05",
+      "diversity": 0.512898
+    },
+    {
+      "state": "AZ",
+      "district": "06",
+      "diversity": 0.540094
+    },
+    {
+      "state": "AZ",
+      "district": "07",
+      "diversity": 0.559555
+    },
+    {
+      "state": "AZ",
+      "district": "08",
+      "diversity": 0.540292
+    },
+    {
+      "state": "AZ",
+      "district": "09",
+      "diversity": 0.577305
+    },
+    {
+      "state": "AR",
+      "district": "01",
+      "diversity": 0.434189
+    },
+    {
+      "state": "AR",
+      "district": "02",
+      "diversity": 0.505972
+    },
+    {
+      "state": "AR",
+      "district": "03",
+      "diversity": 0.508708
+    },
+    {
+      "state": "AR",
+      "district": "04",
+      "diversity": 0.509255
+    },
+    {
+      "state": "CA",
+      "district": "01",
+      "diversity": 0.562721
+    },
+    {
+      "state": "CA",
+      "district": "02",
+      "diversity": 0.528502
+    },
+    {
+      "state": "CA",
+      "district": "03",
+      "diversity": 0.493946
+    },
+    {
+      "state": "CA",
+      "district": "04",
+      "diversity": 0.627652
+    },
+    {
+      "state": "CA",
+      "district": "05",
+      "diversity": 0.576922
+    },
+    {
+      "state": "CA",
+      "district": "06",
+      "diversity": 0.695561
+    },
+    {
+      "state": "CA",
+      "district": "07",
+      "diversity": 0.762538
+    },
+    {
+      "state": "CA",
+      "district": "08",
+      "diversity": 0.75847
+    },
+    {
+      "state": "CA",
+      "district": "09",
+      "diversity": 0.709784
+    },
+    {
+      "state": "CA",
+      "district": "10",
+      "diversity": 0.687716
+    },
+    {
+      "state": "CA",
+      "district": "11",
+      "diversity": 0.692984
+    },
+    {
+      "state": "CA",
+      "district": "12",
+      "diversity": 0.766046
+    },
+    {
+      "state": "CA",
+      "district": "13",
+      "diversity": 0.525863
+    },
+    {
+      "state": "CA",
+      "district": "14",
+      "diversity": 0.72252
+    },
+    {
+      "state": "CA",
+      "district": "15",
+      "diversity": 0.716212
+    },
+    {
+      "state": "CA",
+      "district": "16",
+      "diversity": 0.685063
+    },
+    {
+      "state": "CA",
+      "district": "17",
+      "diversity": 0.611086
+    },
+    {
+      "state": "CA",
+      "district": "18",
+      "diversity": 0.529566
+    },
+    {
+      "state": "CA",
+      "district": "19",
+      "diversity": 0.666854
+    },
+    {
+      "state": "CA",
+      "district": "20",
+      "diversity": 0.635121
+    },
+    {
+      "state": "CA",
+      "district": "21",
+      "diversity": 0.540789
+    },
+    {
+      "state": "CA",
+      "district": "22",
+      "diversity": 0.436896
+    },
+    {
+      "state": "CA",
+      "district": "23",
+      "diversity": 0.657263
+    },
+    {
+      "state": "CA",
+      "district": "24",
+      "diversity": 0.599469
+    },
+    {
+      "state": "CA",
+      "district": "25",
+      "diversity": 0.513848
+    },
+    {
+      "state": "CA",
+      "district": "26",
+      "diversity": 0.626138
+    },
+    {
+      "state": "CA",
+      "district": "27",
+      "diversity": 0.68638
+    },
+    {
+      "state": "CA",
+      "district": "28",
+      "diversity": 0.705002
+    },
+    {
+      "state": "CA",
+      "district": "29",
+      "diversity": 0.533961
+    },
+    {
+      "state": "CA",
+      "district": "30",
+      "diversity": 0.616454
+    },
+    {
+      "state": "CA",
+      "district": "31",
+      "diversity": 0.571762
+    },
+    {
+      "state": "CA",
+      "district": "32",
+      "diversity": 0.63775
+    },
+    {
+      "state": "CA",
+      "district": "33",
+      "diversity": 0.57272
+    },
+    {
+      "state": "CA",
+      "district": "34",
+      "diversity": 0.531522
+    },
+    {
+      "state": "CA",
+      "district": "35",
+      "diversity": 0.549368
+    },
+    {
+      "state": "CA",
+      "district": "36",
+      "diversity": 0.630191
+    },
+    {
+      "state": "CA",
+      "district": "37",
+      "diversity": 0.637214
+    },
+    {
+      "state": "CA",
+      "district": "38",
+      "diversity": 0.560328
+    },
+    {
+      "state": "CA",
+      "district": "39",
+      "diversity": 0.559134
+    },
+    {
+      "state": "CA",
+      "district": "40",
+      "diversity": 0.664637
+    },
+    {
+      "state": "CA",
+      "district": "41",
+      "diversity": 0.651814
+    },
+    {
+      "state": "CA",
+      "district": "42",
+      "diversity": 0.541884
+    },
+    {
+      "state": "CA",
+      "district": "43",
+      "diversity": 0.604337
+    },
+    {
+      "state": "CA",
+      "district": "44",
+      "diversity": 0.585377
+    },
+    {
+      "state": "CA",
+      "district": "45",
+      "diversity": 0.697729
+    },
+    {
+      "state": "CA",
+      "district": "46",
+      "diversity": 0.533746
+    },
+    {
+      "state": "CA",
+      "district": "47",
+      "diversity": 0.650376
+    },
+    {
+      "state": "CA",
+      "district": "48",
+      "diversity": 0.621198
+    },
+    {
+      "state": "CA",
+      "district": "49",
+      "diversity": 0.583825
+    },
+    {
+      "state": "CA",
+      "district": "50",
+      "diversity": 0.625715
+    },
+    {
+      "state": "CA",
+      "district": "51",
+      "diversity": 0.697831
+    },
+    {
+      "state": "CA",
+      "district": "52",
+      "diversity": 0.592073
+    },
+    {
+      "state": "CO",
+      "district": "01",
+      "diversity": 0.613651
+    },
+    {
+      "state": "CO",
+      "district": "02",
+      "diversity": 0.392734
+    },
+    {
+      "state": "CO",
+      "district": "03",
+      "diversity": 0.485594
+    },
+    {
+      "state": "CO",
+      "district": "04",
+      "diversity": 0.407658
+    },
+    {
+      "state": "CO",
+      "district": "05",
+      "diversity": 0.52844
+    },
+    {
+      "state": "CO",
+      "district": "06",
+      "diversity": 0.626879
+    },
+    {
+      "state": "CO",
+      "district": "07",
+      "diversity": 0.412306
+    },
+    {
+      "state": "CO",
+      "district": "08",
+      "diversity": 0.581399
+    },
+    {
+      "state": "CT",
+      "district": "01",
+      "diversity": 0.614898
+    },
+    {
+      "state": "CT",
+      "district": "02",
+      "diversity": 0.377583
+    },
+    {
+      "state": "CT",
+      "district": "03",
+      "diversity": 0.582726
+    },
+    {
+      "state": "CT",
+      "district": "04",
+      "diversity": 0.609769
+    },
+    {
+      "state": "CT",
+      "district": "05",
+      "diversity": 0.547316
+    },
+    {
+      "state": "CT",
+      "district": "ZZ",
+      "diversity": 0.525828
+    },
+    {
+      "state": "DE",
+      "district": 1,
+      "diversity": 0.595379
+    },
+    {
+      "state": "FL",
+      "district": "01",
+      "diversity": 0.490446
+    },
+    {
+      "state": "FL",
+      "district": "02",
+      "diversity": 0.541148
+    },
+    {
+      "state": "FL",
+      "district": "03",
+      "diversity": 0.537615
+    },
+    {
+      "state": "FL",
+      "district": "04",
+      "diversity": 0.621438
+    },
+    {
+      "state": "FL",
+      "district": "05",
+      "diversity": 0.543832
+    },
+    {
+      "state": "FL",
+      "district": "06",
+      "diversity": 0.463496
+    },
+    {
+      "state": "FL",
+      "district": "07",
+      "diversity": 0.56888
+    },
+    {
+      "state": "FL",
+      "district": "08",
+      "diversity": 0.466568
+    },
+    {
+      "state": "FL",
+      "district": "09",
+      "diversity": 0.629213
+    },
+    {
+      "state": "FL",
+      "district": "10",
+      "diversity": 0.720968
+    },
+    {
+      "state": "FL",
+      "district": "11",
+      "diversity": 0.594472
+    },
+    {
+      "state": "FL",
+      "district": "12",
+      "diversity": 0.411597
+    },
+    {
+      "state": "FL",
+      "district": "13",
+      "diversity": 0.432585
+    },
+    {
+      "state": "FL",
+      "district": "14",
+      "diversity": 0.675227
+    },
+    {
+      "state": "FL",
+      "district": "15",
+      "diversity": 0.652612
+    },
+    {
+      "state": "FL",
+      "district": "16",
+      "diversity": 0.578864
+    },
+    {
+      "state": "FL",
+      "district": "17",
+      "diversity": 0.40679
+    },
+    {
+      "state": "FL",
+      "district": "18",
+      "diversity": 0.605371
+    },
+    {
+      "state": "FL",
+      "district": "19",
+      "diversity": 0.473924
+    },
+    {
+      "state": "FL",
+      "district": "20",
+      "diversity": 0.663457
+    },
+    {
+      "state": "FL",
+      "district": "21",
+      "diversity": 0.545004
+    },
+    {
+      "state": "FL",
+      "district": "22",
+      "diversity": 0.644461
+    },
+    {
+      "state": "FL",
+      "district": "23",
+      "diversity": 0.62627
+    },
+    {
+      "state": "FL",
+      "district": "24",
+      "diversity": 0.668595
+    },
+    {
+      "state": "FL",
+      "district": "25",
+      "diversity": 0.681576
+    },
+    {
+      "state": "FL",
+      "district": "26",
+      "diversity": 0.427884
+    },
+    {
+      "state": "FL",
+      "district": "27",
+      "diversity": 0.427875
+    },
+    {
+      "state": "FL",
+      "district": "28",
+      "diversity": 0.440249
+    },
+    {
+      "state": "GA",
+      "district": "01",
+      "diversity": 0.58328
+    },
+    {
+      "state": "GA",
+      "district": "02",
+      "diversity": 0.594999
+    },
+    {
+      "state": "GA",
+      "district": "03",
+      "diversity": 0.529521
+    },
+    {
+      "state": "GA",
+      "district": "04",
+      "diversity": 0.641755
+    },
+    {
+      "state": "GA",
+      "district": "05",
+      "diversity": 0.628998
+    },
+    {
+      "state": "GA",
+      "district": "06",
+      "diversity": 0.560519
+    },
+    {
+      "state": "GA",
+      "district": "07",
+      "diversity": 0.755073
+    },
+    {
+      "state": "GA",
+      "district": "08",
+      "diversity": 0.568842
+    },
+    {
+      "state": "GA",
+      "district": "09",
+      "diversity": 0.544655
+    },
+    {
+      "state": "GA",
+      "district": "10",
+      "diversity": 0.538911
+    },
+    {
+      "state": "GA",
+      "district": "11",
+      "diversity": 0.574328
+    },
+    {
+      "state": "GA",
+      "district": "12",
+      "diversity": 0.593182
+    },
+    {
+      "state": "GA",
+      "district": "13",
+      "diversity": 0.545641
+    },
+    {
+      "state": "GA",
+      "district": "14",
+      "diversity": 0.497705
+    },
+    {
+      "state": "HI",
+      "district": "01",
+      "diversity": 0.684129
+    },
+    {
+      "state": "HI",
+      "district": "02",
+      "diversity": 0.783666
+    },
+    {
+      "state": "ID",
+      "district": "01",
+      "diversity": 0.343246
+    },
+    {
+      "state": "ID",
+      "district": "02",
+      "diversity": 0.373078
+    },
+    {
+      "state": "IL",
+      "district": "01",
+      "diversity": 0.611932
+    },
+    {
+      "state": "IL",
+      "district": "02",
+      "diversity": 0.644295
+    },
+    {
+      "state": "IL",
+      "district": "03",
+      "diversity": 0.620533
+    },
+    {
+      "state": "IL",
+      "district": "04",
+      "diversity": 0.506725
+    },
+    {
+      "state": "IL",
+      "district": "05",
+      "diversity": 0.468876
+    },
+    {
+      "state": "IL",
+      "district": "06",
+      "diversity": 0.461556
+    },
+    {
+      "state": "IL",
+      "district": "07",
+      "diversity": 0.698132
+    },
+    {
+      "state": "IL",
+      "district": "08",
+      "diversity": 0.62547
+    },
+    {
+      "state": "IL",
+      "district": "09",
+      "diversity": 0.599889
+    },
+    {
+      "state": "IL",
+      "district": "10",
+      "diversity": 0.597138
+    },
+    {
+      "state": "IL",
+      "district": "11",
+      "diversity": 0.554957
+    },
+    {
+      "state": "IL",
+      "district": "12",
+      "diversity": 0.241069
+    },
+    {
+      "state": "IL",
+      "district": "13",
+      "diversity": 0.53205
+    },
+    {
+      "state": "IL",
+      "district": "14",
+      "diversity": 0.590743
+    },
+    {
+      "state": "IL",
+      "district": "15",
+      "diversity": 0.196886
+    },
+    {
+      "state": "IL",
+      "district": "16",
+      "diversity": 0.291343
+    },
+    {
+      "state": "IL",
+      "district": "17",
+      "diversity": 0.501523
+    },
+    {
+      "state": "IL",
+      "district": "ZZ",
+      "diversity": 0.652999
+    },
+    {
+      "state": "IN",
+      "district": "01",
+      "diversity": 0.585599
+    },
+    {
+      "state": "IN",
+      "district": "02",
+      "diversity": 0.403189
+    },
+    {
+      "state": "IN",
+      "district": "03",
+      "diversity": 0.343177
+    },
+    {
+      "state": "IN",
+      "district": "04",
+      "diversity": 0.328145
+    },
+    {
+      "state": "IN",
+      "district": "05",
+      "diversity": 0.332631
+    },
+    {
+      "state": "IN",
+      "district": "06",
+      "diversity": 0.331799
+    },
+    {
+      "state": "IN",
+      "district": "07",
+      "diversity": 0.661975
+    },
+    {
+      "state": "IN",
+      "district": "08",
+      "diversity": 0.226992
+    },
+    {
+      "state": "IN",
+      "district": "09",
+      "diversity": 0.242262
+    },
+    {
+      "state": "IA",
+      "district": "01",
+      "diversity": 0.297384
+    },
+    {
+      "state": "IA",
+      "district": "02",
+      "diversity": 0.256522
+    },
+    {
+      "state": "IA",
+      "district": "03",
+      "diversity": 0.366317
+    },
+    {
+      "state": "IA",
+      "district": "04",
+      "diversity": 0.306473
+    },
+    {
+      "state": "KS",
+      "district": "01",
+      "diversity": 0.415779
+    },
+    {
+      "state": "KS",
+      "district": "02",
+      "diversity": 0.485526
+    },
+    {
+      "state": "KS",
+      "district": "03",
+      "diversity": 0.41986
+    },
+    {
+      "state": "KS",
+      "district": "04",
+      "diversity": 0.487727
+    },
+    {
+      "state": "KY",
+      "district": "01",
+      "diversity": 0.289908
+    },
+    {
+      "state": "KY",
+      "district": "02",
+      "diversity": 0.295024
+    },
+    {
+      "state": "KY",
+      "district": "03",
+      "diversity": 0.559799
+    },
+    {
+      "state": "KY",
+      "district": "04",
+      "diversity": 0.246115
+    },
+    {
+      "state": "KY",
+      "district": "05",
+      "diversity": 0.120674
+    },
+    {
+      "state": "KY",
+      "district": "06",
+      "diversity": 0.369398
+    },
+    {
+      "state": "LA",
+      "district": "01",
+      "diversity": 0.520728
+    },
+    {
+      "state": "LA",
+      "district": "02",
+      "diversity": 0.581118
+    },
+    {
+      "state": "LA",
+      "district": "03",
+      "diversity": 0.521772
+    },
+    {
+      "state": "LA",
+      "district": "04",
+      "diversity": 0.572098
+    },
+    {
+      "state": "LA",
+      "district": "05",
+      "diversity": 0.54785
+    },
+    {
+      "state": "LA",
+      "district": "06",
+      "diversity": 0.549348
+    },
+    {
+      "state": "ME",
+      "district": "01",
+      "diversity": 0.196807
+    },
+    {
+      "state": "ME",
+      "district": "02",
+      "diversity": 0.171861
+    },
+    {
+      "state": "MD",
+      "district": "01",
+      "diversity": 0.45418
+    },
+    {
+      "state": "MD",
+      "district": "02",
+      "diversity": 0.58281
+    },
+    {
+      "state": "MD",
+      "district": "03",
+      "diversity": 0.621202
+    },
+    {
+      "state": "MD",
+      "district": "04",
+      "diversity": 0.618945
+    },
+    {
+      "state": "MD",
+      "district": "05",
+      "diversity": 0.641273
+    },
+    {
+      "state": "MD",
+      "district": "06",
+      "diversity": 0.597941
+    },
+    {
+      "state": "MD",
+      "district": "07",
+      "diversity": 0.617285
+    },
+    {
+      "state": "MD",
+      "district": "08",
+      "diversity": 0.714136
+    },
+    {
+      "state": "MA",
+      "district": "01",
+      "diversity": 0.479086
+    },
+    {
+      "state": "MA",
+      "district": "02",
+      "diversity": 0.474752
+    },
+    {
+      "state": "MA",
+      "district": "03",
+      "diversity": 0.572464
+    },
+    {
+      "state": "MA",
+      "district": "04",
+      "diversity": 0.379677
+    },
+    {
+      "state": "MA",
+      "district": "05",
+      "diversity": 0.548608
+    },
+    {
+      "state": "MA",
+      "district": "06",
+      "diversity": 0.395164
+    },
+    {
+      "state": "MA",
+      "district": "07",
+      "diversity": 0.740177
+    },
+    {
+      "state": "MA",
+      "district": "08",
+      "diversity": 0.539875
+    },
+    {
+      "state": "MA",
+      "district": "09",
+      "diversity": 0.302186
+    },
+    {
+      "state": "MI",
+      "district": "01",
+      "diversity": 0.196771
+    },
+    {
+      "state": "MI",
+      "district": "02",
+      "diversity": 0.224917
+    },
+    {
+      "state": "MI",
+      "district": "03",
+      "diversity": 0.479866
+    },
+    {
+      "state": "MI",
+      "district": "04",
+      "diversity": 0.419295
+    },
+    {
+      "state": "MI",
+      "district": "05",
+      "diversity": 0.279371
+    },
+    {
+      "state": "MI",
+      "district": "06",
+      "diversity": 0.49541
+    },
+    {
+      "state": "MI",
+      "district": "07",
+      "diversity": 0.351014
+    },
+    {
+      "state": "MI",
+      "district": "08",
+      "diversity": 0.434409
+    },
+    {
+      "state": "MI",
+      "district": "09",
+      "diversity": 0.222434
+    },
+    {
+      "state": "MI",
+      "district": "10",
+      "diversity": 0.446122
+    },
+    {
+      "state": "MI",
+      "district": "11",
+      "diversity": 0.505166
+    },
+    {
+      "state": "MI",
+      "district": "12",
+      "diversity": 0.58828
+    },
+    {
+      "state": "MI",
+      "district": "13",
+      "diversity": 0.644221
+    },
+    {
+      "state": "MN",
+      "district": "01",
+      "diversity": 0.312373
+    },
+    {
+      "state": "MN",
+      "district": "02",
+      "diversity": 0.417144
+    },
+    {
+      "state": "MN",
+      "district": "03",
+      "diversity": 0.465819
+    },
+    {
+      "state": "MN",
+      "district": "04",
+      "diversity": 0.576655
+    },
+    {
+      "state": "MN",
+      "district": "05",
+      "diversity": 0.59487
+    },
+    {
+      "state": "MN",
+      "district": "06",
+      "diversity": 0.288812
+    },
+    {
+      "state": "MN",
+      "district": "07",
+      "diversity": 0.219326
+    },
+    {
+      "state": "MN",
+      "district": "08",
+      "diversity": 0.238718
+    },
+    {
+      "state": "MS",
+      "district": "01",
+      "diversity": 0.505456
+    },
+    {
+      "state": "MS",
+      "district": "02",
+      "diversity": 0.501775
+    },
+    {
+      "state": "MS",
+      "district": "03",
+      "diversity": 0.539549
+    },
+    {
+      "state": "MS",
+      "district": "04",
+      "diversity": 0.512237
+    },
+    {
+      "state": "MO",
+      "district": "01",
+      "diversity": 0.616764
+    },
+    {
+      "state": "MO",
+      "district": "02",
+      "diversity": 0.286864
+    },
+    {
+      "state": "MO",
+      "district": "03",
+      "diversity": 0.279294
+    },
+    {
+      "state": "MO",
+      "district": "04",
+      "diversity": 0.297944
+    },
+    {
+      "state": "MO",
+      "district": "05",
+      "diversity": 0.601482
+    },
+    {
+      "state": "MO",
+      "district": "06",
+      "diversity": 0.253388
+    },
+    {
+      "state": "MO",
+      "district": "07",
+      "diversity": 0.305909
+    },
+    {
+      "state": "MO",
+      "district": "08",
+      "diversity": 0.240025
+    },
+    {
+      "state": "MT",
+      "district": "01",
+      "diversity": 0.273894
+    },
+    {
+      "state": "MT",
+      "district": "02",
+      "diversity": 0.326236
+    },
+    {
+      "state": "NE",
+      "district": "01",
+      "diversity": 0.377595
+    },
+    {
+      "state": "NE",
+      "district": "02",
+      "diversity": 0.510411
+    },
+    {
+      "state": "NE",
+      "district": "03",
+      "diversity": 0.321492
+    },
+    {
+      "state": "NV",
+      "district": "01",
+      "diversity": 0.693577
+    },
+    {
+      "state": "NV",
+      "district": "02",
+      "diversity": 0.546393
+    },
+    {
+      "state": "NV",
+      "district": "03",
+      "diversity": 0.719624
+    },
+    {
+      "state": "NV",
+      "district": "04",
+      "diversity": 0.711161
+    },
+    {
+      "state": "NH",
+      "district": "01",
+      "diversity": 0.234468
+    },
+    {
+      "state": "NH",
+      "district": "02",
+      "diversity": 0.236858
+    },
+    {
+      "state": "NJ",
+      "district": "01",
+      "diversity": 0.592748
+    },
+    {
+      "state": "NJ",
+      "district": "02",
+      "diversity": 0.548904
+    },
+    {
+      "state": "NJ",
+      "district": "03",
+      "diversity": 0.56303
+    },
+    {
+      "state": "NJ",
+      "district": "04",
+      "diversity": 0.339865
+    },
+    {
+      "state": "NJ",
+      "district": "05",
+      "diversity": 0.594052
+    },
+    {
+      "state": "NJ",
+      "district": "06",
+      "diversity": 0.71645
+    },
+    {
+      "state": "NJ",
+      "district": "07",
+      "diversity": 0.477053
+    },
+    {
+      "state": "NJ",
+      "district": "08",
+      "diversity": 0.656569
+    },
+    {
+      "state": "NJ",
+      "district": "09",
+      "diversity": 0.666047
+    },
+    {
+      "state": "NJ",
+      "district": "10",
+      "diversity": 0.677576
+    },
+    {
+      "state": "NJ",
+      "district": "11",
+      "diversity": 0.573994
+    },
+    {
+      "state": "NJ",
+      "district": "12",
+      "diversity": 0.730646
+    },
+    {
+      "state": "NM",
+      "district": "01",
+      "diversity": 0.622892
+    },
+    {
+      "state": "NM",
+      "district": "02",
+      "diversity": 0.548305
+    },
+    {
+      "state": "NM",
+      "district": "03",
+      "diversity": 0.669767
+    },
+    {
+      "state": "NY",
+      "district": "01",
+      "diversity": 0.457845
+    },
+    {
+      "state": "NY",
+      "district": "02",
+      "diversity": 0.600623
+    },
+    {
+      "state": "NY",
+      "district": "03",
+      "diversity": 0.613978
+    },
+    {
+      "state": "NY",
+      "district": "04",
+      "diversity": 0.661165
+    },
+    {
+      "state": "NY",
+      "district": "05",
+      "diversity": 0.747339
+    },
+    {
+      "state": "NY",
+      "district": "06",
+      "diversity": 0.679047
+    },
+    {
+      "state": "NY",
+      "district": "07",
+      "diversity": 0.715216
+    },
+    {
+      "state": "NY",
+      "district": "08",
+      "diversity": 0.710967
+    },
+    {
+      "state": "NY",
+      "district": "09",
+      "diversity": 0.70689
+    },
+    {
+      "state": "NY",
+      "district": "10",
+      "diversity": 0.676057
+    },
+    {
+      "state": "NY",
+      "district": "11",
+      "diversity": 0.654477
+    },
+    {
+      "state": "NY",
+      "district": "12",
+      "diversity": 0.539601
+    },
+    {
+      "state": "NY",
+      "district": "13",
+      "diversity": 0.635229
+    },
+    {
+      "state": "NY",
+      "district": "14",
+      "diversity": 0.666556
+    },
+    {
+      "state": "NY",
+      "district": "15",
+      "diversity": 0.600735
+    },
+    {
+      "state": "NY",
+      "district": "16",
+      "diversity": 0.710677
+    },
+    {
+      "state": "NY",
+      "district": "17",
+      "diversity": 0.536376
+    },
+    {
+      "state": "NY",
+      "district": "18",
+      "diversity": 0.55844
+    },
+    {
+      "state": "NY",
+      "district": "19",
+      "diversity": 0.347582
+    },
+    {
+      "state": "NY",
+      "district": "20",
+      "diversity": 0.457035
+    },
+    {
+      "state": "NY",
+      "district": "21",
+      "diversity": 0.238274
+    },
+    {
+      "state": "NY",
+      "district": "22",
+      "diversity": 0.408974
+    },
+    {
+      "state": "NY",
+      "district": "23",
+      "diversity": 0.221975
+    },
+    {
+      "state": "NY",
+      "district": "24",
+      "diversity": 0.234894
+    },
+    {
+      "state": "NY",
+      "district": "25",
+      "diversity": 0.515268
+    },
+    {
+      "state": "NY",
+      "district": "26",
+      "diversity": 0.54003
+    },
+    {
+      "state": "NC",
+      "district": "01",
+      "diversity": 0.60653
+    },
+    {
+      "state": "NC",
+      "district": "02",
+      "diversity": 0.620529
+    },
+    {
+      "state": "NC",
+      "district": "03",
+      "diversity": 0.542187
+    },
+    {
+      "state": "NC",
+      "district": "04",
+      "diversity": 0.639578
+    },
+    {
+      "state": "NC",
+      "district": "05",
+      "diversity": 0.444979
+    },
+    {
+      "state": "NC",
+      "district": "06",
+      "diversity": 0.632635
+    },
+    {
+      "state": "NC",
+      "district": "07",
+      "diversity": 0.575863
+    },
+    {
+      "state": "NC",
+      "district": "08",
+      "diversity": 0.48297
+    },
+    {
+      "state": "NC",
+      "district": "09",
+      "diversity": 0.62105
+    },
+    {
+      "state": "NC",
+      "district": "10",
+      "diversity": 0.409125
+    },
+    {
+      "state": "NC",
+      "district": "11",
+      "diversity": 0.314764
+    },
+    {
+      "state": "NC",
+      "district": "12",
+      "diversity": 0.691862
+    },
+    {
+      "state": "NC",
+      "district": "13",
+      "diversity": 0.591981
+    },
+    {
+      "state": "NC",
+      "district": "14",
+      "diversity": 0.615783
+    },
+    {
+      "state": "ND",
+      "district": 1,
+      "diversity": 0.326022
+    },
+    {
+      "state": "OH",
+      "district": "01",
+      "diversity": 0.501586
+    },
+    {
+      "state": "OH",
+      "district": "02",
+      "diversity": 0.159445
+    },
+    {
+      "state": "OH",
+      "district": "03",
+      "diversity": 0.609927
+    },
+    {
+      "state": "OH",
+      "district": "04",
+      "diversity": 0.269039
+    },
+    {
+      "state": "OH",
+      "district": "05",
+      "diversity": 0.288882
+    },
+    {
+      "state": "OH",
+      "district": "06",
+      "diversity": 0.262793
+    },
+    {
+      "state": "OH",
+      "district": "07",
+      "diversity": 0.248687
+    },
+    {
+      "state": "OH",
+      "district": "08",
+      "diversity": 0.423892
+    },
+    {
+      "state": "OH",
+      "district": "09",
+      "diversity": 0.423518
+    },
+    {
+      "state": "OH",
+      "district": "10",
+      "diversity": 0.465017
+    },
+    {
+      "state": "OH",
+      "district": "11",
+      "diversity": 0.631515
+    },
+    {
+      "state": "OH",
+      "district": "12",
+      "diversity": 0.219986
+    },
+    {
+      "state": "OH",
+      "district": "13",
+      "diversity": 0.406529
+    },
+    {
+      "state": "OH",
+      "district": "14",
+      "diversity": 0.255366
+    },
+    {
+      "state": "OH",
+      "district": "15",
+      "diversity": 0.449246
+    },
+    {
+      "state": "OK",
+      "district": "01",
+      "diversity": 0.628939
+    },
+    {
+      "state": "OK",
+      "district": "02",
+      "diversity": 0.583526
+    },
+    {
+      "state": "OK",
+      "district": "03",
+      "diversity": 0.588242
+    },
+    {
+      "state": "OK",
+      "district": "04",
+      "diversity": 0.558597
+    },
+    {
+      "state": "OK",
+      "district": "05",
+      "diversity": 0.580207
+    },
+    {
+      "state": "OR",
+      "district": "01",
+      "diversity": 0.532404
+    },
+    {
+      "state": "OR",
+      "district": "02",
+      "diversity": 0.404478
+    },
+    {
+      "state": "OR",
+      "district": "03",
+      "diversity": 0.550961
+    },
+    {
+      "state": "OR",
+      "district": "04",
+      "diversity": 0.36189
+    },
+    {
+      "state": "OR",
+      "district": "05",
+      "diversity": 0.376754
+    },
+    {
+      "state": "OR",
+      "district": "06",
+      "diversity": 0.502887
+    },
+    {
+      "state": "PA",
+      "district": "01",
+      "diversity": 0.351437
+    },
+    {
+      "state": "PA",
+      "district": "02",
+      "diversity": 0.730755
+    },
+    {
+      "state": "PA",
+      "district": "03",
+      "diversity": 0.631936
+    },
+    {
+      "state": "PA",
+      "district": "04",
+      "diversity": 0.406447
+    },
+    {
+      "state": "PA",
+      "district": "05",
+      "diversity": 0.590837
+    },
+    {
+      "state": "PA",
+      "district": "06",
+      "diversity": 0.486722
+    },
+    {
+      "state": "PA",
+      "district": "07",
+      "diversity": 0.487083
+    },
+    {
+      "state": "PA",
+      "district": "08",
+      "diversity": 0.420284
+    },
+    {
+      "state": "PA",
+      "district": "09",
+      "diversity": 0.227679
+    },
+    {
+      "state": "PA",
+      "district": "10",
+      "diversity": 0.470555
+    },
+    {
+      "state": "PA",
+      "district": "11",
+      "diversity": 0.319676
+    },
+    {
+      "state": "PA",
+      "district": "12",
+      "diversity": 0.440669
+    },
+    {
+      "state": "PA",
+      "district": "13",
+      "diversity": 0.193005
+    },
+    {
+      "state": "PA",
+      "district": "14",
+      "diversity": 0.179791
+    },
+    {
+      "state": "PA",
+      "district": "15",
+      "diversity": 0.180237
+    },
+    {
+      "state": "PA",
+      "district": "16",
+      "diversity": 0.238003
+    },
+    {
+      "state": "PA",
+      "district": "17",
+      "diversity": 0.320905
+    },
+    {
+      "state": "RI",
+      "district": "01",
+      "diversity": 0.539039
+    },
+    {
+      "state": "RI",
+      "district": "02",
+      "diversity": 0.444733
+    },
+    {
+      "state": "SC",
+      "district": "01",
+      "diversity": 0.500545
+    },
+    {
+      "state": "SC",
+      "district": "02",
+      "diversity": 0.561282
+    },
+    {
+      "state": "SC",
+      "district": "03",
+      "diversity": 0.45494
+    },
+    {
+      "state": "SC",
+      "district": "04",
+      "diversity": 0.540383
+    },
+    {
+      "state": "SC",
+      "district": "05",
+      "diversity": 0.529119
+    },
+    {
+      "state": "SC",
+      "district": "06",
+      "diversity": 0.603162
+    },
+    {
+      "state": "SC",
+      "district": "07",
+      "diversity": 0.522834
+    },
+    {
+      "state": "SD",
+      "district": 1,
+      "diversity": 0.355457
+    },
+    {
+      "state": "TN",
+      "district": "01",
+      "diversity": 0.223201
+    },
+    {
+      "state": "TN",
+      "district": "02",
+      "diversity": 0.316218
+    },
+    {
+      "state": "TN",
+      "district": "03",
+      "diversity": 0.380426
+    },
+    {
+      "state": "TN",
+      "district": "04",
+      "diversity": 0.406969
+    },
+    {
+      "state": "TN",
+      "district": "05",
+      "diversity": 0.487194
+    },
+    {
+      "state": "TN",
+      "district": "06",
+      "diversity": 0.388193
+    },
+    {
+      "state": "TN",
+      "district": "07",
+      "diversity": 0.48329
+    },
+    {
+      "state": "TN",
+      "district": "08",
+      "diversity": 0.442019
+    },
+    {
+      "state": "TN",
+      "district": "09",
+      "diversity": 0.566546
+    },
+    {
+      "state": "TX",
+      "district": "01",
+      "diversity": 0.578604
+    },
+    {
+      "state": "TX",
+      "district": "02",
+      "diversity": 0.650459
+    },
+    {
+      "state": "TX",
+      "district": "03",
+      "diversity": 0.63474
+    },
+    {
+      "state": "TX",
+      "district": "04",
+      "diversity": 0.600795
+    },
+    {
+      "state": "TX",
+      "district": "05",
+      "diversity": 0.662006
+    },
+    {
+      "state": "TX",
+      "district": "06",
+      "diversity": 0.662948
+    },
+    {
+      "state": "TX",
+      "district": "07",
+      "diversity": 0.75506
+    },
+    {
+      "state": "TX",
+      "district": "08",
+      "diversity": 0.670273
+    },
+    {
+      "state": "TX",
+      "district": "09",
+      "diversity": 0.690897
+    },
+    {
+      "state": "TX",
+      "district": "10",
+      "diversity": 0.613881
+    },
+    {
+      "state": "TX",
+      "district": "11",
+      "diversity": 0.645475
+    },
+    {
+      "state": "TX",
+      "district": "12",
+      "diversity": 0.621126
+    },
+    {
+      "state": "TX",
+      "district": "13",
+      "diversity": 0.574571
+    },
+    {
+      "state": "TX",
+      "district": "14",
+      "diversity": 0.633254
+    },
+    {
+      "state": "TX",
+      "district": "15",
+      "diversity": 0.312859
+    },
+    {
+      "state": "TX",
+      "district": "16",
+      "diversity": 0.299162
+    },
+    {
+      "state": "TX",
+      "district": "17",
+      "diversity": 0.631281
+    },
+    {
+      "state": "TX",
+      "district": "18",
+      "diversity": 0.679587
+    },
+    {
+      "state": "TX",
+      "district": "19",
+      "diversity": 0.596343
+    },
+    {
+      "state": "TX",
+      "district": "20",
+      "diversity": 0.471383
+    },
+    {
+      "state": "TX",
+      "district": "21",
+      "diversity": 0.554141
+    },
+    {
+      "state": "TX",
+      "district": "22",
+      "diversity": 0.714651
+    },
+    {
+      "state": "TX",
+      "district": "23",
+      "diversity": 0.51852
+    },
+    {
+      "state": "TX",
+      "district": "24",
+      "diversity": 0.588873
+    },
+    {
+      "state": "TX",
+      "district": "25",
+      "diversity": 0.593899
+    },
+    {
+      "state": "TX",
+      "district": "26",
+      "diversity": 0.62158
+    },
+    {
+      "state": "TX",
+      "district": "27",
+      "diversity": 0.566594
+    },
+    {
+      "state": "TX",
+      "district": "28",
+      "diversity": 0.393943
+    },
+    {
+      "state": "TX",
+      "district": "29",
+      "diversity": 0.424056
+    },
+    {
+      "state": "TX",
+      "district": "30",
+      "diversity": 0.67797
+    },
+    {
+      "state": "TX",
+      "district": "31",
+      "diversity": 0.589439
+    },
+    {
+      "state": "TX",
+      "district": "32",
+      "diversity": 0.715517
+    },
+    {
+      "state": "TX",
+      "district": "33",
+      "diversity": 0.609042
+    },
+    {
+      "state": "TX",
+      "district": "34",
+      "diversity": 0.180144
+    },
+    {
+      "state": "TX",
+      "district": "35",
+      "diversity": 0.612518
+    },
+    {
+      "state": "TX",
+      "district": "36",
+      "diversity": 0.645919
+    },
+    {
+      "state": "TX",
+      "district": "37",
+      "diversity": 0.635495
+    },
+    {
+      "state": "TX",
+      "district": "38",
+      "diversity": 0.663835
+    },
+    {
+      "state": "UT",
+      "district": "01",
+      "diversity": 0.358255
+    },
+    {
+      "state": "UT",
+      "district": "02",
+      "diversity": 0.464912
+    },
+    {
+      "state": "UT",
+      "district": "03",
+      "diversity": 0.375975
+    },
+    {
+      "state": "UT",
+      "district": "04",
+      "diversity": 0.421744
+    },
+    {
+      "state": "VT",
+      "district": 1,
+      "diversity": 0.201929
+    },
+    {
+      "state": "VA",
+      "district": "01",
+      "diversity": 0.476901
+    },
+    {
+      "state": "VA",
+      "district": "02",
+      "diversity": 0.595531
+    },
+    {
+      "state": "VA",
+      "district": "03",
+      "diversity": 0.650062
+    },
+    {
+      "state": "VA",
+      "district": "04",
+      "diversity": 0.644038
+    },
+    {
+      "state": "VA",
+      "district": "05",
+      "diversity": 0.488877
+    },
+    {
+      "state": "VA",
+      "district": "06",
+      "diversity": 0.375021
+    },
+    {
+      "state": "VA",
+      "district": "07",
+      "diversity": 0.665803
+    },
+    {
+      "state": "VA",
+      "district": "08",
+      "diversity": 0.681106
+    },
+    {
+      "state": "VA",
+      "district": "09",
+      "diversity": 0.256023
+    },
+    {
+      "state": "VA",
+      "district": "10",
+      "diversity": 0.657551
+    },
+    {
+      "state": "VA",
+      "district": "11",
+      "diversity": 0.67893
+    },
+    {
+      "state": "WA",
+      "district": "01",
+      "diversity": 0.592717
+    },
+    {
+      "state": "WA",
+      "district": "02",
+      "diversity": 0.497504
+    },
+    {
+      "state": "WA",
+      "district": "03",
+      "diversity": 0.416458
+    },
+    {
+      "state": "WA",
+      "district": "04",
+      "diversity": 0.578064
+    },
+    {
+      "state": "WA",
+      "district": "05",
+      "diversity": 0.369924
+    },
+    {
+      "state": "WA",
+      "district": "06",
+      "diversity": 0.460013
+    },
+    {
+      "state": "WA",
+      "district": "07",
+      "diversity": 0.571872
+    },
+    {
+      "state": "WA",
+      "district": "08",
+      "diversity": 0.495768
+    },
+    {
+      "state": "WA",
+      "district": "09",
+      "diversity": 0.739711
+    },
+    {
+      "state": "WA",
+      "district": "10",
+      "diversity": 0.599075
+    },
+    {
+      "state": "WV",
+      "district": "01",
+      "diversity": 0.188801
+    },
+    {
+      "state": "WV",
+      "district": "02",
+      "diversity": 0.213319
+    },
+    {
+      "state": "WI",
+      "district": "01",
+      "diversity": 0.428253
+    },
+    {
+      "state": "WI",
+      "district": "02",
+      "diversity": 0.360386
+    },
+    {
+      "state": "WI",
+      "district": "03",
+      "diversity": 0.202443
+    },
+    {
+      "state": "WI",
+      "district": "04",
+      "diversity": 0.69648
+    },
+    {
+      "state": "WI",
+      "district": "05",
+      "diversity": 0.256922
+    },
+    {
+      "state": "WI",
+      "district": "06",
+      "diversity": 0.253155
+    },
+    {
+      "state": "WI",
+      "district": "07",
+      "diversity": 0.195553
+    },
+    {
+      "state": "WI",
+      "district": "08",
+      "diversity": 0.291202
+    },
+    {
+      "state": "WY",
+      "district": 1,
+      "diversity": 0.324015
+    }
+  ],
+  "blind_stats": {
+    "mean": 0.5214,
+    "median": 0.5549,
+    "std": 0.1469,
+    "n": 435
+  },
+  "enacted_stats": {
+    "mean": 0.5109,
+    "median": 0.5422,
+    "std": 0.1463,
+    "n": 437
+  },
+  "errors": []
+}

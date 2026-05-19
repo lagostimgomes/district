@@ -1,0 +1,3047 @@
+{
+  "AL": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.1775,
+        "lean": "R",
+        "margin": 65,
+        "label": "R+65"
+      },
+      "1": {
+        "harris_pct": 0.324,
+        "lean": "R",
+        "margin": 35,
+        "label": "R+35"
+      },
+      "2": {
+        "harris_pct": 0.3457,
+        "lean": "R",
+        "margin": 31,
+        "label": "R+31"
+      },
+      "3": {
+        "harris_pct": 0.3098,
+        "lean": "R",
+        "margin": 38,
+        "label": "R+38"
+      },
+      "4": {
+        "harris_pct": 0.3499,
+        "lean": "R",
+        "margin": 30,
+        "label": "R+30"
+      },
+      "5": {
+        "harris_pct": 0.2958,
+        "lean": "R",
+        "margin": 41,
+        "label": "R+41"
+      },
+      "6": {
+        "harris_pct": 0.4713,
+        "lean": "R",
+        "margin": 6,
+        "label": "R+6"
+      }
+    },
+    "D": 0,
+    "R": 7
+  },
+  "AR": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4059,
+        "lean": "R",
+        "margin": 19,
+        "label": "R+19"
+      },
+      "1": {
+        "harris_pct": 0.2847,
+        "lean": "R",
+        "margin": 43,
+        "label": "R+43"
+      },
+      "2": {
+        "harris_pct": 0.2631,
+        "lean": "R",
+        "margin": 47,
+        "label": "R+47"
+      },
+      "3": {
+        "harris_pct": 0.338,
+        "lean": "R",
+        "margin": 32,
+        "label": "R+32"
+      }
+    },
+    "D": 0,
+    "R": 4
+  },
+  "AZ": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4143,
+        "lean": "R",
+        "margin": 17,
+        "label": "R+17"
+      },
+      "1": {
+        "harris_pct": 0.3851,
+        "lean": "R",
+        "margin": 23,
+        "label": "R+23"
+      },
+      "2": {
+        "harris_pct": 0.6655,
+        "lean": "D",
+        "margin": 33,
+        "label": "D+33"
+      },
+      "3": {
+        "harris_pct": 0.3979,
+        "lean": "R",
+        "margin": 20,
+        "label": "R+20"
+      },
+      "4": {
+        "harris_pct": 0.58,
+        "lean": "D",
+        "margin": 16,
+        "label": "D+16"
+      },
+      "5": {
+        "harris_pct": 0.4437,
+        "lean": "R",
+        "margin": 11,
+        "label": "R+11"
+      },
+      "6": {
+        "harris_pct": 0.4781,
+        "lean": "R",
+        "margin": 4,
+        "label": "R+4"
+      },
+      "7": {
+        "harris_pct": 0.3856,
+        "lean": "R",
+        "margin": 23,
+        "label": "R+23"
+      },
+      "8": {
+        "harris_pct": 0.5894,
+        "lean": "D",
+        "margin": 18,
+        "label": "D+18"
+      }
+    },
+    "D": 3,
+    "R": 6
+  },
+  "CA": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.6631,
+        "lean": "D",
+        "margin": 33,
+        "label": "D+33"
+      },
+      "1": {
+        "harris_pct": 0.7121,
+        "lean": "D",
+        "margin": 42,
+        "label": "D+42"
+      },
+      "2": {
+        "harris_pct": 0.6028,
+        "lean": "D",
+        "margin": 21,
+        "label": "D+21"
+      },
+      "3": {
+        "harris_pct": 0.58,
+        "lean": "D",
+        "margin": 16,
+        "label": "D+16"
+      },
+      "4": {
+        "harris_pct": 0.6799,
+        "lean": "D",
+        "margin": 36,
+        "label": "D+36"
+      },
+      "5": {
+        "harris_pct": 0.504,
+        "lean": "D",
+        "margin": 1,
+        "label": "D+1"
+      },
+      "6": {
+        "harris_pct": 0.5651,
+        "lean": "D",
+        "margin": 13,
+        "label": "D+13"
+      },
+      "7": {
+        "harris_pct": 0.7394,
+        "lean": "D",
+        "margin": 48,
+        "label": "D+48"
+      },
+      "8": {
+        "harris_pct": 0.6911,
+        "lean": "D",
+        "margin": 38,
+        "label": "D+38"
+      },
+      "9": {
+        "harris_pct": 0.5055,
+        "lean": "D",
+        "margin": 1,
+        "label": "D+1"
+      },
+      "10": {
+        "harris_pct": 0.4306,
+        "lean": "R",
+        "margin": 14,
+        "label": "R+14"
+      },
+      "11": {
+        "harris_pct": 0.6252,
+        "lean": "D",
+        "margin": 25,
+        "label": "D+25"
+      },
+      "12": {
+        "harris_pct": 0.5683,
+        "lean": "D",
+        "margin": 14,
+        "label": "D+14"
+      },
+      "13": {
+        "harris_pct": 0.5214,
+        "lean": "D",
+        "margin": 4,
+        "label": "D+4"
+      },
+      "14": {
+        "harris_pct": 0.4318,
+        "lean": "R",
+        "margin": 14,
+        "label": "R+14"
+      },
+      "15": {
+        "harris_pct": 0.6081,
+        "lean": "D",
+        "margin": 22,
+        "label": "D+22"
+      },
+      "16": {
+        "harris_pct": 0.8388,
+        "lean": "D",
+        "margin": 68,
+        "label": "D+68"
+      },
+      "17": {
+        "harris_pct": 0.712,
+        "lean": "D",
+        "margin": 42,
+        "label": "D+42"
+      },
+      "18": {
+        "harris_pct": 0.7231,
+        "lean": "D",
+        "margin": 45,
+        "label": "D+45"
+      },
+      "19": {
+        "harris_pct": 0.441,
+        "lean": "R",
+        "margin": 12,
+        "label": "R+12"
+      },
+      "20": {
+        "harris_pct": 0.8298,
+        "lean": "D",
+        "margin": 66,
+        "label": "D+66"
+      },
+      "21": {
+        "harris_pct": 0.4291,
+        "lean": "R",
+        "margin": 14,
+        "label": "R+14"
+      },
+      "22": {
+        "harris_pct": 0.5562,
+        "lean": "D",
+        "margin": 11,
+        "label": "D+11"
+      },
+      "23": {
+        "harris_pct": 0.5219,
+        "lean": "D",
+        "margin": 4,
+        "label": "D+4"
+      },
+      "24": {
+        "harris_pct": 0.7244,
+        "lean": "D",
+        "margin": 45,
+        "label": "D+45"
+      },
+      "25": {
+        "harris_pct": 0.7876,
+        "lean": "D",
+        "margin": 58,
+        "label": "D+58"
+      },
+      "26": {
+        "harris_pct": 0.5394,
+        "lean": "D",
+        "margin": 8,
+        "label": "D+8"
+      },
+      "27": {
+        "harris_pct": 0.6576,
+        "lean": "D",
+        "margin": 32,
+        "label": "D+32"
+      },
+      "28": {
+        "harris_pct": 0.4088,
+        "lean": "R",
+        "margin": 18,
+        "label": "R+18"
+      },
+      "29": {
+        "harris_pct": 0.5715,
+        "lean": "D",
+        "margin": 14,
+        "label": "D+14"
+      },
+      "30": {
+        "harris_pct": 0.4509,
+        "lean": "R",
+        "margin": 10,
+        "label": "R+10"
+      },
+      "31": {
+        "harris_pct": 0.5509,
+        "lean": "D",
+        "margin": 10,
+        "label": "D+10"
+      },
+      "32": {
+        "harris_pct": 0.5138,
+        "lean": "D",
+        "margin": 3,
+        "label": "D+3"
+      },
+      "33": {
+        "harris_pct": 0.6404,
+        "lean": "D",
+        "margin": 28,
+        "label": "D+28"
+      },
+      "34": {
+        "harris_pct": 0.4657,
+        "lean": "R",
+        "margin": 7,
+        "label": "R+7"
+      },
+      "35": {
+        "harris_pct": 0.529,
+        "lean": "D",
+        "margin": 6,
+        "label": "D+6"
+      },
+      "36": {
+        "harris_pct": 0.563,
+        "lean": "D",
+        "margin": 13,
+        "label": "D+13"
+      },
+      "37": {
+        "harris_pct": 0.5389,
+        "lean": "D",
+        "margin": 8,
+        "label": "D+8"
+      },
+      "38": {
+        "harris_pct": 0.6631,
+        "lean": "D",
+        "margin": 33,
+        "label": "D+33"
+      },
+      "39": {
+        "harris_pct": 0.4079,
+        "lean": "R",
+        "margin": 18,
+        "label": "R+18"
+      },
+      "40": {
+        "harris_pct": 0.6697,
+        "lean": "D",
+        "margin": 34,
+        "label": "D+34"
+      },
+      "41": {
+        "harris_pct": 0.4424,
+        "lean": "R",
+        "margin": 12,
+        "label": "R+12"
+      },
+      "42": {
+        "harris_pct": 0.6259,
+        "lean": "D",
+        "margin": 25,
+        "label": "D+25"
+      },
+      "43": {
+        "harris_pct": 0.8177,
+        "lean": "D",
+        "margin": 64,
+        "label": "D+64"
+      },
+      "44": {
+        "harris_pct": 0.7522,
+        "lean": "D",
+        "margin": 50,
+        "label": "D+50"
+      },
+      "45": {
+        "harris_pct": 0.7315,
+        "lean": "D",
+        "margin": 46,
+        "label": "D+46"
+      },
+      "46": {
+        "harris_pct": 0.6568,
+        "lean": "D",
+        "margin": 31,
+        "label": "D+31"
+      },
+      "47": {
+        "harris_pct": 0.5236,
+        "lean": "D",
+        "margin": 5,
+        "label": "D+5"
+      },
+      "48": {
+        "harris_pct": 0.604,
+        "lean": "D",
+        "margin": 21,
+        "label": "D+21"
+      },
+      "49": {
+        "harris_pct": 0.7327,
+        "lean": "D",
+        "margin": 47,
+        "label": "D+47"
+      },
+      "50": {
+        "harris_pct": 0.8209,
+        "lean": "D",
+        "margin": 64,
+        "label": "D+64"
+      },
+      "51": {
+        "harris_pct": 0.5926,
+        "lean": "D",
+        "margin": 19,
+        "label": "D+19"
+      }
+    },
+    "D": 43,
+    "R": 9
+  },
+  "CO": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5685,
+        "lean": "D",
+        "margin": 14,
+        "label": "D+14"
+      },
+      "1": {
+        "harris_pct": 0.6744,
+        "lean": "D",
+        "margin": 35,
+        "label": "D+35"
+      },
+      "2": {
+        "harris_pct": 0.4409,
+        "lean": "R",
+        "margin": 12,
+        "label": "R+12"
+      },
+      "3": {
+        "harris_pct": 0.4829,
+        "lean": "R",
+        "margin": 3,
+        "label": "R+3"
+      },
+      "4": {
+        "harris_pct": 0.4403,
+        "lean": "R",
+        "margin": 12,
+        "label": "R+12"
+      },
+      "5": {
+        "harris_pct": 0.661,
+        "lean": "D",
+        "margin": 32,
+        "label": "D+32"
+      },
+      "6": {
+        "harris_pct": 0.515,
+        "lean": "D",
+        "margin": 3,
+        "label": "D+3"
+      },
+      "7": {
+        "harris_pct": 0.738,
+        "lean": "D",
+        "margin": 48,
+        "label": "D+48"
+      }
+    },
+    "D": 5,
+    "R": 3
+  },
+  "CT": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5327,
+        "lean": "D",
+        "margin": 7,
+        "label": "D+7"
+      },
+      "1": {
+        "harris_pct": 0.6288,
+        "lean": "D",
+        "margin": 26,
+        "label": "D+26"
+      },
+      "2": {
+        "harris_pct": 0.5695,
+        "lean": "D",
+        "margin": 14,
+        "label": "D+14"
+      },
+      "3": {
+        "harris_pct": 0.5572,
+        "lean": "D",
+        "margin": 11,
+        "label": "D+11"
+      },
+      "4": {
+        "harris_pct": 0.5824,
+        "lean": "D",
+        "margin": 16,
+        "label": "D+16"
+      }
+    },
+    "D": 5,
+    "R": 0
+  },
+  "FL": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4617,
+        "lean": "R",
+        "margin": 8,
+        "label": "R+8"
+      },
+      "1": {
+        "harris_pct": 0.4358,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "2": {
+        "harris_pct": 0.3591,
+        "lean": "R",
+        "margin": 28,
+        "label": "R+28"
+      },
+      "3": {
+        "harris_pct": 0.5497,
+        "lean": "D",
+        "margin": 10,
+        "label": "D+10"
+      },
+      "4": {
+        "harris_pct": 0.2876,
+        "lean": "R",
+        "margin": 42,
+        "label": "R+42"
+      },
+      "5": {
+        "harris_pct": 0.4903,
+        "lean": "R",
+        "margin": 2,
+        "label": "R+2"
+      },
+      "6": {
+        "harris_pct": 0.3805,
+        "lean": "R",
+        "margin": 24,
+        "label": "R+24"
+      },
+      "7": {
+        "harris_pct": 0.348,
+        "lean": "R",
+        "margin": 30,
+        "label": "R+30"
+      },
+      "8": {
+        "harris_pct": 0.3962,
+        "lean": "R",
+        "margin": 21,
+        "label": "R+21"
+      },
+      "9": {
+        "harris_pct": 0.554,
+        "lean": "D",
+        "margin": 11,
+        "label": "D+11"
+      },
+      "10": {
+        "harris_pct": 0.4698,
+        "lean": "R",
+        "margin": 6,
+        "label": "R+6"
+      },
+      "11": {
+        "harris_pct": 0.3847,
+        "lean": "R",
+        "margin": 23,
+        "label": "R+23"
+      },
+      "12": {
+        "harris_pct": 0.3408,
+        "lean": "R",
+        "margin": 32,
+        "label": "R+32"
+      },
+      "13": {
+        "harris_pct": 0.346,
+        "lean": "R",
+        "margin": 31,
+        "label": "R+31"
+      },
+      "14": {
+        "harris_pct": 0.4032,
+        "lean": "R",
+        "margin": 19,
+        "label": "R+19"
+      },
+      "15": {
+        "harris_pct": 0.3338,
+        "lean": "R",
+        "margin": 33,
+        "label": "R+33"
+      },
+      "16": {
+        "harris_pct": 0.537,
+        "lean": "D",
+        "margin": 7,
+        "label": "D+7"
+      },
+      "17": {
+        "harris_pct": 0.6481,
+        "lean": "D",
+        "margin": 30,
+        "label": "D+30"
+      },
+      "18": {
+        "harris_pct": 0.5058,
+        "lean": "D",
+        "margin": 1,
+        "label": "D+1"
+      },
+      "19": {
+        "harris_pct": 0.3216,
+        "lean": "R",
+        "margin": 36,
+        "label": "R+36"
+      },
+      "20": {
+        "harris_pct": 0.3456,
+        "lean": "R",
+        "margin": 31,
+        "label": "R+31"
+      },
+      "21": {
+        "harris_pct": 0.5947,
+        "lean": "D",
+        "margin": 19,
+        "label": "D+19"
+      },
+      "22": {
+        "harris_pct": 0.4631,
+        "lean": "R",
+        "margin": 7,
+        "label": "R+7"
+      },
+      "23": {
+        "harris_pct": 0.4516,
+        "lean": "R",
+        "margin": 10,
+        "label": "R+10"
+      },
+      "24": {
+        "harris_pct": 0.4812,
+        "lean": "R",
+        "margin": 4,
+        "label": "R+4"
+      },
+      "25": {
+        "harris_pct": 0.4358,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "26": {
+        "harris_pct": 0.3527,
+        "lean": "R",
+        "margin": 29,
+        "label": "R+29"
+      },
+      "27": {
+        "harris_pct": 0.5934,
+        "lean": "D",
+        "margin": 19,
+        "label": "D+19"
+      }
+    },
+    "D": 7,
+    "R": 21
+  },
+  "GA": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3763,
+        "lean": "R",
+        "margin": 25,
+        "label": "R+25"
+      },
+      "1": {
+        "harris_pct": 0.5408,
+        "lean": "D",
+        "margin": 8,
+        "label": "D+8"
+      },
+      "2": {
+        "harris_pct": 0.6001,
+        "lean": "D",
+        "margin": 20,
+        "label": "D+20"
+      },
+      "3": {
+        "harris_pct": 0.6241,
+        "lean": "D",
+        "margin": 25,
+        "label": "D+25"
+      },
+      "4": {
+        "harris_pct": 0.4092,
+        "lean": "R",
+        "margin": 18,
+        "label": "R+18"
+      },
+      "5": {
+        "harris_pct": 0.3457,
+        "lean": "R",
+        "margin": 31,
+        "label": "R+31"
+      },
+      "6": {
+        "harris_pct": 0.3877,
+        "lean": "R",
+        "margin": 22,
+        "label": "R+22"
+      },
+      "7": {
+        "harris_pct": 0.7354,
+        "lean": "D",
+        "margin": 47,
+        "label": "D+47"
+      },
+      "8": {
+        "harris_pct": 0.2613,
+        "lean": "R",
+        "margin": 48,
+        "label": "R+48"
+      },
+      "9": {
+        "harris_pct": 0.4777,
+        "lean": "R",
+        "margin": 4,
+        "label": "R+4"
+      },
+      "10": {
+        "harris_pct": 0.4275,
+        "lean": "R",
+        "margin": 14,
+        "label": "R+14"
+      },
+      "11": {
+        "harris_pct": 0.2698,
+        "lean": "R",
+        "margin": 46,
+        "label": "R+46"
+      },
+      "12": {
+        "harris_pct": 0.56,
+        "lean": "D",
+        "margin": 12,
+        "label": "D+12"
+      },
+      "13": {
+        "harris_pct": 0.8329,
+        "lean": "D",
+        "margin": 67,
+        "label": "D+67"
+      }
+    },
+    "D": 6,
+    "R": 8
+  },
+  "HI": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.7295,
+        "lean": "D",
+        "margin": 46,
+        "label": "D+46"
+      },
+      "1": {
+        "harris_pct": 0.6622,
+        "lean": "D",
+        "margin": 32,
+        "label": "D+32"
+      }
+    },
+    "D": 2,
+    "R": 0
+  },
+  "IA": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4703,
+        "lean": "R",
+        "margin": 6,
+        "label": "R+6"
+      },
+      "1": {
+        "harris_pct": 0.4173,
+        "lean": "R",
+        "margin": 17,
+        "label": "R+17"
+      },
+      "2": {
+        "harris_pct": 0.3101,
+        "lean": "R",
+        "margin": 38,
+        "label": "R+38"
+      },
+      "3": {
+        "harris_pct": 0.4727,
+        "lean": "R",
+        "margin": 5,
+        "label": "R+5"
+      }
+    },
+    "D": 0,
+    "R": 4
+  },
+  "ID": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3076,
+        "lean": "R",
+        "margin": 38,
+        "label": "R+38"
+      },
+      "1": {
+        "harris_pct": 0.2628,
+        "lean": "R",
+        "margin": 47,
+        "label": "R+47"
+      }
+    },
+    "D": 0,
+    "R": 2
+  },
+  "IL": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4375,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "1": {
+        "harris_pct": 0.2248,
+        "lean": "R",
+        "margin": 55,
+        "label": "R+55"
+      },
+      "2": {
+        "harris_pct": 0.3846,
+        "lean": "R",
+        "margin": 23,
+        "label": "R+23"
+      },
+      "3": {
+        "harris_pct": 0.5593,
+        "lean": "D",
+        "margin": 12,
+        "label": "D+12"
+      },
+      "4": {
+        "harris_pct": 0.3753,
+        "lean": "R",
+        "margin": 25,
+        "label": "R+25"
+      },
+      "5": {
+        "harris_pct": 0.4844,
+        "lean": "R",
+        "margin": 3,
+        "label": "R+3"
+      },
+      "6": {
+        "harris_pct": 0.8083,
+        "lean": "D",
+        "margin": 62,
+        "label": "D+62"
+      },
+      "7": {
+        "harris_pct": 0.4433,
+        "lean": "R",
+        "margin": 11,
+        "label": "R+11"
+      },
+      "8": {
+        "harris_pct": 0.6054,
+        "lean": "D",
+        "margin": 21,
+        "label": "D+21"
+      },
+      "9": {
+        "harris_pct": 0.8189,
+        "lean": "D",
+        "margin": 64,
+        "label": "D+64"
+      },
+      "10": {
+        "harris_pct": 0.5457,
+        "lean": "D",
+        "margin": 9,
+        "label": "D+9"
+      },
+      "11": {
+        "harris_pct": 0.8316,
+        "lean": "D",
+        "margin": 66,
+        "label": "D+66"
+      },
+      "12": {
+        "harris_pct": 0.6432,
+        "lean": "D",
+        "margin": 29,
+        "label": "D+29"
+      },
+      "13": {
+        "harris_pct": 0.693,
+        "lean": "D",
+        "margin": 39,
+        "label": "D+39"
+      },
+      "14": {
+        "harris_pct": 0.5991,
+        "lean": "D",
+        "margin": 20,
+        "label": "D+20"
+      },
+      "15": {
+        "harris_pct": 0.4014,
+        "lean": "R",
+        "margin": 20,
+        "label": "R+20"
+      },
+      "16": {
+        "harris_pct": 0.5385,
+        "lean": "D",
+        "margin": 8,
+        "label": "D+8"
+      }
+    },
+    "D": 10,
+    "R": 7
+  },
+  "IN": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4188,
+        "lean": "R",
+        "margin": 16,
+        "label": "R+16"
+      },
+      "1": {
+        "harris_pct": 0.3103,
+        "lean": "R",
+        "margin": 38,
+        "label": "R+38"
+      },
+      "2": {
+        "harris_pct": 0.4087,
+        "lean": "R",
+        "margin": 18,
+        "label": "R+18"
+      },
+      "3": {
+        "harris_pct": 0.3509,
+        "lean": "R",
+        "margin": 30,
+        "label": "R+30"
+      },
+      "4": {
+        "harris_pct": 0.3619,
+        "lean": "R",
+        "margin": 28,
+        "label": "R+28"
+      },
+      "5": {
+        "harris_pct": 0.4801,
+        "lean": "R",
+        "margin": 4,
+        "label": "R+4"
+      },
+      "6": {
+        "harris_pct": 0.3222,
+        "lean": "R",
+        "margin": 36,
+        "label": "R+36"
+      },
+      "7": {
+        "harris_pct": 0.317,
+        "lean": "R",
+        "margin": 37,
+        "label": "R+37"
+      },
+      "8": {
+        "harris_pct": 0.3315,
+        "lean": "R",
+        "margin": 34,
+        "label": "R+34"
+      }
+    },
+    "D": 0,
+    "R": 9
+  },
+  "KS": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3682,
+        "lean": "R",
+        "margin": 26,
+        "label": "R+26"
+      },
+      "1": {
+        "harris_pct": 0.2236,
+        "lean": "R",
+        "margin": 55,
+        "label": "R+55"
+      },
+      "2": {
+        "harris_pct": 0.4818,
+        "lean": "R",
+        "margin": 4,
+        "label": "R+4"
+      },
+      "3": {
+        "harris_pct": 0.3178,
+        "lean": "R",
+        "margin": 36,
+        "label": "R+36"
+      }
+    },
+    "D": 0,
+    "R": 4
+  },
+  "KY": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3626,
+        "lean": "R",
+        "margin": 27,
+        "label": "R+27"
+      },
+      "1": {
+        "harris_pct": 0.2811,
+        "lean": "R",
+        "margin": 44,
+        "label": "R+44"
+      },
+      "2": {
+        "harris_pct": 0.2322,
+        "lean": "R",
+        "margin": 54,
+        "label": "R+54"
+      },
+      "3": {
+        "harris_pct": 0.2777,
+        "lean": "R",
+        "margin": 44,
+        "label": "R+44"
+      },
+      "4": {
+        "harris_pct": 0.5317,
+        "lean": "D",
+        "margin": 6,
+        "label": "D+6"
+      },
+      "5": {
+        "harris_pct": 0.1642,
+        "lean": "R",
+        "margin": 67,
+        "label": "R+67"
+      }
+    },
+    "D": 1,
+    "R": 5
+  },
+  "LA": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.2717,
+        "lean": "R",
+        "margin": 46,
+        "label": "R+46"
+      },
+      "1": {
+        "harris_pct": 0.5242,
+        "lean": "D",
+        "margin": 5,
+        "label": "D+5"
+      },
+      "2": {
+        "harris_pct": 0.3033,
+        "lean": "R",
+        "margin": 39,
+        "label": "R+39"
+      },
+      "3": {
+        "harris_pct": 0.2482,
+        "lean": "R",
+        "margin": 50,
+        "label": "R+50"
+      },
+      "4": {
+        "harris_pct": 0.398,
+        "lean": "R",
+        "margin": 20,
+        "label": "R+20"
+      },
+      "5": {
+        "harris_pct": 0.3178,
+        "lean": "R",
+        "margin": 36,
+        "label": "R+36"
+      }
+    },
+    "D": 1,
+    "R": 5
+  },
+  "MA": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.6092,
+        "lean": "D",
+        "margin": 22,
+        "label": "D+22"
+      },
+      "1": {
+        "harris_pct": 0.6358,
+        "lean": "D",
+        "margin": 27,
+        "label": "D+27"
+      },
+      "2": {
+        "harris_pct": 0.7008,
+        "lean": "D",
+        "margin": 40,
+        "label": "D+40"
+      },
+      "3": {
+        "harris_pct": 0.6562,
+        "lean": "D",
+        "margin": 31,
+        "label": "D+31"
+      },
+      "4": {
+        "harris_pct": 0.8162,
+        "lean": "D",
+        "margin": 63,
+        "label": "D+63"
+      },
+      "5": {
+        "harris_pct": 0.5485,
+        "lean": "D",
+        "margin": 10,
+        "label": "D+10"
+      },
+      "6": {
+        "harris_pct": 0.6122,
+        "lean": "D",
+        "margin": 22,
+        "label": "D+22"
+      },
+      "7": {
+        "harris_pct": 0.5948,
+        "lean": "D",
+        "margin": 19,
+        "label": "D+19"
+      },
+      "8": {
+        "harris_pct": 0.5911,
+        "lean": "D",
+        "margin": 18,
+        "label": "D+18"
+      }
+    },
+    "D": 9,
+    "R": 0
+  },
+  "MD": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.6019,
+        "lean": "D",
+        "margin": 20,
+        "label": "D+20"
+      },
+      "1": {
+        "harris_pct": 0.7393,
+        "lean": "D",
+        "margin": 48,
+        "label": "D+48"
+      },
+      "2": {
+        "harris_pct": 0.5119,
+        "lean": "D",
+        "margin": 2,
+        "label": "D+2"
+      },
+      "3": {
+        "harris_pct": 0.817,
+        "lean": "D",
+        "margin": 63,
+        "label": "D+63"
+      },
+      "4": {
+        "harris_pct": 0.8832,
+        "lean": "D",
+        "margin": 77,
+        "label": "D+77"
+      },
+      "5": {
+        "harris_pct": 0.7675,
+        "lean": "D",
+        "margin": 53,
+        "label": "D+53"
+      },
+      "6": {
+        "harris_pct": 0.4999,
+        "lean": "R",
+        "margin": 0,
+        "label": "R+0"
+      },
+      "7": {
+        "harris_pct": 0.5491,
+        "lean": "D",
+        "margin": 10,
+        "label": "D+10"
+      }
+    },
+    "D": 7,
+    "R": 1
+  },
+  "ME": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5432,
+        "lean": "D",
+        "margin": 9,
+        "label": "D+9"
+      },
+      "1": {
+        "harris_pct": 0.6287,
+        "lean": "D",
+        "margin": 26,
+        "label": "D+26"
+      }
+    },
+    "D": 2,
+    "R": 0
+  },
+  "MI": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3529,
+        "lean": "R",
+        "margin": 29,
+        "label": "R+29"
+      },
+      "1": {
+        "harris_pct": 0.6118,
+        "lean": "D",
+        "margin": 22,
+        "label": "D+22"
+      },
+      "2": {
+        "harris_pct": 0.385,
+        "lean": "R",
+        "margin": 23,
+        "label": "R+23"
+      },
+      "3": {
+        "harris_pct": 0.4429,
+        "lean": "R",
+        "margin": 11,
+        "label": "R+11"
+      },
+      "4": {
+        "harris_pct": 0.4972,
+        "lean": "R",
+        "margin": 1,
+        "label": "R+1"
+      },
+      "5": {
+        "harris_pct": 0.6011,
+        "lean": "D",
+        "margin": 20,
+        "label": "D+20"
+      },
+      "6": {
+        "harris_pct": 0.3945,
+        "lean": "R",
+        "margin": 21,
+        "label": "R+21"
+      },
+      "7": {
+        "harris_pct": 0.5382,
+        "lean": "D",
+        "margin": 8,
+        "label": "D+8"
+      },
+      "8": {
+        "harris_pct": 0.7326,
+        "lean": "D",
+        "margin": 47,
+        "label": "D+47"
+      },
+      "9": {
+        "harris_pct": 0.451,
+        "lean": "R",
+        "margin": 10,
+        "label": "R+10"
+      },
+      "10": {
+        "harris_pct": 0.4782,
+        "lean": "R",
+        "margin": 4,
+        "label": "R+4"
+      },
+      "11": {
+        "harris_pct": 0.4562,
+        "lean": "R",
+        "margin": 9,
+        "label": "R+9"
+      },
+      "12": {
+        "harris_pct": 0.5067,
+        "lean": "D",
+        "margin": 1,
+        "label": "D+1"
+      }
+    },
+    "D": 5,
+    "R": 8
+  },
+  "MN": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4233,
+        "lean": "R",
+        "margin": 15,
+        "label": "R+15"
+      },
+      "1": {
+        "harris_pct": 0.5485,
+        "lean": "D",
+        "margin": 10,
+        "label": "D+10"
+      },
+      "2": {
+        "harris_pct": 0.366,
+        "lean": "R",
+        "margin": 27,
+        "label": "R+27"
+      },
+      "3": {
+        "harris_pct": 0.7734,
+        "lean": "D",
+        "margin": 55,
+        "label": "D+55"
+      },
+      "4": {
+        "harris_pct": 0.5478,
+        "lean": "D",
+        "margin": 10,
+        "label": "D+10"
+      },
+      "5": {
+        "harris_pct": 0.595,
+        "lean": "D",
+        "margin": 19,
+        "label": "D+19"
+      },
+      "6": {
+        "harris_pct": 0.5996,
+        "lean": "D",
+        "margin": 20,
+        "label": "D+20"
+      },
+      "7": {
+        "harris_pct": 0.4087,
+        "lean": "R",
+        "margin": 18,
+        "label": "R+18"
+      }
+    },
+    "D": 5,
+    "R": 3
+  },
+  "MO": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4915,
+        "lean": "R",
+        "margin": 2,
+        "label": "R+2"
+      },
+      "1": {
+        "harris_pct": 0.3282,
+        "lean": "R",
+        "margin": 34,
+        "label": "R+34"
+      },
+      "2": {
+        "harris_pct": 0.5971,
+        "lean": "D",
+        "margin": 19,
+        "label": "D+19"
+      },
+      "3": {
+        "harris_pct": 0.2643,
+        "lean": "R",
+        "margin": 47,
+        "label": "R+47"
+      },
+      "4": {
+        "harris_pct": 0.2979,
+        "lean": "R",
+        "margin": 40,
+        "label": "R+40"
+      },
+      "5": {
+        "harris_pct": 0.1768,
+        "lean": "R",
+        "margin": 65,
+        "label": "R+65"
+      },
+      "6": {
+        "harris_pct": 0.7189,
+        "lean": "D",
+        "margin": 44,
+        "label": "D+44"
+      },
+      "7": {
+        "harris_pct": 0.3015,
+        "lean": "R",
+        "margin": 40,
+        "label": "R+40"
+      }
+    },
+    "D": 2,
+    "R": 6
+  },
+  "MS": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3956,
+        "lean": "R",
+        "margin": 21,
+        "label": "R+21"
+      },
+      "1": {
+        "harris_pct": 0.2566,
+        "lean": "R",
+        "margin": 49,
+        "label": "R+49"
+      },
+      "2": {
+        "harris_pct": 0.3162,
+        "lean": "R",
+        "margin": 37,
+        "label": "R+37"
+      },
+      "3": {
+        "harris_pct": 0.4919,
+        "lean": "R",
+        "margin": 2,
+        "label": "R+2"
+      }
+    },
+    "D": 0,
+    "R": 4
+  },
+  "MT": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4016,
+        "lean": "R",
+        "margin": 20,
+        "label": "R+20"
+      },
+      "1": {
+        "harris_pct": 0.3818,
+        "lean": "R",
+        "margin": 24,
+        "label": "R+24"
+      }
+    },
+    "D": 0,
+    "R": 2
+  },
+  "NC": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5804,
+        "lean": "D",
+        "margin": 16,
+        "label": "D+16"
+      },
+      "1": {
+        "harris_pct": 0.6187,
+        "lean": "D",
+        "margin": 24,
+        "label": "D+24"
+      },
+      "2": {
+        "harris_pct": 0.6353,
+        "lean": "D",
+        "margin": 27,
+        "label": "D+27"
+      },
+      "3": {
+        "harris_pct": 0.4346,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "4": {
+        "harris_pct": 0.3727,
+        "lean": "R",
+        "margin": 25,
+        "label": "R+25"
+      },
+      "5": {
+        "harris_pct": 0.3647,
+        "lean": "R",
+        "margin": 27,
+        "label": "R+27"
+      },
+      "6": {
+        "harris_pct": 0.3068,
+        "lean": "R",
+        "margin": 39,
+        "label": "R+39"
+      },
+      "7": {
+        "harris_pct": 0.4262,
+        "lean": "R",
+        "margin": 15,
+        "label": "R+15"
+      },
+      "8": {
+        "harris_pct": 0.4495,
+        "lean": "R",
+        "margin": 10,
+        "label": "R+10"
+      },
+      "9": {
+        "harris_pct": 0.4411,
+        "lean": "R",
+        "margin": 12,
+        "label": "R+12"
+      },
+      "10": {
+        "harris_pct": 0.4368,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "11": {
+        "harris_pct": 0.5838,
+        "lean": "D",
+        "margin": 17,
+        "label": "D+17"
+      },
+      "12": {
+        "harris_pct": 0.4877,
+        "lean": "R",
+        "margin": 2,
+        "label": "R+2"
+      },
+      "13": {
+        "harris_pct": 0.6124,
+        "lean": "D",
+        "margin": 22,
+        "label": "D+22"
+      }
+    },
+    "D": 5,
+    "R": 9
+  },
+  "NE": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4702,
+        "lean": "R",
+        "margin": 6,
+        "label": "R+6"
+      },
+      "1": {
+        "harris_pct": 0.4429,
+        "lean": "R",
+        "margin": 11,
+        "label": "R+11"
+      },
+      "2": {
+        "harris_pct": 0.1871,
+        "lean": "R",
+        "margin": 63,
+        "label": "R+63"
+      }
+    },
+    "D": 0,
+    "R": 3
+  },
+  "NH": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5074,
+        "lean": "D",
+        "margin": 1,
+        "label": "D+1"
+      },
+      "1": {
+        "harris_pct": 0.5278,
+        "lean": "D",
+        "margin": 6,
+        "label": "D+6"
+      }
+    },
+    "D": 2,
+    "R": 0
+  },
+  "NJ": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5734,
+        "lean": "D",
+        "margin": 15,
+        "label": "D+15"
+      },
+      "1": {
+        "harris_pct": 0.7841,
+        "lean": "D",
+        "margin": 57,
+        "label": "D+57"
+      },
+      "2": {
+        "harris_pct": 0.5369,
+        "lean": "D",
+        "margin": 7,
+        "label": "D+7"
+      },
+      "3": {
+        "harris_pct": 0.5676,
+        "lean": "D",
+        "margin": 14,
+        "label": "D+14"
+      },
+      "4": {
+        "harris_pct": 0.4301,
+        "lean": "R",
+        "margin": 14,
+        "label": "R+14"
+      },
+      "5": {
+        "harris_pct": 0.5014,
+        "lean": "D",
+        "margin": 0,
+        "label": "D+0"
+      },
+      "6": {
+        "harris_pct": 0.6203,
+        "lean": "D",
+        "margin": 24,
+        "label": "D+24"
+      },
+      "7": {
+        "harris_pct": 0.4636,
+        "lean": "R",
+        "margin": 7,
+        "label": "R+7"
+      },
+      "8": {
+        "harris_pct": 0.5714,
+        "lean": "D",
+        "margin": 14,
+        "label": "D+14"
+      },
+      "9": {
+        "harris_pct": 0.4131,
+        "lean": "R",
+        "margin": 17,
+        "label": "R+17"
+      },
+      "10": {
+        "harris_pct": 0.6353,
+        "lean": "D",
+        "margin": 27,
+        "label": "D+27"
+      },
+      "11": {
+        "harris_pct": 0.6065,
+        "lean": "D",
+        "margin": 21,
+        "label": "D+21"
+      }
+    },
+    "D": 9,
+    "R": 3
+  },
+  "NM": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.6192,
+        "lean": "D",
+        "margin": 24,
+        "label": "D+24"
+      },
+      "1": {
+        "harris_pct": 0.5899,
+        "lean": "D",
+        "margin": 18,
+        "label": "D+18"
+      },
+      "2": {
+        "harris_pct": 0.4242,
+        "lean": "R",
+        "margin": 15,
+        "label": "R+15"
+      }
+    },
+    "D": 2,
+    "R": 1
+  },
+  "NV": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4603,
+        "lean": "R",
+        "margin": 8,
+        "label": "R+8"
+      },
+      "1": {
+        "harris_pct": 0.5154,
+        "lean": "D",
+        "margin": 3,
+        "label": "D+3"
+      },
+      "2": {
+        "harris_pct": 0.5569,
+        "lean": "D",
+        "margin": 11,
+        "label": "D+11"
+      },
+      "3": {
+        "harris_pct": 0.416,
+        "lean": "R",
+        "margin": 17,
+        "label": "R+17"
+      }
+    },
+    "D": 2,
+    "R": 2
+  },
+  "NY": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3858,
+        "lean": "R",
+        "margin": 23,
+        "label": "R+23"
+      },
+      "1": {
+        "harris_pct": 0.7994,
+        "lean": "D",
+        "margin": 60,
+        "label": "D+60"
+      },
+      "2": {
+        "harris_pct": 0.5255,
+        "lean": "D",
+        "margin": 5,
+        "label": "D+5"
+      },
+      "3": {
+        "harris_pct": 0.5206,
+        "lean": "D",
+        "margin": 4,
+        "label": "D+4"
+      },
+      "4": {
+        "harris_pct": 0.3943,
+        "lean": "R",
+        "margin": 21,
+        "label": "R+21"
+      },
+      "5": {
+        "harris_pct": 0.8393,
+        "lean": "D",
+        "margin": 68,
+        "label": "D+68"
+      },
+      "6": {
+        "harris_pct": 0.3983,
+        "lean": "R",
+        "margin": 20,
+        "label": "R+20"
+      },
+      "7": {
+        "harris_pct": 0.8262,
+        "lean": "D",
+        "margin": 65,
+        "label": "D+65"
+      },
+      "8": {
+        "harris_pct": 0.6839,
+        "lean": "D",
+        "margin": 37,
+        "label": "D+37"
+      },
+      "9": {
+        "harris_pct": 0.5105,
+        "lean": "D",
+        "margin": 2,
+        "label": "D+2"
+      },
+      "10": {
+        "harris_pct": 0.521,
+        "lean": "D",
+        "margin": 4,
+        "label": "D+4"
+      },
+      "11": {
+        "harris_pct": 0.7323,
+        "lean": "D",
+        "margin": 46,
+        "label": "D+46"
+      },
+      "12": {
+        "harris_pct": 0.4825,
+        "lean": "R",
+        "margin": 3,
+        "label": "R+3"
+      },
+      "13": {
+        "harris_pct": 0.5742,
+        "lean": "D",
+        "margin": 15,
+        "label": "D+15"
+      },
+      "14": {
+        "harris_pct": 0.5174,
+        "lean": "D",
+        "margin": 3,
+        "label": "D+3"
+      },
+      "15": {
+        "harris_pct": 0.6946,
+        "lean": "D",
+        "margin": 39,
+        "label": "D+39"
+      },
+      "16": {
+        "harris_pct": 0.5002,
+        "lean": "D",
+        "margin": 0,
+        "label": "D+0"
+      },
+      "17": {
+        "harris_pct": 0.4392,
+        "lean": "R",
+        "margin": 12,
+        "label": "R+12"
+      },
+      "18": {
+        "harris_pct": 0.7621,
+        "lean": "D",
+        "margin": 52,
+        "label": "D+52"
+      },
+      "19": {
+        "harris_pct": 0.4226,
+        "lean": "R",
+        "margin": 15,
+        "label": "R+15"
+      },
+      "20": {
+        "harris_pct": 0.4187,
+        "lean": "R",
+        "margin": 16,
+        "label": "R+16"
+      },
+      "21": {
+        "harris_pct": 0.655,
+        "lean": "D",
+        "margin": 31,
+        "label": "D+31"
+      },
+      "22": {
+        "harris_pct": 0.6963,
+        "lean": "D",
+        "margin": 39,
+        "label": "D+39"
+      },
+      "23": {
+        "harris_pct": 0.7315,
+        "lean": "D",
+        "margin": 46,
+        "label": "D+46"
+      },
+      "24": {
+        "harris_pct": 0.4497,
+        "lean": "R",
+        "margin": 10,
+        "label": "R+10"
+      },
+      "25": {
+        "harris_pct": 0.6899,
+        "lean": "D",
+        "margin": 38,
+        "label": "D+38"
+      }
+    },
+    "D": 18,
+    "R": 8
+  },
+  "OH": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5448,
+        "lean": "D",
+        "margin": 9,
+        "label": "D+9"
+      },
+      "1": {
+        "harris_pct": 0.676,
+        "lean": "D",
+        "margin": 35,
+        "label": "D+35"
+      },
+      "2": {
+        "harris_pct": 0.4339,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "3": {
+        "harris_pct": 0.4339,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "4": {
+        "harris_pct": 0.428,
+        "lean": "R",
+        "margin": 14,
+        "label": "R+14"
+      },
+      "5": {
+        "harris_pct": 0.5101,
+        "lean": "D",
+        "margin": 2,
+        "label": "D+2"
+      },
+      "6": {
+        "harris_pct": 0.4139,
+        "lean": "R",
+        "margin": 17,
+        "label": "R+17"
+      },
+      "7": {
+        "harris_pct": 0.3331,
+        "lean": "R",
+        "margin": 33,
+        "label": "R+33"
+      },
+      "8": {
+        "harris_pct": 0.6373,
+        "lean": "D",
+        "margin": 27,
+        "label": "D+27"
+      },
+      "9": {
+        "harris_pct": 0.3951,
+        "lean": "R",
+        "margin": 21,
+        "label": "R+21"
+      },
+      "10": {
+        "harris_pct": 0.4955,
+        "lean": "R",
+        "margin": 1,
+        "label": "R+1"
+      },
+      "11": {
+        "harris_pct": 0.3066,
+        "lean": "R",
+        "margin": 39,
+        "label": "R+39"
+      },
+      "12": {
+        "harris_pct": 0.278,
+        "lean": "R",
+        "margin": 44,
+        "label": "R+44"
+      },
+      "13": {
+        "harris_pct": 0.2344,
+        "lean": "R",
+        "margin": 53,
+        "label": "R+53"
+      },
+      "14": {
+        "harris_pct": 0.4618,
+        "lean": "R",
+        "margin": 8,
+        "label": "R+8"
+      }
+    },
+    "D": 4,
+    "R": 11
+  },
+  "OK": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3035,
+        "lean": "R",
+        "margin": 39,
+        "label": "R+39"
+      },
+      "1": {
+        "harris_pct": 0.3767,
+        "lean": "R",
+        "margin": 25,
+        "label": "R+25"
+      },
+      "2": {
+        "harris_pct": 0.4367,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "3": {
+        "harris_pct": 0.2196,
+        "lean": "R",
+        "margin": 56,
+        "label": "R+56"
+      },
+      "4": {
+        "harris_pct": 0.2821,
+        "lean": "R",
+        "margin": 44,
+        "label": "R+44"
+      }
+    },
+    "D": 0,
+    "R": 5
+  },
+  "OR": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.8424,
+        "lean": "D",
+        "margin": 68,
+        "label": "D+68"
+      },
+      "1": {
+        "harris_pct": 0.3882,
+        "lean": "R",
+        "margin": 22,
+        "label": "R+22"
+      },
+      "2": {
+        "harris_pct": 0.5461,
+        "lean": "D",
+        "margin": 9,
+        "label": "D+9"
+      },
+      "3": {
+        "harris_pct": 0.6343,
+        "lean": "D",
+        "margin": 27,
+        "label": "D+27"
+      },
+      "4": {
+        "harris_pct": 0.5414,
+        "lean": "D",
+        "margin": 8,
+        "label": "D+8"
+      },
+      "5": {
+        "harris_pct": 0.5889,
+        "lean": "D",
+        "margin": 18,
+        "label": "D+18"
+      }
+    },
+    "D": 5,
+    "R": 1
+  },
+  "PA": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3461,
+        "lean": "R",
+        "margin": 31,
+        "label": "R+31"
+      },
+      "1": {
+        "harris_pct": 0.28,
+        "lean": "R",
+        "margin": 44,
+        "label": "R+44"
+      },
+      "2": {
+        "harris_pct": 0.5319,
+        "lean": "D",
+        "margin": 6,
+        "label": "D+6"
+      },
+      "3": {
+        "harris_pct": 0.6458,
+        "lean": "D",
+        "margin": 29,
+        "label": "D+29"
+      },
+      "4": {
+        "harris_pct": 0.3046,
+        "lean": "R",
+        "margin": 39,
+        "label": "R+39"
+      },
+      "5": {
+        "harris_pct": 0.3709,
+        "lean": "R",
+        "margin": 26,
+        "label": "R+26"
+      },
+      "6": {
+        "harris_pct": 0.4332,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "7": {
+        "harris_pct": 0.4929,
+        "lean": "R",
+        "margin": 1,
+        "label": "R+1"
+      },
+      "8": {
+        "harris_pct": 0.3759,
+        "lean": "R",
+        "margin": 25,
+        "label": "R+25"
+      },
+      "9": {
+        "harris_pct": 0.5733,
+        "lean": "D",
+        "margin": 15,
+        "label": "D+15"
+      },
+      "10": {
+        "harris_pct": 0.7998,
+        "lean": "D",
+        "margin": 60,
+        "label": "D+60"
+      },
+      "11": {
+        "harris_pct": 0.4639,
+        "lean": "R",
+        "margin": 7,
+        "label": "R+7"
+      },
+      "12": {
+        "harris_pct": 0.4833,
+        "lean": "R",
+        "margin": 3,
+        "label": "R+3"
+      },
+      "13": {
+        "harris_pct": 0.8405,
+        "lean": "D",
+        "margin": 68,
+        "label": "D+68"
+      },
+      "14": {
+        "harris_pct": 0.3966,
+        "lean": "R",
+        "margin": 21,
+        "label": "R+21"
+      },
+      "15": {
+        "harris_pct": 0.5484,
+        "lean": "D",
+        "margin": 10,
+        "label": "D+10"
+      },
+      "16": {
+        "harris_pct": 0.4708,
+        "lean": "R",
+        "margin": 6,
+        "label": "R+6"
+      }
+    },
+    "D": 6,
+    "R": 11
+  },
+  "RI": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5894,
+        "lean": "D",
+        "margin": 18,
+        "label": "D+18"
+      },
+      "1": {
+        "harris_pct": 0.6025,
+        "lean": "D",
+        "margin": 20,
+        "label": "D+20"
+      }
+    },
+    "D": 2,
+    "R": 0
+  },
+  "SC": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.3443,
+        "lean": "R",
+        "margin": 31,
+        "label": "R+31"
+      },
+      "1": {
+        "harris_pct": 0.4947,
+        "lean": "R",
+        "margin": 1,
+        "label": "R+1"
+      },
+      "2": {
+        "harris_pct": 0.5208,
+        "lean": "D",
+        "margin": 4,
+        "label": "D+4"
+      },
+      "3": {
+        "harris_pct": 0.406,
+        "lean": "R",
+        "margin": 19,
+        "label": "R+19"
+      },
+      "4": {
+        "harris_pct": 0.3618,
+        "lean": "R",
+        "margin": 28,
+        "label": "R+28"
+      },
+      "5": {
+        "harris_pct": 0.4354,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      },
+      "6": {
+        "harris_pct": 0.3077,
+        "lean": "R",
+        "margin": 38,
+        "label": "R+38"
+      }
+    },
+    "D": 1,
+    "R": 6
+  },
+  "TN": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5946,
+        "lean": "D",
+        "margin": 19,
+        "label": "D+19"
+      },
+      "1": {
+        "harris_pct": 0.4735,
+        "lean": "R",
+        "margin": 5,
+        "label": "R+5"
+      },
+      "2": {
+        "harris_pct": 0.2111,
+        "lean": "R",
+        "margin": 58,
+        "label": "R+58"
+      },
+      "3": {
+        "harris_pct": 0.3062,
+        "lean": "R",
+        "margin": 39,
+        "label": "R+39"
+      },
+      "4": {
+        "harris_pct": 0.272,
+        "lean": "R",
+        "margin": 46,
+        "label": "R+46"
+      },
+      "5": {
+        "harris_pct": 0.1698,
+        "lean": "R",
+        "margin": 66,
+        "label": "R+66"
+      },
+      "6": {
+        "harris_pct": 0.3288,
+        "lean": "R",
+        "margin": 34,
+        "label": "R+34"
+      },
+      "7": {
+        "harris_pct": 0.3091,
+        "lean": "R",
+        "margin": 38,
+        "label": "R+38"
+      },
+      "8": {
+        "harris_pct": 0.3233,
+        "lean": "R",
+        "margin": 35,
+        "label": "R+35"
+      }
+    },
+    "D": 1,
+    "R": 8
+  },
+  "TX": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5549,
+        "lean": "D",
+        "margin": 11,
+        "label": "D+11"
+      },
+      "1": {
+        "harris_pct": 0.2364,
+        "lean": "R",
+        "margin": 53,
+        "label": "R+53"
+      },
+      "2": {
+        "harris_pct": 0.6796,
+        "lean": "D",
+        "margin": 36,
+        "label": "D+36"
+      },
+      "3": {
+        "harris_pct": 0.5344,
+        "lean": "D",
+        "margin": 7,
+        "label": "D+7"
+      },
+      "4": {
+        "harris_pct": 0.6723,
+        "lean": "D",
+        "margin": 34,
+        "label": "D+34"
+      },
+      "5": {
+        "harris_pct": 0.6421,
+        "lean": "D",
+        "margin": 28,
+        "label": "D+28"
+      },
+      "6": {
+        "harris_pct": 0.5555,
+        "lean": "D",
+        "margin": 11,
+        "label": "D+11"
+      },
+      "7": {
+        "harris_pct": 0.4124,
+        "lean": "R",
+        "margin": 18,
+        "label": "R+18"
+      },
+      "8": {
+        "harris_pct": 0.5312,
+        "lean": "D",
+        "margin": 6,
+        "label": "D+6"
+      },
+      "9": {
+        "harris_pct": 0.3008,
+        "lean": "R",
+        "margin": 40,
+        "label": "R+40"
+      },
+      "10": {
+        "harris_pct": 0.3902,
+        "lean": "R",
+        "margin": 22,
+        "label": "R+22"
+      },
+      "11": {
+        "harris_pct": 0.4855,
+        "lean": "R",
+        "margin": 3,
+        "label": "R+3"
+      },
+      "12": {
+        "harris_pct": 0.4033,
+        "lean": "R",
+        "margin": 19,
+        "label": "R+19"
+      },
+      "13": {
+        "harris_pct": 0.6869,
+        "lean": "D",
+        "margin": 37,
+        "label": "D+37"
+      },
+      "14": {
+        "harris_pct": 0.5176,
+        "lean": "D",
+        "margin": 4,
+        "label": "D+4"
+      },
+      "15": {
+        "harris_pct": 0.6388,
+        "lean": "D",
+        "margin": 28,
+        "label": "D+28"
+      },
+      "16": {
+        "harris_pct": 0.3714,
+        "lean": "R",
+        "margin": 26,
+        "label": "R+26"
+      },
+      "17": {
+        "harris_pct": 0.5878,
+        "lean": "D",
+        "margin": 18,
+        "label": "D+18"
+      },
+      "18": {
+        "harris_pct": 0.7314,
+        "lean": "D",
+        "margin": 46,
+        "label": "D+46"
+      },
+      "19": {
+        "harris_pct": 0.4928,
+        "lean": "R",
+        "margin": 1,
+        "label": "R+1"
+      },
+      "20": {
+        "harris_pct": 0.2967,
+        "lean": "R",
+        "margin": 41,
+        "label": "R+41"
+      },
+      "21": {
+        "harris_pct": 0.1895,
+        "lean": "R",
+        "margin": 62,
+        "label": "R+62"
+      },
+      "22": {
+        "harris_pct": 0.2118,
+        "lean": "R",
+        "margin": 58,
+        "label": "R+58"
+      },
+      "23": {
+        "harris_pct": 0.4031,
+        "lean": "R",
+        "margin": 19,
+        "label": "R+19"
+      },
+      "24": {
+        "harris_pct": 0.36,
+        "lean": "R",
+        "margin": 28,
+        "label": "R+28"
+      },
+      "25": {
+        "harris_pct": 0.3043,
+        "lean": "R",
+        "margin": 39,
+        "label": "R+39"
+      },
+      "26": {
+        "harris_pct": 0.472,
+        "lean": "R",
+        "margin": 6,
+        "label": "R+6"
+      },
+      "27": {
+        "harris_pct": 0.2584,
+        "lean": "R",
+        "margin": 48,
+        "label": "R+48"
+      },
+      "28": {
+        "harris_pct": 0.1937,
+        "lean": "R",
+        "margin": 61,
+        "label": "R+61"
+      },
+      "29": {
+        "harris_pct": 0.5715,
+        "lean": "D",
+        "margin": 14,
+        "label": "D+14"
+      },
+      "30": {
+        "harris_pct": 0.4414,
+        "lean": "R",
+        "margin": 12,
+        "label": "R+12"
+      },
+      "31": {
+        "harris_pct": 0.3693,
+        "lean": "R",
+        "margin": 26,
+        "label": "R+26"
+      },
+      "32": {
+        "harris_pct": 0.4624,
+        "lean": "R",
+        "margin": 8,
+        "label": "R+8"
+      },
+      "33": {
+        "harris_pct": 0.4266,
+        "lean": "R",
+        "margin": 15,
+        "label": "R+15"
+      },
+      "34": {
+        "harris_pct": 0.5444,
+        "lean": "D",
+        "margin": 9,
+        "label": "D+9"
+      },
+      "35": {
+        "harris_pct": 0.2037,
+        "lean": "R",
+        "margin": 59,
+        "label": "R+59"
+      },
+      "36": {
+        "harris_pct": 0.3615,
+        "lean": "R",
+        "margin": 28,
+        "label": "R+28"
+      },
+      "37": {
+        "harris_pct": 0.2709,
+        "lean": "R",
+        "margin": 46,
+        "label": "R+46"
+      }
+    },
+    "D": 14,
+    "R": 24
+  },
+  "UT": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.4841,
+        "lean": "R",
+        "margin": 3,
+        "label": "R+3"
+      },
+      "1": {
+        "harris_pct": 0.4076,
+        "lean": "R",
+        "margin": 18,
+        "label": "R+18"
+      },
+      "2": {
+        "harris_pct": 0.4165,
+        "lean": "R",
+        "margin": 17,
+        "label": "R+17"
+      },
+      "3": {
+        "harris_pct": 0.2522,
+        "lean": "R",
+        "margin": 50,
+        "label": "R+50"
+      }
+    },
+    "D": 0,
+    "R": 4
+  },
+  "VA": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.5448,
+        "lean": "D",
+        "margin": 9,
+        "label": "D+9"
+      },
+      "1": {
+        "harris_pct": 0.442,
+        "lean": "R",
+        "margin": 12,
+        "label": "R+12"
+      },
+      "2": {
+        "harris_pct": 0.4554,
+        "lean": "R",
+        "margin": 9,
+        "label": "R+9"
+      },
+      "3": {
+        "harris_pct": 0.3072,
+        "lean": "R",
+        "margin": 39,
+        "label": "R+39"
+      },
+      "4": {
+        "harris_pct": 0.6111,
+        "lean": "D",
+        "margin": 22,
+        "label": "D+22"
+      },
+      "5": {
+        "harris_pct": 0.3789,
+        "lean": "R",
+        "margin": 24,
+        "label": "R+24"
+      },
+      "6": {
+        "harris_pct": 0.694,
+        "lean": "D",
+        "margin": 39,
+        "label": "D+39"
+      },
+      "7": {
+        "harris_pct": 0.6719,
+        "lean": "D",
+        "margin": 34,
+        "label": "D+34"
+      },
+      "8": {
+        "harris_pct": 0.7768,
+        "lean": "D",
+        "margin": 55,
+        "label": "D+55"
+      },
+      "9": {
+        "harris_pct": 0.5217,
+        "lean": "D",
+        "margin": 4,
+        "label": "D+4"
+      },
+      "10": {
+        "harris_pct": 0.6586,
+        "lean": "D",
+        "margin": 32,
+        "label": "D+32"
+      }
+    },
+    "D": 7,
+    "R": 4
+  },
+  "WA": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.8167,
+        "lean": "D",
+        "margin": 63,
+        "label": "D+63"
+      },
+      "1": {
+        "harris_pct": 0.5953,
+        "lean": "D",
+        "margin": 19,
+        "label": "D+19"
+      },
+      "2": {
+        "harris_pct": 0.5856,
+        "lean": "D",
+        "margin": 17,
+        "label": "D+17"
+      },
+      "3": {
+        "harris_pct": 0.5773,
+        "lean": "D",
+        "margin": 15,
+        "label": "D+15"
+      },
+      "4": {
+        "harris_pct": 0.4213,
+        "lean": "R",
+        "margin": 16,
+        "label": "R+16"
+      },
+      "5": {
+        "harris_pct": 0.4517,
+        "lean": "R",
+        "margin": 10,
+        "label": "R+10"
+      },
+      "6": {
+        "harris_pct": 0.5427,
+        "lean": "D",
+        "margin": 9,
+        "label": "D+9"
+      },
+      "7": {
+        "harris_pct": 0.478,
+        "lean": "R",
+        "margin": 4,
+        "label": "R+4"
+      },
+      "8": {
+        "harris_pct": 0.6563,
+        "lean": "D",
+        "margin": 31,
+        "label": "D+31"
+      },
+      "9": {
+        "harris_pct": 0.8284,
+        "lean": "D",
+        "margin": 66,
+        "label": "D+66"
+      }
+    },
+    "D": 7,
+    "R": 3
+  },
+  "WI": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.6437,
+        "lean": "D",
+        "margin": 29,
+        "label": "D+29"
+      },
+      "1": {
+        "harris_pct": 0.4162,
+        "lean": "R",
+        "margin": 17,
+        "label": "R+17"
+      },
+      "2": {
+        "harris_pct": 0.5657,
+        "lean": "D",
+        "margin": 13,
+        "label": "D+13"
+      },
+      "3": {
+        "harris_pct": 0.4071,
+        "lean": "R",
+        "margin": 19,
+        "label": "R+19"
+      },
+      "4": {
+        "harris_pct": 0.5193,
+        "lean": "D",
+        "margin": 4,
+        "label": "D+4"
+      },
+      "5": {
+        "harris_pct": 0.5293,
+        "lean": "D",
+        "margin": 6,
+        "label": "D+6"
+      },
+      "6": {
+        "harris_pct": 0.4503,
+        "lean": "R",
+        "margin": 10,
+        "label": "R+10"
+      },
+      "7": {
+        "harris_pct": 0.4258,
+        "lean": "R",
+        "margin": 15,
+        "label": "R+15"
+      }
+    },
+    "D": 4,
+    "R": 4
+  },
+  "WV": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.2454,
+        "lean": "R",
+        "margin": 51,
+        "label": "R+51"
+      },
+      "1": {
+        "harris_pct": 0.2026,
+        "lean": "R",
+        "margin": 59,
+        "label": "R+59"
+      }
+    },
+    "D": 0,
+    "R": 2
+  },
+  "AK": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.436,
+        "lean": "R",
+        "margin": 13,
+        "label": "R+13"
+      }
+    },
+    "D": 0,
+    "R": 1
+  },
+  "DE": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.583,
+        "lean": "D",
+        "margin": 17,
+        "label": "D+17"
+      }
+    },
+    "D": 1,
+    "R": 0
+  },
+  "ND": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.321,
+        "lean": "R",
+        "margin": 36,
+        "label": "R+36"
+      }
+    },
+    "D": 0,
+    "R": 1
+  },
+  "SD": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.361,
+        "lean": "R",
+        "margin": 28,
+        "label": "R+28"
+      }
+    },
+    "D": 0,
+    "R": 1
+  },
+  "VT": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.676,
+        "lean": "D",
+        "margin": 35,
+        "label": "D+35"
+      }
+    },
+    "D": 1,
+    "R": 0
+  },
+  "WY": {
+    "districts": {
+      "0": {
+        "harris_pct": 0.233,
+        "lean": "R",
+        "margin": 53,
+        "label": "R+53"
+      }
+    },
+    "D": 0,
+    "R": 1
+  },
+  "totals": {
+    "D": 204,
+    "R": 231,
+    "total": 435
+  },
+  "margins": {
+    "within_2pct": {
+      "D": 10,
+      "R": 10,
+      "total": 20,
+      "D_states": [
+        "CA",
+        "FL",
+        "MD",
+        "MI",
+        "NH",
+        "NJ",
+        "NY",
+        "OH"
+      ],
+      "R_states": [
+        "FL",
+        "MD",
+        "MI",
+        "MO",
+        "MS",
+        "NC",
+        "OH",
+        "PA",
+        "SC",
+        "TX"
+      ]
+    },
+    "within_5pct": {
+      "D": 25,
+      "R": 25,
+      "total": 50,
+      "D_states": [
+        "CA",
+        "CO",
+        "FL",
+        "LA",
+        "MD",
+        "MI",
+        "NH",
+        "NJ",
+        "NV",
+        "NY",
+        "OH",
+        "SC",
+        "TX",
+        "VA",
+        "WI"
+      ],
+      "R_states": [
+        "AZ",
+        "CO",
+        "FL",
+        "GA",
+        "IA",
+        "IL",
+        "IN",
+        "KS",
+        "MD",
+        "MI",
+        "MO",
+        "MS",
+        "NC",
+        "NY",
+        "OH",
+        "PA",
+        "SC",
+        "TN",
+        "TX",
+        "UT",
+        "WA"
+      ]
+    },
+    "within_8pct": {
+      "D": 41,
+      "R": 39,
+      "total": 80,
+      "D_states": [
+        "CA",
+        "CO",
+        "CT",
+        "FL",
+        "GA",
+        "IL",
+        "KY",
+        "LA",
+        "MD",
+        "MI",
+        "NH",
+        "NJ",
+        "NV",
+        "NY",
+        "OH",
+        "OR",
+        "PA",
+        "SC",
+        "TX",
+        "VA",
+        "WI"
+      ],
+      "R_states": [
+        "AL",
+        "AZ",
+        "CA",
+        "CO",
+        "FL",
+        "GA",
+        "IA",
+        "IL",
+        "IN",
+        "KS",
+        "MD",
+        "MI",
+        "MO",
+        "MS",
+        "NC",
+        "NE",
+        "NJ",
+        "NV",
+        "NY",
+        "OH",
+        "PA",
+        "SC",
+        "TN",
+        "TX",
+        "UT",
+        "WA"
+      ]
+    }
+  }
+}

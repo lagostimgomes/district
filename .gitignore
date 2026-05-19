@@ -22,6 +22,16 @@ env/
 # intermediate files are not tracked. Run the pipeline to regenerate locally.
 data/
 
+# Cycle archives: binary finals/enacted_districts are too large for git.
+# Only the lightweight provenance files are tracked (manifest, summaries, sources).
+# Full binary archives live in GitHub Releases (see CYCLES.md).
+!data/archive/
+!data/archive/*/
+!data/archive/*/manifest.json
+!data/archive/*/data_sources.txt
+!data/archive/*/summaries/
+!data/archive/*/summaries/*.json
+
 # Logs (runtime output, not source)
 logs/
 

@@ -1,0 +1,44 @@
+# Data Sources — Redistricting Archive
+# Generated automatically by archive_cycle.py
+
+## VEST 2020 Precinct-Level Election Data
+Source  : Harvard Dataverse
+DOI     : 10.7910/DVN/K7760H
+URL     : https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/K7760H
+Version : 2020 General Election (state shapefiles with G20PREDBID / G20PRERTRU columns)
+Local   : data/vest/{abbr}/{abbr}_2020.shp  (one directory per state)
+Note    : Download via compute_lean_2024.py or manually from Dataverse.
+          Files are NOT included in git due to size (1.9 GB total).
+
+## TIGER 2020 Census Geography (Voting Tabulation Districts)
+Source  : US Census Bureau TIGER/Line
+URL     : https://www2.census.gov/geo/tiger/TIGER2020/VTD/
+Files   : tl_2020_{fips}_vtd20.zip  (one per state)
+Local   : data/{abbr}/graph/{abbr}_precincts_pop.gpkg  (processed output)
+Note    : Downloaded automatically by pipeline/download.py.
+
+## TIGER 2020 County and Road Shapefiles
+County  : https://www2.census.gov/geo/tiger/TIGER2020/COUNTY/tl_2020_us_county.zip
+Roads   : https://www2.census.gov/geo/tiger/TIGER2020/PRIMARYROADS/tl_2020_us_primaryroads.zip
+Local   : data/maryland/counties/  and  data/maryland/roads/
+
+## Enacted 118th Congress Districts
+Source  : US Census Bureau TIGER/Line
+URL     : https://www2.census.gov/geo/tiger/TIGER2022/CD/
+Files   : tl_2022_{fips}_cd118.zip  (one per state)
+Local   : data/{abbr}/current_districts/tl_2022_{fips}_cd118.shp
+Note    : For future cycles, replace with tl_2024_*, tl_2032_*, etc.
+          Update RESULTS_2024 dict in compute_lean_2024.py with new election results.
+
+## 2020 Census PL 94-171 Redistricting Data
+Source  : US Census Bureau
+URL     : https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/
+Format  : Pipe-delimited; P2 data at field indices 76-86 of segment 1 file
+Local   : data/census/{abbr}/  (downloaded by compute_diversity.py)
+Note    : For the 2030 cycle, use the 2030 PL 94-171 data when available.
+
+## 2024 Presidential Election Results
+Source  : Associated Press / certified state canvasses
+Embedded: compute_lean_2024.py → RESULTS_2024 dict (two-party Harris share per state)
+Note    : For future cycles, update RESULTS_2024 with the most recent presidential results.
+          The uniform-swing method requires only the state-level two-party share.
