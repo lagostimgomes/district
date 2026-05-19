@@ -48,7 +48,11 @@ from state_configs import StateConfig
 # Constants
 # ---------------------------------------------------------------------------
 
-MIN_BORDER_M = 1.0       # minimum shared border (metres) to register an edge
+MIN_BORDER_M = 50.0      # minimum shared border (metres) to register an edge
+# Raised from 1.0 → 50.0 (CS professor recommendation):
+# Near-miss polygon corners can share < 10 m due to digitization noise;
+# these spurious edges create thin peninsula connectors in K=2 states.
+# 50 m eliminates noise while retaining all real precinct boundaries.
 
 # Edge weight multipliers.
 W_SAME_COUNTY = 10.0

@@ -48,6 +48,12 @@ RANDOM_SEED = 42
 PP_MIN_THRESHOLD = 0.05
 POP_DEV_MAX_THRESHOLD = 0.005
 
+# Peninsula filter: a cut edge whose shared border is shorter than this
+# threshold relative to the median cut-edge border indicates a narrow
+# peninsula connector.  Plans where any cut edge is < 5% of the median
+# cut-edge border are deprioritised in final selection.
+PENINSULA_RATIO_THRESHOLD = 0.05
+
 
 # ---------------------------------------------------------------------------
 # Load helpers
@@ -138,6 +144,72 @@ def _compute_county_splits(
 
 
 # ---------------------------------------------------------------------------
+# Cut-border metrics (peninsula detection)
+# ---------------------------------------------------------------------------
+
+
+def _compute_cut_border_metrics(
+    plans_df: pd.DataFrame,
+    G: nx.Graph,
+    node_col_prefix: str = "n",
+) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Compute per-plan cut-border metrics using graph edge border lengths.
+
+    These metrics are computed from the plans data at selection time, so they
+    work for both old ensembles (metrics.parquet without cut_border_m) and new
+    ones (which include it in metrics.parquet as well).
+
+    Returns
+    -------
+    cut_border_m     : float64 [n_plans]
+        Total length (m) of all inter-district precinct boundaries.
+        Lower is better — reflects clean, geographically natural splits.
+    min_cut_border_m : float64 [n_plans]
+        Length (m) of the shortest single inter-district boundary.
+        Very low values (< 5% of median) indicate a narrow peninsula connector
+        that appears as an isolated pocket at map scale.
+    """
+    col_node_ids = [int(c[len(node_col_prefix):]) for c in plans_df.columns]
+    nid_to_col: dict[int, int] = {nid: i for i, nid in enumerate(col_node_ids)}
+
+    eu_list, ev_list, border_list = [], [], []
+    for u, v, data in G.edges(data=True):
+        ci = nid_to_col.get(int(u), -1)
+        cj = nid_to_col.get(int(v), -1)
+        if ci >= 0 and cj >= 0:
+            eu_list.append(ci)
+            ev_list.append(cj)
+            border_list.append(float(data.get("border_len_m", 0.0)))
+
+    n_plans = len(plans_df)
+    if not eu_list:
+        return np.zeros(n_plans, dtype=np.float64), np.zeros(n_plans, dtype=np.float64)
+
+    eu_arr     = np.array(eu_list, dtype=np.int32)
+    ev_arr     = np.array(ev_list, dtype=np.int32)
+    border_arr = np.array(border_list, dtype=np.float64)
+
+    plans_matrix = plans_df.values  # (n_plans, n_cols)
+
+    # Vectorised across all plans at once: (n_plans, n_edges)
+    u_asgn = plans_matrix[:, eu_arr]
+    v_asgn = plans_matrix[:, ev_arr]
+    is_cut  = u_asgn != v_asgn  # True where the edge is a district boundary
+
+    # Total cut-border length per plan
+    cut_border_m = (is_cut.astype(np.float64) * border_arr[np.newaxis, :]).sum(axis=1)
+
+    # Minimum cut-border length per plan (peninsula indicator)
+    BIG = 1e12
+    cut_or_big = np.where(is_cut, border_arr[np.newaxis, :], BIG)
+    raw_min = cut_or_big.min(axis=1)
+    min_cut_border_m = np.where(raw_min >= BIG, 0.0, raw_min)
+
+    return cut_border_m, min_cut_border_m
+
+
+# ---------------------------------------------------------------------------
 # Pareto frontier
 # ---------------------------------------------------------------------------
 
@@ -146,14 +218,20 @@ def _pareto_frontier(df: pd.DataFrame) -> pd.DataFrame:
     """
     Compute the Pareto non-dominated set.
     Objectives: maximise pp_mean, minimise county_splits, minimise cut_edges,
-                minimise max_county_districts.
+                minimise max_county_districts, minimise cut_border_m.
 
-    max_county_districts is the worst-case fragmentation of any single county —
-    adding it as an objective prevents the algorithm from concentrating splits
-    on one dense urban county while appearing well-behaved on total splits.
+    max_county_districts is the worst-case fragmentation of any single county.
+    cut_border_m penalises plans with long, ragged inter-district boundaries;
+    a clean geographic split tends to follow natural/administrative lines and
+    has a lower total boundary length than a patchwork plan.
     """
     print("  Computing Pareto frontier…")
-    costs = df[["pp_mean", "county_splits", "cut_edges", "max_county_districts"]].copy()
+    objectives = ["pp_mean", "county_splits", "cut_edges",
+                  "max_county_districts", "cut_border_m"]
+    # Only include cut_border_m if it's present (backward compat with old ensembles
+    # that ran before the metric was added — select.py always computes it now).
+    avail = [o for o in objectives if o in df.columns]
+    costs = df[avail].copy()
     costs["pp_mean"] = -costs["pp_mean"]  # convert to minimisation
 
     n = len(costs)
@@ -172,6 +250,7 @@ def _pareto_frontier(df: pd.DataFrame) -> pd.DataFrame:
 
     frontier = df[~is_dominated].copy()
     print(f"    Frontier size: {len(frontier)} / {n} sampled plans")
+    print(f"    Objectives used: {avail}")
     return frontier
 
 
@@ -184,16 +263,41 @@ def _select_best_plans(frontier: pd.DataFrame) -> tuple[int, int]:
     """
     Return (compact_idx, splits_idx) — original row indices in plans.parquet.
 
-    For both selections, prefer plans with lower max_county_districts first
-    (minimising worst-case county fragmentation), then optimise the primary
-    objective within that group.  This prevents the selector from choosing a
-    marginally more compact plan that shreds one dense county into many pieces.
+    Selection tiers (applied in order):
+    1. Prefer plans with no peninsula connectors (min_cut_border_m >= 5% of
+       median cut-border, per PENINSULA_RATIO_THRESHOLD).  If no such plan
+       exists in the frontier, fall back to the full frontier.
+    2. Among preferred plans, take those with the lowest max_county_districts
+       (prevents concentrating fragmentation on one dense urban county).
+    3. Optimise the primary objective within that group.
     """
-    best_max_cd = frontier["max_county_districts"].min()
-    best_cd_plans = frontier[frontier["max_county_districts"] == best_max_cd]
+    work = frontier.copy()
 
+    # ── Tier 1: peninsula filter ─────────────────────────────────────────────
+    # Compare min_cut_border_m to the mean single-edge length per plan
+    # (= cut_border_m / cut_edges).  A plan where the shortest cut edge is
+    # < PENINSULA_RATIO_THRESHOLD × average cut edge has a suspicious narrow
+    # peninsula connector and is deprioritised.
+    if ("min_cut_border_m" in work.columns and "cut_border_m" in work.columns
+            and "cut_edges" in work.columns):
+        mean_edge = work["cut_border_m"] / work["cut_edges"].clip(lower=1)
+        ratio = work["min_cut_border_m"] / mean_edge.clip(lower=1.0)
+        non_peninsula = work[ratio >= PENINSULA_RATIO_THRESHOLD]
+        if len(non_peninsula) > 0:
+            work = non_peninsula
+            print(f"    Peninsula filter: {len(work)} / {len(frontier)} plans retained "
+                  f"(min/mean edge ratio ≥ {PENINSULA_RATIO_THRESHOLD})")
+        else:
+            print(f"    Peninsula filter: no non-peninsula plans found — "
+                  f"using full frontier ({len(frontier)} plans)")
+
+    # ── Tier 2: county fragmentation ────────────────────────────────────────
+    best_max_cd = work["max_county_districts"].min()
+    best_cd_plans = work[work["max_county_districts"] == best_max_cd]
+
+    # ── Tier 3: primary objectives ───────────────────────────────────────────
     compact_pos = best_cd_plans["pp_mean"].idxmax()
-    compact_idx = frontier.loc[compact_pos, "plan_idx"]
+    compact_idx = work.loc[compact_pos, "plan_idx"]
 
     splits_sorted = best_cd_plans.sort_values(
         ["county_splits", "pp_mean"], ascending=[True, False]
@@ -253,6 +357,8 @@ def _write_map(
         "pop_dev_max": metrics_row.get("pop_dev_max"),
         "pop_dev_mean": metrics_row.get("pop_dev_mean"),
         "cut_edges": metrics_row.get("cut_edges"),
+        "cut_border_m": metrics_row.get("cut_border_m"),
+        "min_cut_border_m": metrics_row.get("min_cut_border_m"),
         "county_splits": metrics_row.get("county_splits"),
         "max_county_districts": metrics_row.get("max_county_districts"),
         "district_populations": {
@@ -349,6 +455,17 @@ def select_maps(cfg: StateConfig, data_root: Path) -> dict:
     print(f"    max_county_districts distribution:\n"
           f"      {pd.Series(max_county_districts).value_counts().sort_index().to_dict()}")
 
+    print("  Computing cut-border metrics (peninsula detection)…")
+    cut_border_m, min_cut_border_m = _compute_cut_border_metrics(plans_sample, G)
+    sample_df_meta["cut_border_m"]     = cut_border_m
+    sample_df_meta["min_cut_border_m"] = min_cut_border_m
+    print(f"    cut_border_m    : min={cut_border_m.min():.0f} m  "
+          f"median={np.median(cut_border_m):.0f} m  "
+          f"max={cut_border_m.max():.0f} m")
+    print(f"    min_cut_border_m: min={min_cut_border_m.min():.1f} m  "
+          f"median={np.median(min_cut_border_m):.1f} m  "
+          f"max={min_cut_border_m.max():.0f} m")
+
     # Pareto frontier.
     frontier = _pareto_frontier(sample_df_meta)
     frontier_csv_path = final_dir / "pareto_frontier.csv"
@@ -421,18 +538,32 @@ def select_maps(cfg: StateConfig, data_root: Path) -> dict:
             "minimise county_splits",
             "minimise cut_edges",
             "minimise max_county_districts",
+            "minimise cut_border_m",
         ],
+        "peninsula_filter": {
+            "enabled": True,
+            "description": (
+                "Plans where min_cut_border_m / median(cut_border_m) < "
+                f"{PENINSULA_RATIO_THRESHOLD} are deprioritised as potential "
+                "peninsula connectors (narrow artificial boundaries)."
+            ),
+            "ratio_threshold": PENINSULA_RATIO_THRESHOLD,
+        },
         "best_map_compact": {
             "plan_row": compact_orig_idx,
             "pp_mean": compact_metrics.get("pp_mean"),
             "county_splits": int(compact_metrics.get("county_splits", -1)),
             "cut_edges": int(compact_metrics.get("cut_edges", -1)),
+            "cut_border_m": compact_metrics.get("cut_border_m"),
+            "min_cut_border_m": compact_metrics.get("min_cut_border_m"),
         },
         "best_map_fewest_splits": {
             "plan_row": splits_orig_idx,
             "pp_mean": splits_metrics.get("pp_mean"),
             "county_splits": int(splits_metrics.get("county_splits", -1)),
             "cut_edges": int(splits_metrics.get("cut_edges", -1)),
+            "cut_border_m": splits_metrics.get("cut_border_m"),
+            "min_cut_border_m": splits_metrics.get("min_cut_border_m"),
         },
         "outputs": {
             "best_map_compact": str(final_dir / "best_map_compact.gpkg"),

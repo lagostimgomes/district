@@ -69,6 +69,8 @@ from state_configs import StateConfig
 # ---------------------------------------------------------------------------
 
 BETA         = 2.0    # prob ∝ 1/w^β; β=2 → cross-county cut 100× more likely
+# K=2 states (WV, ME, NH, ID, MT, RI, HI) use a lower beta; see run_sampling().
+BETA_K2      = 0.5    # β=0.5 for two-district states (statistician recommendation)
 RANDOM_SEED  = 42
 POP_TOL      = 0.005  # ±0.5 % population tolerance for MCMC and hard filter
 # SEED_EPSILON uses a relaxed 2 % tolerance so that GerryChain's recursive
@@ -272,13 +274,18 @@ def compute_metrics_fast(
     )
     dev = np.abs(dist_pop - ideal_pop) / ideal_pop
 
+    cut_mask = ~same
     return {
-        "pp_min":       float(pp.min()),
-        "pp_mean":      float(pp.mean()),
-        "pp_max":       float(pp.max()),
-        "pop_dev_max":  float(dev.max()),
-        "pop_dev_mean": float(dev.mean()),
-        "cut_edges":    int(np.sum(~same)),
+        "pp_min":         float(pp.min()),
+        "pp_mean":        float(pp.mean()),
+        "pp_max":         float(pp.max()),
+        "pop_dev_max":    float(dev.max()),
+        "pop_dev_mean":   float(dev.mean()),
+        "cut_edges":      int(np.sum(cut_mask)),
+        # Total length (m) of all inter-district precinct boundaries.
+        # Low values indicate clean, geographically natural splits;
+        # high values indicate ragged, patchwork boundaries.
+        "cut_border_m":   float(border_arr[cut_mask].sum()),
     }
 
 
@@ -585,13 +592,14 @@ def initial_partition(
 
 def _make_metrics_schema() -> pa.Schema:
     return pa.schema([
-        pa.field("step",         pa.int32()),
-        pa.field("pp_min",       pa.float32()),
-        pa.field("pp_mean",      pa.float32()),
-        pa.field("pp_max",       pa.float32()),
-        pa.field("pop_dev_max",  pa.float32()),
-        pa.field("pop_dev_mean", pa.float32()),
-        pa.field("cut_edges",    pa.int32()),
+        pa.field("step",          pa.int32()),
+        pa.field("pp_min",        pa.float32()),
+        pa.field("pp_mean",       pa.float32()),
+        pa.field("pp_max",        pa.float32()),
+        pa.field("pop_dev_max",   pa.float32()),
+        pa.field("pop_dev_mean",  pa.float32()),
+        pa.field("cut_edges",     pa.int32()),
+        pa.field("cut_border_m",  pa.float32()),
     ])
 
 
@@ -741,8 +749,14 @@ def run_sampling(
     gpkg_path  = graph_dir / f"{abbr}_precincts_pop.gpkg"
     k = cfg.k
 
+    # Adaptive beta: for K=2 states, β=2.0 creates a 100:1 preference for
+    # cross-county edges that over-constrains the two-district problem and
+    # produces peninsula connectors.  β=0.5 creates only a 1.4:1 preference,
+    # allowing the MCMC to explore a broader set of geographically natural cuts.
+    beta = BETA_K2 if k <= 2 else BETA
+
     print(f"\n[{cfg.abbr}] Sampling {n_steps:,} plans "
-          f"(K={k}, β={BETA}, seed={RANDOM_SEED})")
+          f"(K={k}, β={beta}, seed={RANDOM_SEED})")
     _log_rss("start")
 
     # ── Load NetworkX graph ────────────────────────────────────────────────────
@@ -869,7 +883,7 @@ def run_sampling(
                 # Merge and recut with the computed tolerance.
                 merged_mask    = (assignment == dist_a) | (assignment == dist_b)
                 merged_indices = np.where(merged_mask)[0].astype(np.int32)
-                parent, root   = _wilson_lerw_compact(merged_indices, cg, BETA, rng)
+                parent, root   = _wilson_lerw_compact(merged_indices, cg, beta, rng)
                 comp1          = _find_valid_cut(
                     parent, root, merged_indices, cg, ideal_pop, repair_tol, rng
                 )
@@ -892,7 +906,7 @@ def run_sampling(
     if not resuming:
         print(f"  Running {BURN_IN} normal burn-in steps (POP_TOL={POP_TOL:.1%})…")
         for _ in range(BURN_IN):
-            recom_step(assignment, cg, ideal_pop, rng, BETA, k)
+            recom_step(assignment, cg, ideal_pop, rng, beta, k)
         print("  Burn-in complete.")
         _log_rss("after burn-in")
 
@@ -912,7 +926,7 @@ def run_sampling(
         initial=start_step,
         total=n_steps,
     ):
-        recom_step(assignment, cg, ideal_pop, rng, BETA, k)
+        recom_step(assignment, cg, ideal_pop, rng, beta, k)
 
         # Record current assignment and metrics into the buffer
         plans_matrix[buf_pos] = assignment
