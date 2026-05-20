@@ -11,7 +11,7 @@ This project draws congressional district maps using *only* geographic data — 
 For each state the pipeline:
 
 1. **Downloads** TIGER 2020 census geography (VTD precincts, census blocks, counties, roads)
-2. **Builds** a weighted precinct dual graph, where edge weights encode administrative-unit proximity (same county → 10×, same city → 5×, same township → 3×; major roads divide weights by 2)
+2. **Builds** a weighted precinct dual graph, where edge weights encode administrative-unit proximity (same county → 10×, same city → 5×, same township → 3×; major roads divide weights by 2); only shared borders ≥ 50 m are included to suppress spurious point-touch adjacencies
 3. **Samples** an ensemble of valid district plans with Weighted ReCom MCMC (DeFord, Duchin & Solomon 2021)
 4. **Selects** two Pareto-optimal maps from the ensemble
 5. **Renders** choropleth maps with optional post-hoc 2020 presidential lean overlay (VEST data)
@@ -36,11 +36,11 @@ Each MCMC step:
 w(e) = base × W_SAME_COUNTY^β × W_SAME_PLACE^β × W_SAME_COUSUB^β / W_ROAD^β
 ```
 
-where `β = 2` (BETA parameter) amplifies the contrast, making intra-county cuts ~100× more likely than cross-county cuts.
+where `β` amplifies the contrast, making intra-county cuts far more likely than cross-county cuts. **β is adaptive**: β=0.5 for K=2 states (WV, ME, NH, ID, MT, RI, HI) and β=2.0 for all others — low-K states have sparse county structure and over-penalising county crossings produces degenerate maps.
 
 ### Selection
 
-From the ensemble, two maps are chosen via Pareto optimality across four objectives:
+From the ensemble, two maps are chosen via Pareto optimality across five objectives:
 
 | Objective | Direction |
 |-----------|-----------|
@@ -48,6 +48,9 @@ From the ensemble, two maps are chosen via Pareto optimality across four objecti
 | County splits | Minimise |
 | Cut edges | Minimise |
 | Max districts per county (worst-case fragmentation) | Minimise |
+| `cut_border_m` (total cross-county boundary length) | Minimise |
+
+A **peninsula filter** is applied before Pareto selection: any plan where the min or mean cut-border ratio is below 5% (indicating point-touch or thin-peninsula artefacts) is rejected.
 
 Two representative plans are extracted:
 - **Best compact** — highest Polsby–Popper mean within the Pareto frontier

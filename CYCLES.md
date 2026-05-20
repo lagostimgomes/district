@@ -62,6 +62,27 @@ gh release create cycle-2026 data/archive/cycle_2026.tar.gz \
 | Toss-up ≤ 2% | **20** (10D/10R) | 17 (5D/12R) |
 | Diversity mean (Herfindahl) | **0.521** | 0.511 |
 
+### Pipeline improvements (May 2026)
+
+The following algorithmic improvements were applied to the 2024 cycle data based on dual-expert review of the West Virginia output:
+
+| Improvement | Detail |
+|-------------|--------|
+| **MIN_BORDER_M raised 1.0 → 50.0 m** (`build_graph.py`) | Removes spurious adjacencies caused by precincts that share only a point or a negligible border segment, improving graph quality for all states |
+| **Adaptive β** (`sample.py`) | β=0.5 for K=2 states (WV, ME, NH, ID, MT, RI, HI); β=2.0 for all others. Low-K states have sparse county structure and benefit from softer boundary enforcement |
+| **`cut_border_m` metric added** (`sample.py`) | Records the total length of district boundaries that cross county lines; used in Pareto selection and as a peninsula-filter guard |
+| **`cut_border_m` as 5th Pareto objective** (`select.py`) | Minimise cross-county boundary length added alongside the existing 4 objectives |
+| **Peninsula filter** (`select.py`) | Rejects any plan where min or mean cut-border ratio < 5%, eliminating thin-peninsula or point-touch artefacts |
+
+**WV impact (β=0.5 re-run, 20,000 steps, 902 s):**
+
+| Metric | Before | After |
+|--------|--------|-------|
+| County splits | 5 | **3** |
+| Min cut-border length | 79 m | **672 m** |
+
+These changes do not affect national seat-count totals (D=202, R=227) because WV is a 2-seat state and the partisan lean of both districts was already clear.
+
 ---
 
 ## How to restore a prior cycle
