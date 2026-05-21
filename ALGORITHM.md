@@ -109,7 +109,7 @@ Primary road centerlines (TIGER 2020 `tl_2020_us_primaryroads.shp`) are used as 
 The **precinct dual graph** G = (V, E) is an undirected weighted graph where:
 
 - **V** = one node per precinct, attributed with `{pop, county_fips, place_fips, cousub_fips, area_m²}`
-- **E** = one edge per pair of precincts sharing a border of at least 1 metre
+- **E** = one edge per pair of precincts sharing a border of at least 50 metres
 
 ### 4.2 Adjacency detection
 
@@ -119,7 +119,11 @@ For each pair of precincts (i, j) identified as candidate neighbors via a spatia
 border_len(i, j) = length(boundary(i) ∩ boundary(j))
 ```
 
-An edge is added to G if and only if `border_len(i, j) ≥ 1 m`. This threshold eliminates numerical noise from shared vertices or near-touching but non-adjacent polygons.
+An edge is added to G if and only if `border_len(i, j) ≥ MIN_BORDER_M = 50 m`.
+
+This 50 m threshold serves two purposes:
+1. **Eliminates digitization noise.** TIGER polygon boundaries often share a few vertices at corners where precincts nearly (but do not truly) touch. These produce phantom edges with `border_len < 10 m` that have no geographic meaning.
+2. **Prevents peninsula connectors.** In K=2 states (e.g. West Virginia), a very short shared border can become the sole connection between two precinct clusters, creating a narrow "bridge" that appears as an isolated pocket on the rendered map. Raising the threshold from the original 1 m to 50 m eliminates these without affecting legitimate adjacencies (typical precinct shared borders are hundreds to thousands of metres).
 
 ### 4.3 Connectivity guarantee
 
@@ -181,7 +185,24 @@ p(cross-county edge)   ∝ 1 / 1²   = 1.000
 p(intra-county edge)   ∝ 1 / 10²  = 0.010
 ```
 
-A cross-county edge is therefore **100× more likely to be traversed** (and thus selected as the cut) than an intra-county edge. β = 2 is the value used in production. β = 0 would produce a fully uniform random spanning tree with no geographic bias.
+A cross-county edge is therefore **100× more likely to be traversed** (and thus selected as the cut) than an intra-county edge. β = 0 would produce a fully uniform random spanning tree with no geographic bias.
+
+### 5.6 Adaptive beta for K=2 states
+
+β = 2.0 is appropriate for multi-district states where county structure provides a meaningful guide to natural splits. However, for **K=2 states** (WV, ME, NH, ID, MT, RI, HI), this strong bias causes the MCMC to over-correct:
+
+- With K=2, only a single internal boundary exists. The chain must thread a cut through the entire state.
+- At β=2, intra-county edges are penalised 100×, forcing cuts to cross county lines even when the most natural geographic division would cut through a single county.
+- The result is a chain that concentrates on a narrow set of plans, producing narrow "peninsula" connectors between precinct clusters.
+
+For K≤2 states, **β is set to 0.5**, giving only a 1.4× preference for cross-county cuts:
+
+```
+p(cross-county edge)   ∝ 1 / 1^0.5   = 1.000
+p(intra-county edge)   ∝ 1 / 10^0.5  = 0.316
+```
+
+This allows the MCMC to explore a broader set of geographically natural splits — including plans that cut through a single county where that county spans the geographic midpoint of the state. West Virginia's β=0.5 run reduced county splits from 5 to 3 and eliminated all peninsula connectors (see [STATE_NOTES.md](STATE_NOTES.md)).
 
 ---
 
@@ -327,7 +348,7 @@ The `pop_dev_max` metric (maximum deviation across all districts) is recorded fo
 
 ## 9. Metrics Computed Per Plan
 
-For every recorded plan, six metrics are computed via an O(N + E) algorithm — no geometry dissolve, no spatial join.
+For every recorded plan, seven metrics are computed via an O(N + E) algorithm — no geometry dissolve, no spatial join.
 
 ### 9.1 Polsby-Popper compactness
 
@@ -375,7 +396,20 @@ cut_edges = |{(u,v) ∈ E : district(u) ≠ district(v)}|
 
 Cut edges count the total number of precinct-pair adjacencies that cross a district boundary. Minimising cut edges is equivalent to maximising within-district connectivity — a measure of compactness independent of shape.
 
-### 9.4 County splits (computed at selection time)
+### 9.4 Cut border length
+
+```
+cut_border_m(π) = Σ_{(u,v) ∈ E, district(u) ≠ district(v)} border_len(u, v)
+```
+
+This is the total length (metres) of all precinct-pair shared borders that cross a district boundary in plan π. It measures how "ragged" the district boundary is:
+
+- A plan whose boundaries follow natural geographic lines (river valleys, ridgelines) typically crosses fewer and longer precinct borders — lower `cut_border_m` relative to the number of cut edges.
+- A patchwork plan with many short, jagged boundaries accumulates a high `cut_border_m`.
+
+`cut_border_m` is used as a fifth Pareto objective (see Section 11). It is also used to detect **peninsula connectors**: an edge whose `border_len` is much shorter than the average cut-border length may represent a narrow artificial connection between two precinct clusters rather than a real geographic boundary (see Section 12.3).
+
+### 9.5 County splits (computed at selection time)
 
 County splits are computed for sampled plans at Stage 4, not during sampling, to avoid the per-step overhead.
 
@@ -419,7 +453,7 @@ If zero plans pass the hard filters, the pipeline raises a `RuntimeError` rather
 
 ### 11.1 Objectives
 
-From the filtered ensemble, plans are scored on four objectives simultaneously:
+From the filtered ensemble, plans are scored on five objectives simultaneously:
 
 | Objective | Direction | Meaning |
 |-----------|-----------|---------|
@@ -427,18 +461,20 @@ From the filtered ensemble, plans are scored on four objectives simultaneously:
 | `county_splits` | Minimise | Fewer county splits = more community-intact |
 | `cut_edges` | Minimise | Fewer cut edges = more internally connected districts |
 | `max_county_districts` | Minimise | Worst-case county fragmentation |
+| `cut_border_m` | Minimise | Total cross-district boundary length (raggedness) |
 
-No weights, no aggregation, no trade-off coefficients. The Pareto frontier is the set of plans that are not dominated on all four dimensions simultaneously.
+No weights, no aggregation, no trade-off coefficients. The Pareto frontier is the set of plans not dominated on all five dimensions simultaneously.
 
 ### 11.2 Dominance
 
 Plan A **dominates** plan B if and only if:
 
 ```
-pp_mean(A) ≥ pp_mean(B)       AND
-county_splits(A) ≤ county_splits(B)  AND
-cut_edges(A) ≤ cut_edges(B)         AND
-max_county_districts(A) ≤ max_county_districts(B)
+pp_mean(A) ≥ pp_mean(B)              AND
+county_splits(A) ≤ county_splits(B)        AND
+cut_edges(A) ≤ cut_edges(B)               AND
+max_county_districts(A) ≤ max_county_districts(B)  AND
+cut_border_m(A) ≤ cut_border_m(B)
 ```
 
 with at least one strict inequality.
@@ -464,11 +500,11 @@ Up to 5,000 plans are drawn uniformly at random (without replacement) from the f
 
 The sampling uses `numpy.random.default_rng(RANDOM_SEED).choice()` — seeded, reproducible, and unbiased with respect to any plan characteristic.
 
-### 11.5 Why four objectives and not one
+### 11.5 Why five objectives and not one
 
 Using a single objective (e.g. maximum compactness) would maximise that one criterion while potentially producing plans with extreme county fragmentation or poor population balance. The Pareto frontier respects the inherent tension between objectives without assigning a subjective weighting to any one of them.
 
-Importantly, no partisan or demographic criterion appears in the four objectives. The Pareto frontier is blind to all political outcomes.
+Importantly, no partisan or demographic criterion appears in any of the five objectives. The Pareto frontier is blind to all political outcomes.
 
 ---
 
@@ -490,7 +526,23 @@ Selection rule (applied in order):
 2. Within this subset, sort by `county_splits` ascending, then `pp_mean` descending.
 3. Select the first plan.
 
-### 12.3 Why filter by max_county_districts first
+### 12.3 Peninsula filter
+
+Before the county-fragmentation tier, a **peninsula filter** is applied to reject plans with anomalously short cut-edge borders:
+
+```
+mean_cut_border(π) = cut_border_m(π) / cut_edges(π)
+
+peninsula_ratio(π) = min_{e cut} border_len(e) / mean_cut_border(π)
+```
+
+Plans with `peninsula_ratio < PENINSULA_RATIO_THRESHOLD = 0.05` are deprioritised (the full frontier is used only if no plan passes this threshold).
+
+**What this detects:** If a plan's shortest inter-district border is less than 5% of the average inter-district border, one precinct-pair adjacency is doing disproportionate work connecting two otherwise-separate precinct clusters. On a rendered map, this appears as an isolated district "pocket" connected to the rest of its district by a narrow corridor. These plans can score well on Polsby-Popper (the dissolved district polygon may look compact) while visually appearing fragmented.
+
+This is especially relevant for K=2 states where a single cut must span the entire state.
+
+### 12.4 Why filter by max_county_districts first
 
 This two-stage selection prevents a pathological case: a plan that achieves marginally higher compactness by concentrating all county fragmentation on a single dense urban county. Without this filter, a plan with Baltimore City in 4 districts could appear on the Pareto frontier if it had slightly better PP mean than a plan with Baltimore City in 2 districts, because total county splits might be identical. The `max_county_districts` pre-filter eliminates this class of plans before the primary objective comparison.
 
@@ -636,20 +688,22 @@ Maps produced by this pipeline are illustrative. Real congressional redistrictin
 
 | Parameter | Value | Location | Effect |
 |-----------|-------|----------|--------|
-| `BETA` | 2.0 | `sample.py` | Exponential weight amplification; 100× county-crossing penalty |
+| `BETA` | 2.0 | `sample.py` | Exponential weight amplification for K>2 states; 100× county-crossing preference |
+| `BETA_K2` | 0.5 | `sample.py` | Adaptive β for K≤2 states; 1.4× county-crossing preference (prevents peninsula connectors) |
 | `RANDOM_SEED` | 42 | `sample.py` | PCG64 RNG seed |
 | `POP_TOL` | 0.005 | `sample.py` | ±0.5% population balance tolerance |
 | `BURN_IN` | 500 | `sample.py` | Warm-up steps before recording |
 | `FLUSH_EVERY` | 1,000 | `sample.py` | Chunk size for streaming writes |
 | `SEED_EPSILON` | 0.02 | `sample.py` | Initial partition tolerance (2%) |
-| `MIN_BORDER_M` | 1.0 | `build_graph.py` | Minimum shared border for adjacency |
+| `MIN_BORDER_M` | 50.0 | `build_graph.py` | Minimum shared border (m) to register adjacency; eliminates digitization noise and prevents peninsula connectors |
 | `W_SAME_COUNTY` | 10.0 | `build_graph.py` | County-crossing weight multiplier |
 | `W_SAME_PLACE` | 5.0 | `build_graph.py` | City-crossing weight multiplier |
 | `W_SAME_COUSUB` | 3.0 | `build_graph.py` | Township-crossing weight multiplier |
 | `W_ROAD_DIV` | 2.0 | `build_graph.py` | Primary road weight divisor |
 | `ROAD_BUFFER_M` | 50.0 | `build_graph.py` | Buffer for road proximity check |
-| `PP_MIN_THRESHOLD` | 0.10 | `select.py` | Hard filter: minimum PP for worst district |
+| `PP_MIN_THRESHOLD` | 0.05 | `select.py` | Hard filter: minimum PP for worst district |
 | `POP_DEV_MAX_THRESHOLD` | 0.005 | `select.py` | Hard filter: maximum population deviation |
+| `PENINSULA_RATIO_THRESHOLD` | 0.05 | `select.py` | Minimum ratio of shortest to mean cut-border length; plans below are deprioritised |
 | `SAMPLE_SIZE` | 5,000 | `select.py` | Plans sampled for Pareto computation |
 | `BASE_STEPS` | 2,000 | `run_all_states.py` | Maryland baseline step count |
 | `K_MD_BASELINE` | 8 | `run_all_states.py` | Maryland K for step scaling |

@@ -67,31 +67,34 @@ Two representative plans are extracted:
 
 ## Completed states
 
-| State | K | Ensemble size | State | K | Ensemble size |
-|-------|---|--------------|-------|---|--------------|
-| Alabama | 7 | 2,000 | Missouri | 8 | 2,000 |
-| Arizona | 9 | 2,000 | Montana | 2 | 2,000 |
-| Arkansas | 4 | 2,000 | Nebraska | 3 | 2,000 |
-| Colorado | 8 | 2,000 | Nevada | 4 | 2,000 |
-| Connecticut | 5 | 2,000 | New Hampshire | 2 | 2,000 |
-| Georgia | 14 | 2,000 | New Jersey | 12 | 2,000 |
-| Hawaii | 2 | 2,000 | New Mexico | 3 | 2,000 |
-| Idaho | 2 | 2,000 | North Carolina | 14 | 2,000 |
-| Illinois | 17 | 2,000 | Ohio | 15 | 3,750 |
-| Indiana | 9 | 2,000 | Oklahoma | 5 | 2,000 |
-| Iowa | 4 | 2,000 | Oregon | 6 | 2,000 |
-| Kansas | 4 | 2,000 | Pennsylvania | 17 | 2,000 |
-| Kentucky | 6 | 2,000 | Rhode Island | 2 | 2,000 |
-| Louisiana | 6 | 2,000 | South Carolina | 7 | 2,000 |
-| Maine | 2 | 2,000 | Tennessee | 9 | 2,000 |
-| Maryland | 8 | 2,000 | Utah | 4 | 2,000 |
-| Massachusetts | 9 | 2,000 | Virginia | 11 | 2,750 |
-| Michigan | 13 | 2,000 | Washington | 10 | 2,500 |
-| Minnesota | 8 | 2,000 | West Virginia | 2 | 2,000 |
-| Mississippi | 4 | 2,000 | Wisconsin | 8 | 2,000 |
+All 44 multi-district states are complete (435 redistricted seats). The 6 at-large states (AK, DE, ND, SD, VT, WY) have K=1 and are not redistricted.
 
-**In progress (100k-step runs):** California (K=52), New York (K=26) — currently sampling.  
-**Queued:** Texas (K=38), Florida (K=28).
+| State | K | Ensemble | pp_mean | State | K | Ensemble | pp_mean |
+|-------|---|----------|---------|-------|---|----------|---------|
+| Alabama | 7 | 2,000 | 0.180 | Missouri | 8 | 2,000 | 0.222 |
+| Arizona | 9 | 2,000 | 0.256 | Montana | 2 | 2,000 | 0.387 |
+| Arkansas | 4 | 2,000 | 0.218 | Nebraska | 3 | 2,000 | 0.409 |
+| **California** | **52** | **100,000** | 0.174 | Nevada | 4 | 2,000 | 0.402 |
+| Colorado | 8 | 2,000 | 0.206 | New Hampshire | 2 | 2,000 | 0.357 |
+| Connecticut | 5 | 2,000 | 0.343 | New Jersey | 12 | 2,000 | 0.197 |
+| **Florida** | **28** | **100,000** | 0.205 | New Mexico | 3 | 2,000 | 0.280 |
+| Georgia | 14 | 2,000 | 0.145 | North Carolina | 14 | 2,000 | 0.190 |
+| Hawaii | 2 | 2,000 | 0.252 | **New York** | **26** | **100,000** | 0.188 |
+| Idaho | 2 | 2,000 | 0.318 | Ohio | 15 | 3,750 | 0.166 |
+| Illinois | 17 | 2,000 | 0.196 | Oklahoma | 5 | 2,000 | 0.214 |
+| Indiana | 9 | 2,000 | 0.239 | Oregon | 6 | 2,000 | 0.260 |
+| Iowa | 4 | 2,000 | 0.303 | Pennsylvania | 17 | 2,000 | 0.181 |
+| Kansas | 4 | 2,000 | 0.370 | Rhode Island | 2 | 2,000 | 0.515 |
+| Kentucky | 6 | 2,000 | 0.188 | South Carolina | 7 | 2,000 | 0.223 |
+| Louisiana | 6 | 2,000 | 0.160 | Tennessee | 9 | 2,000 | 0.164 |
+| Maine | 2 | 2,000 | 0.260 | **Texas** | **38** | **100,000** | 0.170 |
+| Maryland | 8 | 2,000 | 0.195 | Utah | 4 | 2,000 | 0.339 |
+| Massachusetts | 9 | 2,000 | 0.223 | Virginia | 11 | 2,750 | 0.195 |
+| Michigan | 13 | 2,000 | 0.227 | Washington | 10 | 2,500 | 0.189 |
+| Minnesota | 8 | 2,000 | 0.213 | **West Virginia** | **2** | **20,000** | 0.139 |
+| Mississippi | 4 | 2,000 | 0.225 | Wisconsin | 8 | 2,000 | 0.224 |
+
+Bold = enhanced step count. CA/FL/NY/TX used 100k steps; WV used 20k steps with adaptive β=0.5 (see [STATE_NOTES.md](STATE_NOTES.md)).
 
 ---
 
