@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&family=Source+Code+Pro:wght@400&display=swap');
+
+@page {
+  size: letter;
+  margin: 1in 1in 1in 1in;
+  @bottom-center {
+    content: counter(page);
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-size: 9pt;
+    color: #666;
+  }
+}
+
+@page :first {
+  @bottom-center { content: none; }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Crimson Text', Georgia, 'Times New Roman', serif;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: #1a1a1a;
+  max-width: 100%;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  text-align: justify;
+}
+
+/* ── Title block ─────────────────────────────────── */
+h1 {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 17pt;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+  margin: 0 0 18pt 0;
+  border-bottom: 2pt solid #c00;
+  padding-bottom: 8pt;
+  page-break-after: avoid;
+}
+
+/* ── Section headings ────────────────────────────── */
+h2 {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: #000;
+  margin: 18pt 0 5pt 0;
+  padding: 0;
+  page-break-after: avoid;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+h3 {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 11pt;
+  font-weight: 600;
+  font-style: italic;
+  color: #222;
+  margin: 12pt 0 4pt 0;
+  page-break-after: avoid;
+}
+
+/* ── Abstract box ────────────────────────────────── */
+.abstract-box {
+  background: #f7f7f7;
+  border-left: 3pt solid #c00;
+  padding: 10pt 12pt;
+  margin: 0 0 18pt 0;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.abstract-box p {
+  margin: 0;
+}
+
+strong:first-child {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Body paragraphs ─────────────────────────────── */
+p {
+  margin: 0 0 7pt 0;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Bold lead-in words in results (Nature style) */
+p > strong:first-child {
+  font-style: normal;
+  font-weight: 600;
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 10.5pt;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Horizontal rule ─────────────────────────────── */
+hr {
+  border: none;
+  border-top: 0.5pt solid #ccc;
+  margin: 14pt 0;
+}
+
+/* ── Tables ──────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 9pt;
+  margin: 10pt 0 12pt 0;
+  page-break-inside: avoid;
+}
+
+th {
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: 600;
+  padding: 4pt 6pt;
+  text-align: left;
+  border-bottom: 1pt solid #000;
+}
+
+td {
+  padding: 3pt 6pt;
+  border-bottom: 0.5pt solid #ddd;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #f9f9f9;
+}
+
+/* ── Code / inline code ──────────────────────────── */
+code {
+  font-family: 'Source Code Pro', 'Courier New', monospace;
+  font-size: 9pt;
+  background: #f0f0f0;
+  padding: 1pt 3pt;
+  border-radius: 2pt;
+}
+
+pre {
+  font-family: 'Source Code Pro', 'Courier New', monospace;
+  font-size: 8.5pt;
+  background: #f4f4f4;
+  border-left: 2pt solid #ccc;
+  padding: 8pt 10pt;
+  margin: 8pt 0;
+  overflow-x: auto;
+  page-break-inside: avoid;
+}
+
+/* ── References ──────────────────────────────────── */
+ol {
+  padding-left: 20pt;
+  margin: 4pt 0;
+}
+
+ol li {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin-bottom: 4pt;
+}
+
+ul {
+  padding-left: 18pt;
+  margin: 4pt 0 8pt 0;
+}
+
+ul li {
+  margin-bottom: 3pt;
+}
+
+/* ── Figure legends ──────────────────────────────── */
+.figure-legend {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin: 10pt 0;
+  border-top: 1pt solid #bbb;
+  padding-top: 6pt;
+  page-break-inside: avoid;
+}
+
+/* ── Keywords line ───────────────────────────────── */
+.keywords {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 9.5pt;
+  color: #444;
+  margin-bottom: 16pt;
+}
+
+/* ── Extended data ───────────────────────────────── */
+h2#extended-data {
+  margin-top: 24pt;
+}
+
+/* ── Page break helpers ──────────────────────────── */
+.page-break { page-break-after: always; }
