@@ -206,5 +206,19 @@ h2#extended-data {
   margin-top: 24pt;
 }
 
+/* ── Figure image blocks ─────────────────────────── */
+.figure-block {
+  margin: 16pt 0 4pt 0;
+  page-break-inside: avoid;
+  text-align: center;
+}
+
+.figure-block img {
+  max-width: 100%;
+  height: auto;
+  border: 0.5pt solid #ddd;
+  border-radius: 3pt;
+}
+
 /* ── Page break helpers ──────────────────────────── */
 .page-break { page-break-after: always; }
