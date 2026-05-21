@@ -44,6 +44,18 @@ def render_comparison(cfg):
         fig, axes = plt.subplots(1, 2, figsize=(16, 8), facecolor=BG)
         fig.suptitle(f"{cfg.name}", fontsize=16, fontweight="bold", color="#e6edf3", y=0.99)
 
+        # State outline as a filled base layer — covers unpopulated gaps
+        # (national forests, wilderness) that have no VTD precinct assigned.
+        # Without this, those areas render as the dark background colour,
+        # creating a "patchwork" appearance on states like WV.
+        from shapely.ops import unary_union
+        if not state_counties.empty:
+            state_outline = gpd.GeoDataFrame(
+                geometry=[unary_union(state_counties.geometry)], crs=crs
+            )
+        else:
+            state_outline = None
+
         for ax, gdf, title, id_col in [
             (axes[0], proposed, "Blind Algorithm\n(Geography Only)", "district_id"),
             (axes[1], None,     "Enacted 118th Congress", "CD118FP"),
@@ -60,10 +72,18 @@ def render_comparison(cfg):
                     continue
                 try:
                     gdf = gpd.read_file(enacted_pat[0]).to_crs(crs)
+                    # Filter out non-voting delegate placeholder districts
+                    if "CD118FP" in gdf.columns:
+                        gdf = gdf[gdf["CD118FP"].str.match(r"^\d+$", na=False)].copy()
                 except Exception as e:
                     ax.text(0.5, 0.5, f"Load error:\n{e}", ha="center", va="center",
                             transform=ax.transAxes, color="#555", fontsize=9)
                     continue
+
+            # Draw state outline first so unpopulated gaps show as neutral grey
+            # rather than the dark background colour.
+            if state_outline is not None:
+                state_outline.plot(ax=ax, color="#2a3140", edgecolor="none")
 
             colors = [color_by_id(row[id_col]) for _, row in gdf.iterrows()]
             gdf.plot(ax=ax, color=colors, edgecolor="#ffffff", linewidth=0.3)
