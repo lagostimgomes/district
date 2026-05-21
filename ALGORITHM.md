@@ -684,6 +684,56 @@ Maps produced by this pipeline are illustrative. Real congressional redistrictin
 
 ---
 
+## 17b. Map Rendering and VTD Coverage
+
+### 17b.1 What is rendered
+
+District maps are rendered directly from the GeoPackage produced by the selection step. Each district polygon is the dissolved union of all precincts assigned to that district. Rendering uses `geopandas.GeoDataFrame.plot()` with per-district colours, optionally overlaid with county boundary lines.
+
+### 17b.2 VTD coverage gap
+
+VTD (Voting Tabulation District) shapefiles do not always tile the full state geography. Three states have material gaps:
+
+| State | VTD coverage | Gap source |
+|-------|-------------|------------|
+| Hawaii | 10.4% | Pacific Ocean within county boundaries |
+| Maine | 14.6% | Gulf of Maine within county boundaries |
+| West Virginia | 72.3% | Federal land (national forests, wilderness areas) |
+
+All other 41 multi-district states are at ≥92.9% coverage; 38 are at exactly 100%.
+
+For Hawaii and Maine the gap is ocean — the TIGER county boundaries extend to territorial waters, so the county geometry is much larger than the land area. VTDs only exist on inhabited land. On a rendered map these gaps are correctly perceived as water; no intervention is needed.
+
+For West Virginia the gap is **inland federal land**. Areas such as the Monongahela National Forest (900,000+ acres) and adjacent wilderness tracts have no VTD assignment. When only the precinct-derived district polygons are drawn, these interior areas render as the dark background colour, producing visible "holes" in what should be a solid two-colour map.
+
+### 17b.3 State-outline base layer
+
+`render_all_state_comparisons.py` addresses the coverage gap by drawing a dissolved state outline as a filled base layer before drawing district polygons:
+
+```python
+from shapely.ops import unary_union
+state_outline = gpd.GeoDataFrame(
+    geometry=[unary_union(state_counties.geometry)], crs=crs
+)
+state_outline.plot(ax=ax, color="#2a3140", edgecolor="none")
+# … then draw district polygons on top
+```
+
+The base layer colour (`#2a3140`) is a neutral gray that sits between the dark background and the district colours, so unpopulated gaps are clearly within the state footprint but visually distinct from any district. This fix is applied uniformly to all 44 states; it has no visible effect on states with 100% VTD coverage.
+
+### 17b.4 Enacted-map placeholder districts
+
+The 118th Congress enacted shapefiles (TIGER `tl_*.shp`) include a `CD118FP = 'ZZ'` placeholder record for the non-voting delegate districts of Washington DC, Puerto Rico, and the US territories. These records have string district codes and no valid geometry for comparison purposes. The renderer filters them before display:
+
+```python
+if "CD118FP" in gdf.columns:
+    gdf = gdf[gdf["CD118FP"].str.match(r"^\d+$", na=False)].copy()
+```
+
+Without this filter, states such as Connecticut, Illinois, and New Hampshire (which share TIGER files with adjacent territories) raise a `ValueError` when the code attempts `int('ZZ')` to assign a colour.
+
+---
+
 ## 18. Parameter Summary
 
 | Parameter | Value | Location | Effect |

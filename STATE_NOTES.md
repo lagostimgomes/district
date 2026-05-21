@@ -8,7 +8,7 @@ For the general algorithm see [ALGORITHM.md](ALGORITHM.md).
 
 ## Table of Contents
 
-1. [West Virginia — Appalachian terrain and K=2 peninsula problem](#west-virginia)
+1. [West Virginia — Appalachian terrain, K=2 peninsula problem, VTD coverage gap](#west-virginia)
 2. [California — VTD fallback, K=52 scale, coastal geometry](#california)
 3. [New York — Dense metro, K=26, Long Island](#new-york)
 4. [Texas — K=38 scale, geographic diversity](#texas)
@@ -16,11 +16,12 @@ For the general algorithm see [ALGORITHM.md](ALGORITHM.md).
 6. [Maryland — Baltimore City as independent county](#maryland)
 7. [Virginia — 38 independent cities](#virginia)
 8. [Louisiana — Parishes as county-equivalents](#louisiana)
-9. [Hawaii — Non-contiguous islands](#hawaii)
-10. [New England states — No county government](#new-england-states)
+9. [Hawaii — Non-contiguous islands, VTD coverage gap](#hawaii)
+10. [New England states — No county government, Maine VTD coverage gap](#new-england-states)
 11. [Missouri and Nevada — Additional independent cities](#missouri-and-nevada)
 12. [At-large states (K=1) — Skipped](#at-large-states)
-13. [Compactness ceiling by state geography](#compactness-ceiling-by-state-geography)
+13. [VTD coverage gap — states with incomplete precinct coverage](#vtd-coverage-gap)
+14. [Compactness ceiling by state geography](#compactness-ceiling-by-state-geography)
 
 ---
 
@@ -63,6 +64,19 @@ Even with β=0.5, the selection step applies the peninsula filter (min cut-borde
 ### MIN_BORDER_M
 
 Raising `MIN_BORDER_M` from 1 m to 50 m eliminates 4 spurious precinct adjacencies in the WV graph that had shared borders of < 10 m. These were digitization artifacts near county-line corners. The 50 m threshold does not affect any legitimate precinct adjacency (minimum real shared border in the WV graph after filtering is ~79 m, which becomes the new floor after graph rebuild; that single remaining short edge is what the peninsula filter catches at selection time).
+
+### VTD coverage gap
+
+WV VTDs (Voting Tabulation Districts) cover only **45,364 km²** of the state's total **62,756 km²** — a coverage rate of **72.3%**. The remaining 17,391 km² consists of federal land (principally the Monongahela National Forest, Spruce Knob–Seneca Rocks National Recreation Area, and several other wilderness tracts) to which no precinct is assigned in the Census TIGER VTD files.
+
+This is a second, independent cause of visual patchiness in WV's rendered maps, distinct from the peninsula connector problem:
+
+- The peninsula connector problem produces isolated district *pockets* — real precinct polygons that appear disconnected from their district body.
+- The coverage gap produces *holes* — interior areas of the state that are simply absent from the district GeoPackage entirely, rendering as the background colour.
+
+**Fix:** `render_all_state_comparisons.py` draws a dissolved county outline (the full state footprint) as a neutral base layer before drawing the district polygons. Unpopulated gaps fill in as `#2a3140` (muted gray) rather than the dark `#161b22` background, eliminating the "patchwork" appearance.
+
+WV has the worst land-coverage rate of any contiguous state. See the [VTD coverage gap](#vtd-coverage-gap) section for the full cross-state comparison.
 
 ---
 
@@ -219,6 +233,12 @@ Non-contiguous island precincts are connected in the graph only if they touch (t
 
 The natural 2-district split for Hawaii is Oʻahu (District 1) and the outer islands (District 2). The blind algorithm consistently finds this division, resulting in just 1 county split (Honolulu County is split because its NW Hawaiian Islands portion is grouped with the outer-island district). pp_mean=0.252 reflects the compact, roughly elliptical shapes of the main islands.
 
+### VTD coverage gap
+
+Hawaii's TIGER county shapefile includes the state's full territorial footprint, which includes the surrounding Pacific Ocean out to the county boundaries (particularly for Honolulu County, whose jurisdiction extends to the Northwestern Hawaiian Islands). VTDs are assigned only to the inhabited land area of the main islands.
+
+As a result, Hawaii has the lowest VTD coverage rate of any state: **10.4%** (2,951 km² of VTDs vs. 28,412 km² of county geometry). The gap is ocean, not land — so on a rendered map it is not visually problematic. The "holes" in the district polygons are correctly perceived as water. The state-outline base layer fix applied for WV is also applied to HI for consistency, but it has no visible effect because the county outline already traces the island coastlines.
+
 ### Projection
 
 Hawaii uses `EPSG:26904` (UTM Zone 4N) rather than the continental US `EPSG:5070` (Albers Equal Area). This is specified in `StateConfig` for HI and applied at every stage of the pipeline.
@@ -241,6 +261,8 @@ New England states have county boundaries drawn on maps, but counties carry litt
 **Effect on the pipeline:** The `W_SAME_COUNTY = 10×` multiplier still applies — county FIPS codes exist in TIGER data even where county government is defunct, and the weight applies based on geography, not on whether a government exercises that geography. However, in practice, the county-split objective carries less normative weight in these states: keeping a county whole in Connecticut is less meaningful than keeping one whole in Texas.
 
 County-subdivision (`W_SAME_COUSUB = 3×`) is more meaningful in New England, since towns (called county subdivisions in TIGER) are the real administrative units. The pipeline's inclusion of cousub weights gives towns appropriate weight in the spanning tree bias.
+
+**Maine VTD coverage note:** Maine's county geometry includes the Gulf of Maine out to territorial waters, giving it a measured VTD coverage rate of only **14.6%** (13,360 km² of VTDs vs. 91,633 km² of county geometry). Like Hawaii, the gap is ocean, not land, so no visual holes appear on rendered maps. The state-outline base layer fix is applied but has no visible effect.
 
 **Rhode Island special note:** RI achieves the highest pp_mean of any state: 0.515. Rhode Island is a small, roughly rectangular state with few geographic constraints. Its two districts consistently come out as roughly equal halves of the state — one covering the Providence metro, one covering the southern coastline — both geometrically compact. The 2-district problem for a state this shape has a near-optimal solution.
 
@@ -265,6 +287,35 @@ Nevada has one independent city: **Carson City**, the state capital. It is a cou
 These six states each have a single congressional seat and are not redistricted. The pipeline skips them (`cfg.k == 1` check in `run_all_states.py`). Their partisan lean is added to `compute_lean_2024.py` as a fixed entry based on the state-level 2024 presidential result.
 
 **Alaska note:** Alaska uses `EPSG:3338` (Alaska Albers Equal Area) as its projection. If Alaska is ever re-added as a multi-district state (which would require a census reapportionment giving it 2+ seats), the pipeline already has the correct projection in `StateConfig`.
+
+---
+
+## VTD Coverage Gap
+
+Most states have VTD (Voting Tabulation District) shapefiles that cover 100% of the state's land area — even rural, sparsely populated counties are divided into precincts that tile the full geography. Three states are exceptions:
+
+| State | VTD area (km²) | County area (km²) | Coverage | Gap source |
+|-------|---------------|-------------------|----------|------------|
+| Hawaii | 2,951 | 28,412 | **10.4%** | Pacific Ocean within county boundaries |
+| Maine | 13,360 | 91,633 | **14.6%** | Gulf of Maine within county boundaries |
+| West Virginia | 45,364 | 62,756 | **72.3%** | Federal land (national forests, wilderness) |
+
+All other 41 multi-district states are at ≥92.9% coverage; 38 are at exactly 100%.
+
+### Why Hawaii and Maine differ from West Virginia
+
+For Hawaii and Maine the gap is **ocean**. TIGER county boundaries extend to territorial waters, so the computed county area is much larger than the land area. The VTDs, which only exist on inhabited land, naturally cover a small fraction of the total county geometry. On a rendered map the district polygons only need to fill the islands/land — the surrounding ocean is visually transparent. No "holes" appear.
+
+For West Virginia the gap is **inland federal land** — chiefly the Monongahela National Forest (900,000+ acres) and adjacent wilderness areas. These tracts are interior to the state outline. A rendered map that draws only the precinct-derived district polygons will show visible dark holes in the middle of the state. This is visually incorrect and misleading.
+
+### Rendering fix
+
+`render_all_state_comparisons.py` addresses this by drawing a dissolved state outline (union of all county geometries) as a filled neutral-gray base layer (`#2a3140`) before drawing the district polygons. This ensures:
+
+- WV's federal land gaps show as a muted gray rather than the dark background, eliminating the "patchwork" appearance.
+- HI and ME are handled consistently, with no visible effect (the base layer traces the island/land coastlines that the district polygons already fill).
+
+The national overview map (`render_us_map.py`) is less affected because its light-blue ocean background (`#C8DCF0`) causes any WV gaps to appear as a slightly wrong shade of blue — less visually jarring at national scale — but the comparison maps use a dark background where the gap is obvious.
 
 ---
 
