@@ -99,9 +99,17 @@ def render_comparison(cfg):
         plt.close("all")
         return False, str(e)
 
+import argparse
+_parser = argparse.ArgumentParser()
+_parser.add_argument("--state", action="append", dest="states", metavar="ABBR",
+                     help="Limit to these state abbreviations (repeatable)")
+_args = _parser.parse_args()
+_filter = {s.upper() for s in _args.states} if _args.states else None
+
 ok, fail = 0, 0
 for cfg in sorted(ALL_STATES.values(), key=lambda c: c.abbr):
     if cfg.k == 1: continue
+    if _filter and cfg.abbr.upper() not in _filter: continue
     print(f"  [{cfg.abbr}]", end=" ", flush=True)
     success, msg = render_comparison(cfg)
     if success:
